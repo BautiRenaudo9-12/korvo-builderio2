@@ -63,13 +63,39 @@ export const BusinessHeader = () => {
     <header className="md:hidden sticky top-0 z-40 px-4 py-4 bg-[#1a1a1a] border-b border-white/5">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <div className="w-9 h-9 bg-amber-500/10 rounded-lg flex items-center justify-center border border-amber-500/20">
-            <span className="text-amber-500 font-bold text-sm">K</span>
+          <div class="flex items-center gap-2">
+            <div class="w-8 h-8 bg-amber-500/10 rounded-lg flex items-center justify-center border border-amber-500/20">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-bird text-amber-500"
+                aria-hidden="true"
+              >
+                <path d="M16 7h.01"></path>
+                <path d="M3.4 18H12a8 8 0 0 0 8-8V7a4 4 0 0 0-7.28-2.3L2 20"></path>
+                <path d="m20 7 2 .5-2 .5"></path>
+                <path d="M10 18v3"></path>
+                <path d="M14 17.75V21"></path>
+                <path d="M7 18a6 6 0 0 0 3.84-10.61"></path>
+              </svg>
+            </div>
+            <h1 class="text-lg font-semibold tracking-tighter text-white">
+              KORVO
+            </h1>
           </div>
           <div className="flex items-center gap-2">
             <h1 className="text-white font-semibold">KORVO</h1>
             <div className="px-2.5 py-1 bg-amber-500/20 border border-amber-500/40 rounded-md">
-              <span className="text-amber-400 font-bold text-xs uppercase tracking-wide">business</span>
+              <span className="text-amber-400 font-bold text-xs uppercase tracking-wide">
+                business
+              </span>
             </div>
           </div>
         </div>
