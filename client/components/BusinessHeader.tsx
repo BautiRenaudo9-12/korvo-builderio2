@@ -89,10 +89,10 @@ export const BusinessHeader = () => {
             <h1 class="text-lg font-semibold tracking-tighter text-white">
               KORVO
             </h1>
+            <span className="text-amber-400 font-bold text-xs uppercase tracking-wide">
+              business
+            </span>
           </div>
-          <span className="text-amber-400 font-bold text-xs uppercase tracking-wide">
-            business
-          </span>
         </div>
         <button
           onClick={() => setMenuOpen(!menuOpen)}
