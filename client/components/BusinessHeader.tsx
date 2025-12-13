@@ -63,9 +63,7 @@ export const BusinessHeader = () => {
     <header className="md:hidden sticky top-0 z-40 px-4 py-4 bg-[#1a1a1a] border-b border-white/5">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <div className="w-9 h-9 bg-amber-500/10 rounded-lg flex items-center justify-center border border-amber-500/20">
-            <span className="text-amber-500 font-bold text-sm">K</span>
-          </div>
+          
           <div class="flex items-center gap-2">
             <div class="w-8 h-8 bg-amber-500/10 rounded-lg flex items-center justify-center border border-amber-500/20">
               <svg
