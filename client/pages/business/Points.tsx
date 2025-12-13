@@ -20,19 +20,23 @@ export default function BusinessPoints() {
   };
 
   return (
-    <div className="px-4 md:px-8 pt-4 md:pt-8 pb-8">
-      <h1 className="text-2xl md:text-3xl font-bold text-white mb-2">Configuración de Puntos</h1>
-      <p className="text-neutral-400 text-sm mb-8">Define cómo ganan puntos tus clientes</p>
+    <div className="px-3 sm:px-4 md:px-8 pt-3 sm:pt-4 md:pt-8 pb-8">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-6">
+        <div>
+          <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-1">Configuración de Puntos</h1>
+          <p className="text-neutral-400 text-xs sm:text-sm">Define cómo ganan puntos tus clientes</p>
+        </div>
+      </div>
 
-      <div className="glass-panel rounded-lg p-6 border border-white/5">
-        <div className="flex items-start justify-between mb-6">
-          <div>
-            <h2 className="text-xl font-semibold text-white mb-1">Parámetros de Puntos</h2>
-            <p className="text-sm text-neutral-400">Configura las reglas de acumulación y expiración</p>
+      <div className="glass-panel rounded-lg p-4 sm:p-6 border border-white/5">
+        <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 sm:gap-4 mb-6">
+          <div className="flex-1">
+            <h2 className="text-lg sm:text-xl font-semibold text-white mb-1">Parámetros de Puntos</h2>
+            <p className="text-xs sm:text-sm text-neutral-400">Configura las reglas de acumulación y expiración</p>
           </div>
           <button
             onClick={() => setPointsConfigEditing(!pointsConfigEditing)}
-            className="px-4 py-2 bg-amber-500/20 text-amber-500 border border-amber-500/30 rounded-lg hover:bg-amber-500/30 transition-colors font-medium text-sm"
+            className="px-3 py-2 sm:px-4 bg-amber-500/20 text-amber-500 border border-amber-500/30 rounded-lg hover:bg-amber-500/30 transition-colors font-medium text-xs sm:text-sm whitespace-nowrap"
           >
             {pointsConfigEditing ? 'Cancelar' : 'Editar'}
           </button>
@@ -83,15 +87,15 @@ export default function BusinessPoints() {
             </button>
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="p-4 bg-white/5 rounded-lg border border-white/10">
-              <p className="text-sm text-neutral-400 mb-1">Ratio de Puntos</p>
-              <p className="text-3xl font-bold text-amber-500">{pointsConfig.pointsPerDollar}</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+            <div className="p-3 sm:p-4 bg-white/5 rounded-lg border border-white/10">
+              <p className="text-xs sm:text-sm text-neutral-400 mb-2">Ratio de Puntos</p>
+              <p className="text-2xl sm:text-3xl font-bold text-amber-500">{pointsConfig.pointsPerDollar}</p>
               <p className="text-xs text-neutral-500 mt-2">puntos por $1</p>
             </div>
-            <div className="p-4 bg-white/5 rounded-lg border border-white/10">
-              <p className="text-sm text-neutral-400 mb-1">Expiración</p>
-              <p className="text-3xl font-bold text-amber-500">{pointsConfig.expiryMonths}</p>
+            <div className="p-3 sm:p-4 bg-white/5 rounded-lg border border-white/10">
+              <p className="text-xs sm:text-sm text-neutral-400 mb-2">Expiración</p>
+              <p className="text-2xl sm:text-3xl font-bold text-amber-500">{pointsConfig.expiryMonths}</p>
               <p className="text-xs text-neutral-500 mt-2">meses de inactividad</p>
             </div>
           </div>

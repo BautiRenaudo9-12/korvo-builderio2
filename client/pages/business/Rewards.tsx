@@ -97,15 +97,16 @@ export default function BusinessRewards() {
   };
 
   return (
-    <div className="px-4 md:px-8 pt-4 md:pt-8 pb-8">
-      <div className="flex items-center justify-between mb-8">
-        <h1 className="text-2xl md:text-3xl font-bold text-white">Recompensas</h1>
+    <div className="px-3 sm:px-4 md:px-8 pt-3 sm:pt-4 md:pt-8 pb-8">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-6 sm:mb-8">
+        <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-white">Recompensas</h1>
         <button
           onClick={handleAddNew}
-          className="flex items-center gap-2 px-4 py-2 bg-amber-500 hover:bg-amber-600 text-black font-semibold rounded-lg transition-colors"
+          className="flex items-center justify-center sm:justify-start gap-2 px-3 sm:px-4 py-2 bg-amber-500 hover:bg-amber-600 text-black font-semibold rounded-lg transition-colors text-sm sm:text-base whitespace-nowrap"
         >
-          <Plus size={18} />
-          Nueva Recompensa
+          <Plus size={16} />
+          <span className="hidden sm:inline">Nueva Recompensa</span>
+          <span className="sm:hidden">Agregar</span>
         </button>
       </div>
 
@@ -268,52 +269,52 @@ export default function BusinessRewards() {
       </div>
 
       {/* Mobile Cards View */}
-      <div className="md:hidden space-y-4">
+      <div className="md:hidden space-y-3">
         {rewards.map((reward, index) => (
           <div
             key={reward.id}
-            className="glass-panel rounded-lg p-4 border border-white/5 hover:border-white/10 transition-all animate-fade-in"
+            className="glass-panel rounded-lg p-3 sm:p-4 border border-white/5 hover:border-white/10 transition-all animate-fade-in"
             style={{ animationDelay: `${index * 30}ms` }}
           >
             {/* Header with name and actions */}
-            <div className="flex items-start justify-between mb-4">
-              <div className="flex-1 pr-3">
-                <h3 className="text-white font-semibold text-base">{reward.name}</h3>
-                <p className="text-sm text-neutral-500 mt-1 line-clamp-2">{reward.description}</p>
+            <div className="flex items-start justify-between gap-2 mb-3">
+              <div className="flex-1 min-w-0">
+                <h3 className="text-white font-semibold text-sm sm:text-base truncate">{reward.name}</h3>
+                <p className="text-xs sm:text-sm text-neutral-500 mt-1 line-clamp-2">{reward.description}</p>
               </div>
-              <div className="flex gap-2">
+              <div className="flex gap-1 flex-shrink-0">
                 <button
                   onClick={() => handleEdit(reward)}
-                  className="p-2 hover:bg-white/10 rounded-lg transition-colors text-amber-500 hover:text-amber-400"
+                  className="p-1.5 sm:p-2 hover:bg-white/10 rounded-lg transition-colors text-amber-500 hover:text-amber-400"
                 >
-                  <Edit2 size={18} />
+                  <Edit2 size={16} />
                 </button>
                 <button
                   onClick={() => handleDelete(reward.id)}
-                  className="p-2 hover:bg-white/10 rounded-lg transition-colors text-red-500 hover:text-red-400"
+                  className="p-1.5 sm:p-2 hover:bg-white/10 rounded-lg transition-colors text-red-500 hover:text-red-400"
                 >
-                  <Trash2 size={18} />
+                  <Trash2 size={16} />
                 </button>
               </div>
             </div>
 
             {/* Info Grid */}
-            <div className="grid grid-cols-2 gap-3 mb-4">
-              <div className="bg-white/5 rounded-lg p-3">
-                <p className="text-xs text-neutral-500 mb-2">Costo</p>
-                <p className="text-amber-400 font-bold text-lg">{reward.cost}</p>
+            <div className="grid grid-cols-2 gap-2 sm:gap-3 mb-3">
+              <div className="bg-white/5 rounded-lg p-2.5 sm:p-3">
+                <p className="text-xs text-neutral-500 mb-1">Costo</p>
+                <p className="text-amber-400 font-bold text-lg sm:text-xl">{reward.cost}</p>
                 <p className="text-xs text-neutral-600">puntos</p>
               </div>
-              <div className="bg-white/5 rounded-lg p-3">
-                <p className="text-xs text-neutral-500 mb-2">Canjeadas</p>
-                <p className="text-white font-bold text-lg">{reward.redeemCount}</p>
+              <div className="bg-white/5 rounded-lg p-2.5 sm:p-3">
+                <p className="text-xs text-neutral-500 mb-1">Canjeadas</p>
+                <p className="text-white font-bold text-lg sm:text-xl">{reward.redeemCount}</p>
               </div>
             </div>
 
             {/* Status */}
             <button
               onClick={() => handleToggle(reward.id)}
-              className={`w-full px-3 py-3 rounded-lg font-semibold transition-all text-sm ${
+              className={`w-full px-2 sm:px-3 py-2 sm:py-3 rounded-lg font-semibold transition-all text-xs sm:text-sm ${
                 reward.active
                   ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30'
                   : 'bg-neutral-500/20 text-neutral-400 border border-neutral-500/30'
@@ -325,8 +326,8 @@ export default function BusinessRewards() {
         ))}
 
         {rewards.length === 0 && (
-          <div className="text-center py-12">
-            <p className="text-neutral-400 text-sm">No hay recompensas creadas</p>
+          <div className="text-center py-8 sm:py-12">
+            <p className="text-neutral-400 text-xs sm:text-sm">No hay recompensas creadas</p>
           </div>
         )}
       </div>
