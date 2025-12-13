@@ -12,53 +12,53 @@ export default function BusinessDashboard() {
       <h1 className="text-2xl md:text-4xl font-bold text-white mb-8">Dashboard</h1>
 
       {/* Stats Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6 mb-8">
         {/* Total Points */}
-        <div className="glass-panel rounded-lg p-6 border border-white/5 hover:border-white/10 transition-all">
-          <div className="flex items-center justify-between mb-4">
-            <div className="w-10 h-10 rounded-lg bg-amber-500/20 flex items-center justify-center">
-              <Zap size={20} className="text-amber-500" />
+        <div className="glass-panel rounded-lg p-4 md:p-6 border border-white/5 hover:border-white/10 transition-all">
+          <div className="flex items-center justify-between mb-3 md:mb-4">
+            <div className="w-8 md:w-10 h-8 md:h-10 rounded-lg bg-amber-500/20 flex items-center justify-center">
+              <Zap size={18} className="text-amber-500" />
             </div>
             <span className="text-xs text-emerald-500 font-semibold">+12%</span>
           </div>
-          <p className="text-neutral-400 text-sm mb-1">Puntos en Circulación</p>
-          <p className="text-3xl font-bold text-white">{stats.totalPoints.toLocaleString()}</p>
+          <p className="text-neutral-400 text-xs md:text-sm mb-1">Puntos en Circulación</p>
+          <p className="text-2xl md:text-3xl font-bold text-white">{stats.totalPoints.toLocaleString()}</p>
         </div>
 
         {/* Active Customers */}
-        <div className="glass-panel rounded-lg p-6 border border-white/5 hover:border-white/10 transition-all">
-          <div className="flex items-center justify-between mb-4">
-            <div className="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center">
-              <Users size={20} className="text-blue-500" />
+        <div className="glass-panel rounded-lg p-4 md:p-6 border border-white/5 hover:border-white/10 transition-all">
+          <div className="flex items-center justify-between mb-3 md:mb-4">
+            <div className="w-8 md:w-10 h-8 md:h-10 rounded-lg bg-blue-500/20 flex items-center justify-center">
+              <Users size={18} className="text-blue-500" />
             </div>
             <span className="text-xs text-emerald-500 font-semibold">+8%</span>
           </div>
-          <p className="text-neutral-400 text-sm mb-1">Clientes Activos</p>
-          <p className="text-3xl font-bold text-white">{stats.activeCustomers}</p>
+          <p className="text-neutral-400 text-xs md:text-sm mb-1">Clientes Activos</p>
+          <p className="text-2xl md:text-3xl font-bold text-white">{stats.activeCustomers}</p>
         </div>
 
         {/* Rewards Claimed */}
-        <div className="glass-panel rounded-lg p-6 border border-white/5 hover:border-white/10 transition-all">
-          <div className="flex items-center justify-between mb-4">
-            <div className="w-10 h-10 rounded-lg bg-pink-500/20 flex items-center justify-center">
-              <Gift size={20} className="text-pink-500" />
+        <div className="glass-panel rounded-lg p-4 md:p-6 border border-white/5 hover:border-white/10 transition-all">
+          <div className="flex items-center justify-between mb-3 md:mb-4">
+            <div className="w-8 md:w-10 h-8 md:h-10 rounded-lg bg-pink-500/20 flex items-center justify-center">
+              <Gift size={18} className="text-pink-500" />
             </div>
             <span className="text-xs text-emerald-500 font-semibold">+15%</span>
           </div>
-          <p className="text-neutral-400 text-sm mb-1">Recompensas Canjeadas</p>
-          <p className="text-3xl font-bold text-white">{stats.rewardsClaimed}</p>
+          <p className="text-neutral-400 text-xs md:text-sm mb-1">Recompensas Canjeadas</p>
+          <p className="text-2xl md:text-3xl font-bold text-white">{stats.rewardsClaimed}</p>
         </div>
 
         {/* Monthly Revenue */}
-        <div className="glass-panel rounded-lg p-6 border border-white/5 hover:border-white/10 transition-all">
-          <div className="flex items-center justify-between mb-4">
-            <div className="w-10 h-10 rounded-lg bg-green-500/20 flex items-center justify-center">
-              <TrendingUp size={20} className="text-green-500" />
+        <div className="glass-panel rounded-lg p-4 md:p-6 border border-white/5 hover:border-white/10 transition-all">
+          <div className="flex items-center justify-between mb-3 md:mb-4">
+            <div className="w-8 md:w-10 h-8 md:h-10 rounded-lg bg-green-500/20 flex items-center justify-center">
+              <TrendingUp size={18} className="text-green-500" />
             </div>
             <span className="text-xs text-emerald-500 font-semibold">+5%</span>
           </div>
-          <p className="text-neutral-400 text-sm mb-1">Ingresos (Mes)</p>
-          <p className="text-3xl font-bold text-white">${(stats.monthlyRevenue / 1000).toFixed(1)}K</p>
+          <p className="text-neutral-400 text-xs md:text-sm mb-1">Ingresos (Mes)</p>
+          <p className="text-2xl md:text-3xl font-bold text-white">${(stats.monthlyRevenue / 1000).toFixed(1)}K</p>
         </div>
       </div>
 
