@@ -86,7 +86,7 @@ export const BusinessHeader = () => {
                 <path d="M7 18a6 6 0 0 0 3.84-10.61"></path>
               </svg>
             </div>
-            <div className="">
+            <div className="flex">
               <h1 class="text-lg font-semibold tracking-tighter text-white">
                 KORVO
               </h1>
