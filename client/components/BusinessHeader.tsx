@@ -42,7 +42,7 @@ export const BusinessHeader = () => {
             <span className="text-amber-500 font-bold text-sm">K</span>
           </div>
           <div className="flex items-center gap-2">
-            <h1 className="text-white font-semibold">KORVO</h1>
+            <h1 className="text-white font-medium">KORVO</h1>
             <div className="px-2.5 py-1 rounded-md">
               <span className="text-amber-400 font-bold text-xs uppercase tracking-wide">business</span>
             </div>
