@@ -90,14 +90,9 @@ export const BusinessHeader = () => {
               KORVO
             </h1>
           </div>
-          <div className="flex items-center gap-2">
-            <h1 className="text-white font-semibold">KORVO</h1>
-            <div className="px-2.5 py-1 bg-amber-500/20 border border-amber-500/40 rounded-md">
-              <span className="text-amber-400 font-bold text-xs uppercase tracking-wide">
-                business
-              </span>
-            </div>
-          </div>
+          <span className="text-amber-400 font-bold text-xs uppercase tracking-wide">
+            business
+          </span>
         </div>
         <button
           onClick={() => setMenuOpen(!menuOpen)}
