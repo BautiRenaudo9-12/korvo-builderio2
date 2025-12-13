@@ -63,7 +63,6 @@ export const BusinessHeader = () => {
     <header className="md:hidden sticky top-0 z-40 px-4 py-4 bg-[#1a1a1a] border-b border-white/5">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
-          
           <div class="flex items-center gap-2">
             <div class="w-8 h-8 bg-amber-500/10 rounded-lg flex items-center justify-center border border-amber-500/20">
               <svg
@@ -87,16 +86,17 @@ export const BusinessHeader = () => {
                 <path d="M7 18a6 6 0 0 0 3.84-10.61"></path>
               </svg>
             </div>
-            <h1 class="text-lg font-semibold tracking-tighter text-white">
-              KORVO
-            </h1>
-            <div className="rounded-md">
-              <span className="text-amber-400 italic font-normal text-xs uppercase tracking-wide">
-                business
-              </span>
+            <div className="">
+              <h1 class="text-lg font-semibold tracking-tighter text-white">
+                KORVO
+              </h1>
+              <div className="rounded-md">
+                <span className="text-amber-400 italic font-normal text-xs uppercase tracking-wide">
+                  business
+                </span>
+              </div>
             </div>
           </div>
-          
         </div>
         <button
           onClick={() => setMenuOpen(!menuOpen)}
