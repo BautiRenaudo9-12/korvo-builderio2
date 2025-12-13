@@ -1,7 +1,16 @@
-import { Menu, X, LayoutDashboard, Users, Settings, LogOut, ChevronDown, Zap } from 'lucide-react';
-import { useState } from 'react';
-import { useNavigation } from '@/hooks/use-navigation';
-import { useLocation } from 'react-router-dom';
+import {
+  Menu,
+  X,
+  LayoutDashboard,
+  Users,
+  Settings,
+  LogOut,
+  ChevronDown,
+  Zap,
+} from "lucide-react";
+import { useState } from "react";
+import { useNavigation } from "@/hooks/use-navigation";
+import { useLocation } from "react-router-dom";
 
 export const BusinessHeader = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -10,19 +19,35 @@ export const BusinessHeader = () => {
   const { navigate } = useNavigation();
 
   const mainMenuItems = [
-    { path: '/business/dashboard', label: 'Dashboard', icon: LayoutDashboard },
-    { path: '/business/customers', label: 'Clientes', icon: Users },
-    { path: '/business/settings', label: 'Configuración', icon: Settings },
+    { path: "/business/dashboard", label: "Dashboard", icon: LayoutDashboard },
+    { path: "/business/customers", label: "Clientes", icon: Users },
+    { path: "/business/settings", label: "Configuración", icon: Settings },
   ];
 
   const benefitsSubItems = [
-    { path: '/business/points', label: 'Puntos', description: 'Configuración base' },
-    { path: '/business/rewards', label: 'Recompensas', description: 'Gestión de premios' },
-    { path: '/business/promotions', label: 'Promociones', description: 'Campañas temporales' },
+    {
+      path: "/business/points",
+      label: "Puntos",
+      description: "Configuración base",
+    },
+    {
+      path: "/business/rewards",
+      label: "Recompensas",
+      description: "Gestión de premios",
+    },
+    {
+      path: "/business/promotions",
+      label: "Promociones",
+      description: "Campañas temporales",
+    },
   ];
 
   const isActive = (path: string) => pathname === path;
-  const isBenefitsActive = ['/business/points', '/business/rewards', '/business/promotions'].includes(pathname);
+  const isBenefitsActive = [
+    "/business/points",
+    "/business/rewards",
+    "/business/promotions",
+  ].includes(pathname);
 
   const handleNavigate = (path: string) => {
     navigate(path);
@@ -30,7 +55,7 @@ export const BusinessHeader = () => {
   };
 
   const handleLogout = () => {
-    navigate('/');
+    navigate("/");
     setMenuOpen(false);
   };
 
@@ -38,10 +63,39 @@ export const BusinessHeader = () => {
     <header className="md:hidden sticky top-0 z-40 px-4 py-4 bg-[#1a1a1a] border-b border-white/5">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <div className="w-9 h-9 bg-amber-500/10 rounded-lg flex items-center justify-center border border-amber-500/20">
-            <span className="text-amber-500 font-bold text-sm">K</span>
+          <div class="flex items-center gap-2">
+            <div class="w-8 h-8 bg-amber-500/10 rounded-lg flex items-center justify-center border border-amber-500/20">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-bird text-amber-500"
+                aria-hidden="true"
+              >
+                <path d="M16 7h.01"></path>
+                <path d="M3.4 18H12a8 8 0 0 0 8-8V7a4 4 0 0 0-7.28-2.3L2 20"></path>
+                <path d="m20 7 2 .5-2 .5"></path>
+                <path d="M10 18v3"></path>
+                <path d="M14 17.75V21"></path>
+                <path d="M7 18a6 6 0 0 0 3.84-10.61"></path>
+              </svg>
+            </div>
+            <div className="flex gap-0.5 items-end">
+            <h1 class="text-lg font-semibold tracking-tighter text-white">
+              KORVO
+            </h1>
+            <span className="text-amber-400 italic font-medium text-xs uppercase tracking-wide pb-1 ">
+              business
+            </span>
+            </div>
+            
           </div>
-          <h1 className="text-white font-semibold">KORVO</h1>
         </div>
         <button
           onClick={() => setMenuOpen(!menuOpen)}
@@ -64,8 +118,8 @@ export const BusinessHeader = () => {
                 onClick={() => handleNavigate(item.path)}
                 className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all font-medium text-sm ${
                   active
-                    ? 'bg-amber-500/10 text-amber-500 border border-amber-500/20'
-                    : 'text-neutral-400 hover:text-white hover:bg-white/5 border border-transparent'
+                    ? "bg-amber-500/10 text-amber-500 border border-amber-500/20"
+                    : "text-neutral-400 hover:text-white hover:bg-white/5 border border-transparent"
                 }`}
               >
                 <Icon size={20} strokeWidth={1.5} />
@@ -80,8 +134,8 @@ export const BusinessHeader = () => {
               onClick={() => setBenefitsExpanded(!benefitsExpanded)}
               className={`w-full flex items-center justify-between px-4 py-3 rounded-lg transition-all font-medium text-sm ${
                 isBenefitsActive
-                  ? 'bg-amber-500/10 text-amber-500 border border-amber-500/20'
-                  : 'text-neutral-400 hover:text-white hover:bg-white/5 border border-transparent'
+                  ? "bg-amber-500/10 text-amber-500 border border-amber-500/20"
+                  : "text-neutral-400 hover:text-white hover:bg-white/5 border border-transparent"
               }`}
             >
               <div className="flex items-center gap-3">
@@ -90,7 +144,9 @@ export const BusinessHeader = () => {
               </div>
               <ChevronDown
                 size={16}
-                className={`transition-transform ${benefitsExpanded ? 'rotate-180' : ''}`}
+                className={`transition-transform ${
+                  benefitsExpanded ? "rotate-180" : ""
+                }`}
               />
             </button>
 
@@ -107,7 +163,9 @@ export const BusinessHeader = () => {
                     className="w-full flex flex-col items-start px-4 py-2 rounded-lg transition-all hover:bg-white/5 border border-transparent text-neutral-400 hover:text-white text-left text-xs"
                   >
                     <span className="font-medium">{item.label}</span>
-                    <span className="text-[10px] text-neutral-600 mt-0.5">{item.description}</span>
+                    <span className="text-[10px] text-neutral-600 mt-0.5">
+                      {item.description}
+                    </span>
                   </button>
                 ))}
               </div>

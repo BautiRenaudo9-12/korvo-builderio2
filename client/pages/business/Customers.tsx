@@ -39,18 +39,18 @@ export default function BusinessCustomers() {
       <h1 className="text-2xl md:text-3xl font-bold text-white mb-8">Clientes</h1>
 
       {/* Stats Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-        <div className="glass-panel rounded-lg p-6 border border-white/5">
-          <p className="text-neutral-400 text-sm mb-2">Total de Clientes</p>
-          <p className="text-3xl font-bold text-white">{totalCustomers}</p>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4 mb-6 md:mb-8">
+        <div className="glass-panel rounded-lg p-4 md:p-6 border border-white/5">
+          <p className="text-neutral-400 text-xs md:text-sm mb-2">Total de Clientes</p>
+          <p className="text-2xl md:text-3xl font-bold text-white">{totalCustomers}</p>
         </div>
-        <div className="glass-panel rounded-lg p-6 border border-white/5">
-          <p className="text-neutral-400 text-sm mb-2">Puntos en Circulación</p>
-          <p className="text-3xl font-bold text-amber-400">{totalPointsInCirculation.toLocaleString()}</p>
+        <div className="glass-panel rounded-lg p-4 md:p-6 border border-white/5">
+          <p className="text-neutral-400 text-xs md:text-sm mb-2">Puntos en Circulación</p>
+          <p className="text-2xl md:text-3xl font-bold text-amber-400">{totalPointsInCirculation.toLocaleString()}</p>
         </div>
-        <div className="glass-panel rounded-lg p-6 border border-white/5">
-          <p className="text-neutral-400 text-sm mb-2">Activos este mes</p>
-          <p className="text-3xl font-bold text-emerald-500">{activeThisMonth}</p>
+        <div className="glass-panel rounded-lg p-4 md:p-6 border border-white/5">
+          <p className="text-neutral-400 text-xs md:text-sm mb-2">Activos este mes</p>
+          <p className="text-2xl md:text-3xl font-bold text-emerald-500">{activeThisMonth}</p>
         </div>
       </div>
 

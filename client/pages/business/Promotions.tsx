@@ -99,15 +99,16 @@ export default function BusinessPromotions() {
   };
 
   return (
-    <div className="px-4 md:px-8 pt-4 md:pt-8 pb-8">
-      <div className="flex items-center justify-between mb-8">
-        <h1 className="text-2xl md:text-3xl font-bold text-white">Promociones</h1>
+    <div className="px-3 sm:px-4 md:px-8 pt-3 sm:pt-4 md:pt-8 pb-8">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-6 sm:mb-8">
+        <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-white">Promociones</h1>
         <button
           onClick={handleAddNew}
-          className="flex items-center gap-2 px-4 py-2 bg-amber-500 hover:bg-amber-600 text-black font-semibold rounded-lg transition-colors"
+          className="flex items-center justify-center sm:justify-start gap-2 px-3 sm:px-4 py-2 bg-amber-500 hover:bg-amber-600 text-black font-semibold rounded-lg transition-colors text-sm sm:text-base whitespace-nowrap"
         >
-          <Plus size={18} />
-          Nueva Promoción
+          <Plus size={16} />
+          <span className="hidden sm:inline">Nueva Promoción</span>
+          <span className="sm:hidden">Agregar</span>
         </button>
       </div>
 
@@ -229,31 +230,31 @@ export default function BusinessPromotions() {
       )}
 
       {/* Promotions List */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 md:gap-6">
         {promotions.map((promo, index) => {
           const active = isActive(promo.startDate, promo.endDate, promo.active);
 
           return (
             <div
               key={promo.id}
-              className="glass-panel rounded-lg p-6 border border-white/5 hover:border-white/10 transition-all animate-fade-in"
+              className="glass-panel rounded-lg p-3 sm:p-4 md:p-6 border border-white/5 hover:border-white/10 transition-all animate-fade-in"
               style={{ animationDelay: `${index * 50}ms` }}
             >
-              <div className="flex items-start justify-between mb-4">
-                <div className="flex-1">
-                  <h3 className="text-lg font-bold text-white mb-1">{promo.title}</h3>
-                  <p className="text-sm text-neutral-400">{promo.description}</p>
+              <div className="flex items-start justify-between gap-2 sm:gap-3 mb-3 sm:mb-4">
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-base sm:text-lg font-bold text-white mb-1 break-words">{promo.title}</h3>
+                  <p className="text-xs sm:text-sm text-neutral-400 line-clamp-2">{promo.description}</p>
                 </div>
-                <div className="flex gap-2 ml-4">
+                <div className="flex gap-1 sm:gap-2 flex-shrink-0">
                   <button
                     onClick={() => handleEdit(promo)}
-                    className="p-2 hover:bg-white/10 rounded-lg transition-colors text-amber-500"
+                    className="p-1.5 sm:p-2 hover:bg-white/10 rounded-lg transition-colors text-amber-500"
                   >
                     <Edit2 size={16} />
                   </button>
                   <button
                     onClick={() => handleDelete(promo.id)}
-                    className="p-2 hover:bg-white/10 rounded-lg transition-colors text-red-500"
+                    className="p-1.5 sm:p-2 hover:bg-white/10 rounded-lg transition-colors text-red-500"
                   >
                     <Trash2 size={16} />
                   </button>
@@ -261,19 +262,19 @@ export default function BusinessPromotions() {
               </div>
 
               {/* Type and Value */}
-              <div className="flex items-center gap-2 mb-4">
-                <span className="px-3 py-1 rounded-full bg-white/10 text-xs font-semibold text-neutral-300">
+              <div className="flex items-center gap-2 mb-3 sm:mb-4 flex-wrap">
+                <span className="px-2 sm:px-3 py-1 rounded-full bg-white/10 text-xs font-semibold text-neutral-300 whitespace-nowrap">
                   {getTypeLabel(promo.type)}
                 </span>
-                <span className="text-2xl font-bold text-amber-400">
+                <span className="text-xl sm:text-2xl font-bold text-amber-400">
                   {promo.type === 'percentage' ? `${promo.discount}%` : promo.type === 'fixed' ? `$${promo.discount}` : `+${promo.discount}`}
                 </span>
               </div>
 
               {/* Dates */}
-              <div className="flex items-center gap-2 text-xs text-neutral-500 mb-4">
-                <Calendar size={14} />
-                <span>
+              <div className="flex items-start gap-2 text-xs text-neutral-500 mb-3 sm:mb-4">
+                <Calendar size={14} className="flex-shrink-0 mt-0.5" />
+                <span className="break-words">
                   {promo.startDate} hasta {promo.endDate}
                 </span>
               </div>
@@ -281,7 +282,7 @@ export default function BusinessPromotions() {
               {/* Status Badge */}
               <div className="flex gap-2">
                 <span
-                  className={`px-3 py-1 rounded-full text-xs font-semibold ${
+                  className={`px-2 sm:px-3 py-1 rounded-full text-xs font-semibold whitespace-nowrap ${
                     active
                       ? 'bg-emerald-500/20 text-emerald-400'
                       : 'bg-neutral-500/20 text-neutral-400'
