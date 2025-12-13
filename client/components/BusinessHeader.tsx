@@ -86,12 +86,15 @@ export const BusinessHeader = () => {
                 <path d="M7 18a6 6 0 0 0 3.84-10.61"></path>
               </svg>
             </div>
+            <div className="flex gap-0.5 items-and">
             <h1 class="text-lg font-semibold tracking-tighter text-white">
               KORVO
             </h1>
-            <span className="text-amber-400 italic font-medium text-xs uppercase tracking-wide">
+            <span className="text-amber-400 italic font-medium text-xs uppercase tracking-wide pb-0.5">
               business
             </span>
+            </div>
+            
           </div>
         </div>
         <button
