@@ -89,7 +89,7 @@ export const BusinessHeader = () => {
             <h1 class="text-lg font-semibold tracking-tighter text-white">
               KORVO
             </h1>
-            <span className="text-amber-400 italic font-thin text-xs uppercase tracking-wide">
+            <span className="text-amber-400 italic font-medium text-xs uppercase tracking-wide">
               business
             </span>
           </div>
