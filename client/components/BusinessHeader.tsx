@@ -41,9 +41,11 @@ export const BusinessHeader = () => {
           <div className="w-9 h-9 bg-amber-500/10 rounded-lg flex items-center justify-center border border-amber-500/20">
             <span className="text-amber-500 font-bold text-sm">K</span>
           </div>
-          <div className="flex items-center gap-1">
+          <div className="flex items-center gap-2">
             <h1 className="text-white font-semibold">KORVO</h1>
-            <span className="text-neutral-500 font-medium text-sm">business</span>
+            <div className="px-2.5 py-1 bg-amber-500/20 border border-amber-500/40 rounded-md">
+              <span className="text-amber-400 font-bold text-xs uppercase tracking-wide">business</span>
+            </div>
           </div>
         </div>
         <button
