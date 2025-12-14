@@ -46,7 +46,7 @@ export default function BusinessCustomers() {
         </div>
         <div className="glass-panel rounded-lg p-4 md:p-6 border border-white/5">
           <p className="text-neutral-400 text-xs md:text-sm mb-2">Puntos en Circulación</p>
-          <p className="text-2xl md:text-3xl font-bold text-amber-400">{totalPointsInCirculation.toLocaleString()}</p>
+          <p className="text-2xl md:text-3xl font-bold text-primary-400">{totalPointsInCirculation.toLocaleString()}</p>
         </div>
         <div className="glass-panel rounded-lg p-4 md:p-6 border border-white/5">
           <p className="text-neutral-400 text-xs md:text-sm mb-2">Activos este mes</p>
@@ -77,7 +77,7 @@ export default function BusinessCustomers() {
               onClick={() => setSortBy(option)}
               className={`px-4 py-2 rounded-lg transition-all text-sm font-medium ${
                 sortBy === option
-                  ? 'bg-amber-500/20 border border-amber-500/50 text-amber-400'
+                  ? 'bg-amber-500/20 border border-amber-500/50 text-primary-400'
                   : 'bg-white/5 border border-white/10 text-neutral-400 hover:bg-white/10'
               }`}
             >
@@ -135,7 +135,7 @@ export default function BusinessCustomers() {
                     </div>
                   </td>
                   <td className="px-4 md:px-6 py-4">
-                    <span className="text-amber-400 font-bold text-lg">{customer.points}</span>
+                    <span className="text-primary-400 font-bold text-lg">{customer.points}</span>
                   </td>
                   <td className="px-4 md:px-6 py-4">
                     <div className="space-y-1">

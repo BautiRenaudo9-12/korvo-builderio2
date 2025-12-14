@@ -228,7 +228,7 @@ export default function BusinessBenefits() {
             onClick={() => setActiveTab(tab.id)}
             className={`pb-4 px-2 md:px-4 font-medium text-sm md:text-base whitespace-nowrap border-b-2 transition-all ${
               activeTab === tab.id
-                ? 'border-amber-500 text-amber-500'
+                ? 'border-amber-500 text-primary'
                 : 'border-transparent text-neutral-400 hover:text-white'
             }`}
           >
@@ -248,7 +248,7 @@ export default function BusinessBenefits() {
               </div>
               <button
                 onClick={() => setPointsConfigEditing(!pointsConfigEditing)}
-                className="px-4 py-2 bg-amber-500/20 text-amber-500 border border-amber-500/30 rounded-lg hover:bg-amber-500/30 transition-colors font-medium text-sm"
+                className="px-4 py-2 bg-primary-20 text-primary border border-primary-30 rounded-lg hover:bg-primary-20 transition-colors font-medium text-sm"
               >
                 {pointsConfigEditing ? 'Cancelar' : 'Editar'}
               </button>
@@ -302,12 +302,12 @@ export default function BusinessBenefits() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="p-4 bg-white/5 rounded-lg border border-white/10">
                   <p className="text-sm text-neutral-400 mb-1">Ratio de Puntos</p>
-                  <p className="text-3xl font-bold text-amber-500">{pointsConfig.pointsPerDollar}</p>
+                  <p className="text-3xl font-bold text-primary">{pointsConfig.pointsPerDollar}</p>
                   <p className="text-xs text-neutral-500 mt-2">puntos por $1</p>
                 </div>
                 <div className="p-4 bg-white/5 rounded-lg border border-white/10">
                   <p className="text-sm text-neutral-400 mb-1">Expiración</p>
-                  <p className="text-3xl font-bold text-amber-500">{pointsConfig.expiryMonths}</p>
+                  <p className="text-3xl font-bold text-primary">{pointsConfig.expiryMonths}</p>
                   <p className="text-xs text-neutral-500 mt-2">meses de inactividad</p>
                 </div>
               </div>
@@ -461,7 +461,7 @@ export default function BusinessBenefits() {
                         </div>
                       </td>
                       <td className="px-4 md:px-6 py-4">
-                        <span className="text-amber-400 font-semibold">{reward.cost} pts</span>
+                        <span className="text-primary-400 font-semibold">{reward.cost} pts</span>
                       </td>
                       <td className="px-4 md:px-6 py-4">
                         <span className="text-xs text-neutral-400">{reward.category}</span>
@@ -485,7 +485,7 @@ export default function BusinessBenefits() {
                         <div className="flex gap-2">
                           <button
                             onClick={() => handleEditReward(reward)}
-                            className="p-2 hover:bg-white/10 rounded-lg transition-colors text-amber-500 hover:text-amber-400"
+                            className="p-2 hover:bg-white/10 rounded-lg transition-colors text-primary hover:text-primary-400"
                           >
                             <Edit2 size={16} />
                           </button>
@@ -702,7 +702,7 @@ export default function BusinessBenefits() {
                         <div className="flex gap-2">
                           <button
                             onClick={() => handleEditPromo(promo)}
-                            className="p-2 hover:bg-white/10 rounded-lg transition-colors text-amber-500 hover:text-amber-400"
+                            className="p-2 hover:bg-white/10 rounded-lg transition-colors text-primary hover:text-primary-400"
                           >
                             <Edit2 size={16} />
                           </button>
