@@ -227,7 +227,7 @@ export default function BusinessRewards() {
                       </div>
                     </td>
                     <td className="px-4 md:px-6 py-4">
-                      <span className="text-amber-400 font-semibold">{reward.cost} pts</span>
+                      <span className="text-primary-400 font-semibold">{reward.cost} pts</span>
                     </td>
                     <td className="px-4 md:px-6 py-4">
                       <span className="text-white font-medium">{reward.redeemCount}</span>
@@ -302,7 +302,7 @@ export default function BusinessRewards() {
             <div className="grid grid-cols-2 gap-2 sm:gap-3 mb-3">
               <div className="bg-white/5 rounded-lg p-2.5 sm:p-3">
                 <p className="text-xs text-neutral-500 mb-1">Costo</p>
-                <p className="text-amber-400 font-bold text-lg sm:text-xl">{reward.cost}</p>
+                <p className="text-primary-400 font-bold text-lg sm:text-xl">{reward.cost}</p>
                 <p className="text-xs text-neutral-600">puntos</p>
               </div>
               <div className="bg-white/5 rounded-lg p-2.5 sm:p-3">
