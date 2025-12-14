@@ -5,7 +5,7 @@ export default function Profile() {
   return (
     <div className="px-6 md:px-8 pt-4 md:pt-8 pb-20 md:pb-8 animate-fade-in max-w-3xl">
       <div className="flex items-center gap-4 md:gap-6 mb-8 md:mb-12">
-        <div className="w-16 md:w-24 h-16 md:h-24 rounded-full bg-gradient-to-br from-amber-500 to-amber-700 p-0.5 flex-shrink-0">
+        <div className="w-16 md:w-24 h-16 md:h-24 rounded-full p-0.5 flex-shrink-0" style={{ backgroundImage: 'linear-gradient(to bottom right, hsl(var(--primary)), hsl(var(--primary) / 0.8))' }}>
           <div className="w-full h-full rounded-full bg-neutral-900 flex items-center justify-center overflow-hidden">
             <span className="text-xl md:text-4xl font-bold text-white">A</span>
           </div>
@@ -13,7 +13,7 @@ export default function Profile() {
         <div>
           <h2 className="text-lg md:text-2xl font-semibold text-white">{mockUser.name}</h2>
           <p className="text-xs md:text-sm text-neutral-400 mt-1">{mockUser.email}</p>
-          <span className="inline-block mt-2 px-3 py-1 md:px-4 md:py-1.5 rounded bg-amber-500/10 text-amber-500 text-[10px] md:text-xs font-medium border border-amber-500/20">
+          <span className="inline-block mt-2 px-3 py-1 md:px-4 md:py-1.5 rounded bg-primary-10 text-primary text-[10px] md:text-xs font-medium border border-primary-20">
             Miembro {mockUser.level}
           </span>
         </div>

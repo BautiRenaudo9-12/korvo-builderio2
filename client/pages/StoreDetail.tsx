@@ -47,7 +47,7 @@ export default function StoreDetail() {
 
       <div className="px-6 md:px-8 -mt-2 relative z-20 max-w-4xl mx-auto">
         {/* Status Card */}
-        <div className="glass-panel rounded-xl p-5 md:p-8 border border-amber-500/20 bg-[#1a1a1a]/80 backdrop-blur-md shadow-2xl mb-8 md:mb-12">
+        <div className="glass-panel rounded-xl p-5 md:p-8 border border-primary-20 bg-[#1a1a1a]/80 backdrop-blur-md shadow-2xl mb-8 md:mb-12">
           <div className="flex justify-between items-end mb-4 md:mb-6">
             <div>
               <p className="text-[10px] md:text-xs uppercase tracking-wider text-neutral-400 font-semibold mb-1 md:mb-2">
