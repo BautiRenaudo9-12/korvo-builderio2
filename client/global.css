@@ -30,6 +30,35 @@
   scrollbar-width: none;
 }
 
+/* Color utilities using CSS variables */
+.text-primary {
+  color: hsl(var(--primary));
+}
+
+.text-primary-400 {
+  color: hsl(var(--primary) / 0.6);
+}
+
+.bg-primary-10 {
+  background-color: hsl(var(--primary) / 0.1);
+}
+
+.bg-primary-20 {
+  background-color: hsl(var(--primary) / 0.2);
+}
+
+.border-primary-20 {
+  border-color: hsl(var(--primary) / 0.2);
+}
+
+.border-primary-30 {
+  border-color: hsl(var(--primary) / 0.3);
+}
+
+.hover-primary-10:hover {
+  background-color: hsl(var(--primary) / 0.1);
+}
+
 /* Glassmorphism utilities */
 .glass-panel {
   background: rgba(255, 255, 255, 0.03);
