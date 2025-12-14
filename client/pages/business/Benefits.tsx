@@ -676,7 +676,7 @@ export default function BusinessBenefits() {
                         <span className="text-xs text-neutral-400">{getTypeLabel(promo.type)}</span>
                       </td>
                       <td className="px-4 md:px-6 py-4">
-                        <span className="text-amber-400 font-semibold">
+                        <span className="text-primary-400 font-semibold">
                           {promo.discount}
                           {promo.type === 'percentage' && '%'}
                           {promo.type === 'bonus-points' && ' pts'}

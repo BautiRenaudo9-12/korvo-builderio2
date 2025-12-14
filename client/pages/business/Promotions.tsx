@@ -266,7 +266,7 @@ export default function BusinessPromotions() {
                 <span className="px-2 sm:px-3 py-1 rounded-full bg-white/10 text-xs font-semibold text-neutral-300 whitespace-nowrap">
                   {getTypeLabel(promo.type)}
                 </span>
-                <span className="text-xl sm:text-2xl font-bold text-amber-400">
+                <span className="text-xl sm:text-2xl font-bold text-primary-400">
                   {promo.type === 'percentage' ? `${promo.discount}%` : promo.type === 'fixed' ? `$${promo.discount}` : `+${promo.discount}`}
                 </span>
               </div>
