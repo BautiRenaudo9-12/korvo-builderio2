@@ -105,7 +105,7 @@ export const BusinessListView = ({ businesses, onClose }: BusinessListViewProps)
                     onClick={() => setSortBy(option)}
                     className={`flex items-center gap-1.5 px-3 py-2 rounded-lg transition-all whitespace-nowrap text-xs md:text-sm font-medium ${
                       sortBy === option
-                        ? 'bg-amber-500/20 border border-amber-500/50 text-amber-400'
+                        ? 'bg-primary-20 border border-primary-50 text-amber-400'
                         : 'bg-white/5 border border-white/10 text-neutral-400 hover:bg-white/10 hover:border-white/20'
                     }`}
                   >
@@ -132,7 +132,7 @@ export const BusinessListView = ({ businesses, onClose }: BusinessListViewProps)
               onClick={() => setShowFilters(!showFilters)}
               className={`flex items-center gap-1.5 px-3 py-2 rounded-lg transition-all text-xs md:text-sm font-medium whitespace-nowrap ${
                 showFilters
-                  ? 'bg-amber-500/20 border border-amber-500/50 text-amber-400'
+                  ? 'bg-primary-20 border border-primary-50 text-amber-400'
                   : 'bg-white/5 border border-white/10 text-neutral-400 hover:bg-white/10 hover:border-white/20'
               }`}
             >

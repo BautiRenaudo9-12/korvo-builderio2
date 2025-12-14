@@ -77,7 +77,7 @@ export default function BusinessCustomers() {
               onClick={() => setSortBy(option)}
               className={`px-4 py-2 rounded-lg transition-all text-sm font-medium ${
                 sortBy === option
-                  ? 'bg-amber-500/20 border border-amber-500/50 text-primary-400'
+                  ? 'bg-primary-20 border border-primary-50 text-primary-400'
                   : 'bg-white/5 border border-white/10 text-neutral-400 hover:bg-white/10'
               }`}
             >
