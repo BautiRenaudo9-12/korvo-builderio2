@@ -126,7 +126,7 @@ export default function BusinessRewards() {
                   type="text"
                   value={formData?.name || ''}
                   onChange={(e) => setFormData({ ...formData!, name: e.target.value })}
-                  className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-amber-500/50"
+                  className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-primary/50"
                   placeholder="Ej: Café Gratis"
                 />
               </div>
@@ -137,7 +137,7 @@ export default function BusinessRewards() {
                 <textarea
                   value={formData?.description || ''}
                   onChange={(e) => setFormData({ ...formData!, description: e.target.value })}
-                  className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-amber-500/50 min-h-20 resize-none"
+                  className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-primary/50 min-h-20 resize-none"
                   placeholder="Ej: Taza de café americano o capuchino"
                 />
               </div>
@@ -149,7 +149,7 @@ export default function BusinessRewards() {
                   type="number"
                   value={formData?.cost || 0}
                   onChange={(e) => setFormData({ ...formData!, cost: parseInt(e.target.value) })}
-                  className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-amber-500/50"
+                  className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-primary/50"
                   placeholder="300"
                 />
               </div>
