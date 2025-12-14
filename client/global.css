@@ -39,12 +39,28 @@
   color: hsl(var(--primary) / 0.6);
 }
 
+.text-primary-hover:hover {
+  color: hsl(var(--primary) / 0.8);
+}
+
+.bg-primary {
+  background-color: hsl(var(--primary));
+}
+
+.bg-primary-dark:hover {
+  background-color: hsl(var(--primary) / 0.9);
+}
+
 .bg-primary-10 {
   background-color: hsl(var(--primary) / 0.1);
 }
 
 .bg-primary-20 {
   background-color: hsl(var(--primary) / 0.2);
+}
+
+.border-primary {
+  border-color: hsl(var(--primary));
 }
 
 .border-primary-20 {
@@ -55,8 +71,30 @@
   border-color: hsl(var(--primary) / 0.3);
 }
 
+.border-primary-50 {
+  border-color: hsl(var(--primary) / 0.5);
+}
+
+.ring-primary:focus {
+  outline: none;
+  ring: 1px solid hsl(var(--primary) / 0.5);
+}
+
+.focus-ring-primary:focus {
+  outline: none;
+  --tw-ring-color: hsl(var(--primary) / 0.5);
+}
+
 .hover-primary-10:hover {
   background-color: hsl(var(--primary) / 0.1);
+}
+
+.from-primary {
+  --tw-gradient-from: hsl(var(--primary));
+}
+
+.to-primary-dark {
+  --tw-gradient-to: hsl(var(--primary) / 0.8);
 }
 
 /* Glassmorphism utilities */
