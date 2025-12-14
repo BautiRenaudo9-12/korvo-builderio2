@@ -268,7 +268,7 @@ export default function BusinessBenefits() {
                       })
                     }
                     step="0.1"
-                    className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-amber-500/50"
+                    className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-primary/50"
                     placeholder="1"
                   />
                   <p className="text-xs text-neutral-500 mt-2">El cliente ganará {pointsConfig.pointsPerDollar} puntos por cada $1 gastado</p>
@@ -285,7 +285,7 @@ export default function BusinessBenefits() {
                         expiryMonths: Math.max(1, parseInt(e.target.value)),
                       })
                     }
-                    className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-amber-500/50"
+                    className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-primary/50"
                     placeholder="12"
                   />
                   <p className="text-xs text-neutral-500 mt-2">Los puntos expirarán después de {pointsConfig.expiryMonths} meses de inactividad</p>
@@ -344,7 +344,7 @@ export default function BusinessBenefits() {
                       type="text"
                       value={rewardFormData?.name || ''}
                       onChange={(e) => setRewardFormData({ ...rewardFormData!, name: e.target.value })}
-                      className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-amber-500/50"
+                      className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-primary/50"
                       placeholder="Ej: Café Gratis"
                     />
                   </div>
@@ -354,7 +354,7 @@ export default function BusinessBenefits() {
                     <textarea
                       value={rewardFormData?.description || ''}
                       onChange={(e) => setRewardFormData({ ...rewardFormData!, description: e.target.value })}
-                      className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-amber-500/50 min-h-20 resize-none"
+                      className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-primary/50 min-h-20 resize-none"
                       placeholder="Ej: Taza de café americano o capuchino"
                     />
                   </div>
@@ -365,7 +365,7 @@ export default function BusinessBenefits() {
                       type="number"
                       value={rewardFormData?.cost || 0}
                       onChange={(e) => setRewardFormData({ ...rewardFormData!, cost: parseInt(e.target.value) })}
-                      className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-amber-500/50"
+                      className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-primary/50"
                       placeholder="300"
                     />
                   </div>
@@ -375,7 +375,7 @@ export default function BusinessBenefits() {
                     <select
                       value={rewardFormData?.category || ''}
                       onChange={(e) => setRewardFormData({ ...rewardFormData!, category: e.target.value })}
-                      className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-1 focus:ring-amber-500/50"
+                      className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-1 focus:ring-primary/50"
                     >
                       <option value="" disabled>
                         Seleccionar categoría
@@ -540,7 +540,7 @@ export default function BusinessBenefits() {
                       type="text"
                       value={promoFormData?.title || ''}
                       onChange={(e) => setPromoFormData({ ...promoFormData!, title: e.target.value })}
-                      className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-amber-500/50"
+                      className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-primary/50"
                       placeholder="Ej: Doble Puntos"
                     />
                   </div>
@@ -550,7 +550,7 @@ export default function BusinessBenefits() {
                     <textarea
                       value={promoFormData?.description || ''}
                       onChange={(e) => setPromoFormData({ ...promoFormData!, description: e.target.value })}
-                      className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-amber-500/50 min-h-20 resize-none"
+                      className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-primary/50 min-h-20 resize-none"
                       placeholder="Ej: Gana el doble de puntos en todas las compras"
                     />
                   </div>
@@ -560,7 +560,7 @@ export default function BusinessBenefits() {
                     <select
                       value={promoFormData?.type || 'percentage'}
                       onChange={(e) => setPromoFormData({ ...promoFormData!, type: e.target.value as any })}
-                      className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-1 focus:ring-amber-500/50"
+                      className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-1 focus:ring-primary/50"
                     >
                       <option value="percentage">% Descuento</option>
                       <option value="fixed">Descuento Fijo</option>
@@ -574,7 +574,7 @@ export default function BusinessBenefits() {
                       type="number"
                       value={promoFormData?.discount || 0}
                       onChange={(e) => setPromoFormData({ ...promoFormData!, discount: parseInt(e.target.value) })}
-                      className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-amber-500/50"
+                      className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-primary/50"
                       placeholder="10"
                     />
                   </div>
@@ -586,7 +586,7 @@ export default function BusinessBenefits() {
                         type="date"
                         value={promoFormData?.startDate || ''}
                         onChange={(e) => setPromoFormData({ ...promoFormData!, startDate: e.target.value })}
-                        className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-1 focus:ring-amber-500/50"
+                        className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-1 focus:ring-primary/50"
                       />
                     </div>
                     <div>
@@ -595,7 +595,7 @@ export default function BusinessBenefits() {
                         type="date"
                         value={promoFormData?.endDate || ''}
                         onChange={(e) => setPromoFormData({ ...promoFormData!, endDate: e.target.value })}
-                        className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-1 focus:ring-amber-500/50"
+                        className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-1 focus:ring-primary/50"
                       />
                     </div>
                   </div>
