@@ -215,7 +215,7 @@ export default function BusinessSettings() {
         <div className="flex gap-4">
           <button
             onClick={handleSave}
-            className="flex items-center gap-2 px-6 py-3 bg-amber-500 hover:bg-amber-600 text-black rounded-lg transition-colors font-semibold flex-1"
+            className="flex items-center gap-2 px-6 py-3 bg-primary hover:bg-primary-dark text-black rounded-lg transition-colors font-semibold flex-1"
           >
             <Save size={18} />
             Guardar Cambios

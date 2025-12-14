@@ -102,7 +102,7 @@ export default function BusinessRewards() {
         <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-white">Recompensas</h1>
         <button
           onClick={handleAddNew}
-          className="flex items-center justify-center sm:justify-start gap-2 px-3 sm:px-4 py-2 bg-amber-500 hover:bg-amber-600 text-black font-semibold rounded-lg transition-colors text-sm sm:text-base whitespace-nowrap"
+          className="flex items-center justify-center sm:justify-start gap-2 px-3 sm:px-4 py-2 bg-primary hover:bg-primary-dark text-black font-semibold rounded-lg transition-colors text-sm sm:text-base whitespace-nowrap"
         >
           <Plus size={16} />
           <span className="hidden sm:inline">Nueva Recompensa</span>
@@ -180,7 +180,7 @@ export default function BusinessRewards() {
               </button>
               <button
                 onClick={handleSave}
-                className="flex-1 px-4 py-2 bg-amber-500 hover:bg-amber-600 text-black rounded-lg transition-colors font-semibold"
+                className="flex-1 px-4 py-2 bg-primary hover:bg-primary-dark text-black rounded-lg transition-colors font-semibold"
               >
                 Guardar
               </button>
@@ -248,7 +248,7 @@ export default function BusinessRewards() {
                       <div className="flex gap-2">
                         <button
                           onClick={() => handleEdit(reward)}
-                          className="p-2 hover:bg-white/10 rounded-lg transition-colors text-amber-500 hover:text-amber-400"
+                          className="p-2 hover:bg-white/10 rounded-lg transition-colors text-primary hover:text-primary-400"
                         >
                           <Edit2 size={16} />
                         </button>
@@ -285,7 +285,7 @@ export default function BusinessRewards() {
               <div className="flex gap-1 flex-shrink-0">
                 <button
                   onClick={() => handleEdit(reward)}
-                  className="p-1.5 sm:p-2 hover:bg-white/10 rounded-lg transition-colors text-amber-500 hover:text-amber-400"
+                  className="p-1.5 sm:p-2 hover:bg-white/10 rounded-lg transition-colors text-primary hover:text-primary-400"
                 >
                   <Edit2 size={16} />
                 </button>
