@@ -30,7 +30,7 @@ export const BottomNav = ({ currentRoute }: BottomNavProps) => {
               <Icon
                 size={22}
                 strokeWidth={1.5}
-                className={`transition-colors ${isActive ? 'text-amber-500' : 'text-neutral-500 group-hover:text-white'}`}
+                className={`transition-colors ${isActive ? 'text-primary' : 'text-neutral-500 group-hover:text-white'}`}
               />
               <span className={`text-[10px] font-medium transition-colors tracking-wide ${isActive ? 'text-white' : 'text-neutral-500 group-hover:text-white'}`}>
                 {label}
