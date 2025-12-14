@@ -16,8 +16,8 @@ export default function BusinessDashboard() {
         {/* Total Points */}
         <div className="glass-panel rounded-lg p-4 md:p-6 border border-white/5 hover:border-white/10 transition-all">
           <div className="flex items-center justify-between mb-3 md:mb-4">
-            <div className="w-8 md:w-10 h-8 md:h-10 rounded-lg bg-amber-500/20 flex items-center justify-center">
-              <Zap size={18} className="text-amber-500" />
+            <div className="w-8 md:w-10 h-8 md:h-10 rounded-lg bg-violet-500/20 flex items-center justify-center">
+              <Zap size={18} className="text-violet-500" />
             </div>
             <span className="text-xs text-emerald-500 font-semibold">+12%</span>
           </div>
@@ -67,7 +67,7 @@ export default function BusinessDashboard() {
         {/* Points Chart */}
         <div className="glass-panel rounded-lg p-6 border border-white/5">
           <div className="flex items-center gap-2 mb-6">
-            <BarChart3 size={20} className="text-amber-500" />
+            <BarChart3 size={20} className="text-violet-500" />
             <h3 className="text-lg font-semibold text-white">Puntos (Ganados vs Canjeados)</h3>
           </div>
           <ResponsiveContainer width="100%" height={300}>
@@ -111,9 +111,9 @@ export default function BusinessDashboard() {
               <Line
                 type="monotone"
                 dataKey="revenue"
-                stroke="#f59e0b"
+                stroke="#a855f7"
                 strokeWidth={2}
-                dot={{ fill: '#f59e0b', r: 4 }}
+                dot={{ fill: '#a855f7', r: 4 }}
               />
             </LineChart>
           </ResponsiveContainer>

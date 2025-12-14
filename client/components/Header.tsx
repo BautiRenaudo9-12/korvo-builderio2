@@ -21,8 +21,8 @@ export const Header = ({ isDetailRoute, onBack }: HeaderProps) => {
         </button>
       ) : (
         <div className="flex items-center gap-2">
-          <div className="w-8 h-8 bg-amber-500/10 rounded-lg flex items-center justify-center border border-amber-500/20">
-            <Bird size={18} className="text-amber-500" strokeWidth={1.5} />
+          <div className="w-8 h-8 bg-violet-500/10 rounded-lg flex items-center justify-center border border-violet-500/20">
+            <Bird size={18} className="text-violet-500" strokeWidth={1.5} />
           </div>
           <h1 className="text-lg font-semibold tracking-tighter text-white">KORVO</h1>
         </div>
