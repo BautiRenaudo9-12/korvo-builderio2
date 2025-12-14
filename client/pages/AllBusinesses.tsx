@@ -37,7 +37,7 @@ export default function AllBusinesses() {
       <div className="px-6 md:px-8 pt-4 md:pt-8 pb-24 animate-fade-in">
         <button
           onClick={() => setSelectedBusiness(null)}
-          className="flex items-center gap-2 text-amber-400 hover:text-amber-300 transition-colors mb-6"
+          className="flex items-center gap-2 text-primary-400 hover:text-primary transition-colors mb-6"
         >
           <ArrowUp size={18} className="rotate-180" />
           <span className="text-sm md:text-base">Volver a Mis Negocios</span>
@@ -165,7 +165,7 @@ export default function AllBusinesses() {
           placeholder="Buscar negocio o dirección..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className="w-full bg-white/5 border border-white/10 rounded-lg pl-10 pr-4 py-2.5 md:py-3 text-sm md:text-base text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-amber-500/50 focus:border-amber-500/50 transition-all"
+          className="w-full bg-white/5 border border-white/10 rounded-lg pl-10 pr-4 py-2.5 md:py-3 text-sm md:text-base text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-primary/50 focus:border-primary/50 transition-all"
         />
       </div>
 
@@ -190,7 +190,7 @@ export default function AllBusinesses() {
               onClick={() => setSortBy(option)}
               className={`flex items-center gap-1.5 px-3 py-2 rounded-lg transition-all whitespace-nowrap text-xs md:text-sm font-medium ${
                 sortBy === option
-                  ? 'bg-amber-500/20 border border-amber-500/50 text-amber-400'
+                  ? 'bg-primary-20 border border-primary-50 text-primary-400'
                   : 'bg-white/5 border border-white/10 text-neutral-400 hover:bg-white/10 hover:border-white/20'
               }`}
             >
@@ -208,7 +208,7 @@ export default function AllBusinesses() {
             <button
               key={business.id}
               onClick={() => setSelectedBusiness(business)}
-              className="w-full text-left glass-panel rounded-xl border border-white/5 hover:border-amber-500/30 transition-all hover:bg-white/[0.03] overflow-hidden group animate-fade-in"
+              className="w-full text-left glass-panel rounded-xl border border-white/5 hover:border-primary/30 transition-all hover:bg-white/[0.03] overflow-hidden group animate-fade-in"
               style={{ animationDelay: `${index * 50}ms` }}
             >
               <div className="p-4 md:p-5 flex gap-4 md:gap-5">
@@ -229,7 +229,7 @@ export default function AllBusinesses() {
                 {/* Business Info */}
                 <div className="flex-1 min-w-0">
                   <div className="mb-3">
-                    <h3 className="text-base md:text-lg font-semibold text-white truncate group-hover:text-amber-400 transition-colors">
+                    <h3 className="text-base md:text-lg font-semibold text-white truncate group-hover:text-primary-400 transition-colors">
                       {business.shop}
                     </h3>
                     <p className="text-xs md:text-sm text-neutral-400 line-clamp-2">

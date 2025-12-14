@@ -104,7 +104,7 @@ export default function BusinessPromotions() {
         <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-white">Promociones</h1>
         <button
           onClick={handleAddNew}
-          className="flex items-center justify-center sm:justify-start gap-2 px-3 sm:px-4 py-2 bg-amber-500 hover:bg-amber-600 text-black font-semibold rounded-lg transition-colors text-sm sm:text-base whitespace-nowrap"
+          className="flex items-center justify-center sm:justify-start gap-2 px-3 sm:px-4 py-2 bg-primary hover:bg-primary-dark text-black font-semibold rounded-lg transition-colors text-sm sm:text-base whitespace-nowrap"
         >
           <Plus size={16} />
           <span className="hidden sm:inline">Nueva Promoción</span>
@@ -128,7 +128,7 @@ export default function BusinessPromotions() {
                   type="text"
                   value={formData?.title || ''}
                   onChange={(e) => setFormData({ ...formData!, title: e.target.value })}
-                  className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-amber-500/50"
+                  className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-primary/50"
                   placeholder="Ej: Descuento Black Friday"
                 />
               </div>
@@ -139,7 +139,7 @@ export default function BusinessPromotions() {
                 <textarea
                   value={formData?.description || ''}
                   onChange={(e) => setFormData({ ...formData!, description: e.target.value })}
-                  className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-amber-500/50 min-h-20 resize-none"
+                  className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-primary/50 min-h-20 resize-none"
                   placeholder="Detalles de la promoción"
                 />
               </div>
@@ -150,7 +150,7 @@ export default function BusinessPromotions() {
                 <select
                   value={formData?.type || 'percentage'}
                   onChange={(e) => setFormData({ ...formData!, type: e.target.value as any })}
-                  className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-1 focus:ring-amber-500/50"
+                  className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-1 focus:ring-primary/50"
                 >
                   <option value="percentage">% Descuento</option>
                   <option value="fixed">Descuento Fijo</option>
@@ -167,7 +167,7 @@ export default function BusinessPromotions() {
                   type="number"
                   value={formData?.discount || 0}
                   onChange={(e) => setFormData({ ...formData!, discount: parseInt(e.target.value) })}
-                  className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-amber-500/50"
+                  className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-primary/50"
                   placeholder="0"
                 />
               </div>
@@ -180,7 +180,7 @@ export default function BusinessPromotions() {
                     type="date"
                     value={formData?.startDate || ''}
                     onChange={(e) => setFormData({ ...formData!, startDate: e.target.value })}
-                    className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-1 focus:ring-amber-500/50"
+                    className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-1 focus:ring-primary/50"
                   />
                 </div>
                 <div>
@@ -189,7 +189,7 @@ export default function BusinessPromotions() {
                     type="date"
                     value={formData?.endDate || ''}
                     onChange={(e) => setFormData({ ...formData!, endDate: e.target.value })}
-                    className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-1 focus:ring-amber-500/50"
+                    className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-1 focus:ring-primary/50"
                   />
                 </div>
               </div>
@@ -220,7 +220,7 @@ export default function BusinessPromotions() {
               </button>
               <button
                 onClick={handleSave}
-                className="flex-1 px-4 py-2 bg-amber-500 hover:bg-amber-600 text-black rounded-lg transition-colors font-semibold"
+                className="flex-1 px-4 py-2 bg-primary hover:bg-primary-dark text-black rounded-lg transition-colors font-semibold"
               >
                 Guardar
               </button>
@@ -248,7 +248,7 @@ export default function BusinessPromotions() {
                 <div className="flex gap-1 sm:gap-2 flex-shrink-0">
                   <button
                     onClick={() => handleEdit(promo)}
-                    className="p-1.5 sm:p-2 hover:bg-white/10 rounded-lg transition-colors text-amber-500"
+                    className="p-1.5 sm:p-2 hover:bg-white/10 rounded-lg transition-colors text-primary"
                   >
                     <Edit2 size={16} />
                   </button>
@@ -266,7 +266,7 @@ export default function BusinessPromotions() {
                 <span className="px-2 sm:px-3 py-1 rounded-full bg-white/10 text-xs font-semibold text-neutral-300 whitespace-nowrap">
                   {getTypeLabel(promo.type)}
                 </span>
-                <span className="text-xl sm:text-2xl font-bold text-amber-400">
+                <span className="text-xl sm:text-2xl font-bold text-primary-400">
                   {promo.type === 'percentage' ? `${promo.discount}%` : promo.type === 'fixed' ? `$${promo.discount}` : `+${promo.discount}`}
                 </span>
               </div>

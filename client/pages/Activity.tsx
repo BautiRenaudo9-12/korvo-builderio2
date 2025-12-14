@@ -116,7 +116,7 @@ export default function Activity() {
               placeholder="Buscar por negocio o transacción..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-white/5 border border-white/10 rounded-lg pl-10 pr-4 py-2.5 md:py-3 text-sm md:text-base text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-amber-500/50 focus:border-amber-500/50 transition-all"
+              className="w-full bg-white/5 border border-white/10 rounded-lg pl-10 pr-4 py-2.5 md:py-3 text-sm md:text-base text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-primary/50 focus:border-primary/50 transition-all"
             />
           </div>
         </div>
@@ -127,7 +127,7 @@ export default function Activity() {
             onClick={() => setTypeFilter('all')}
             className={`flex items-center gap-1.5 px-3 py-2 rounded-lg transition-all text-xs md:text-sm font-medium ${
               typeFilter === 'all'
-                ? 'bg-amber-500/20 border border-amber-500/50 text-amber-400'
+                ? 'bg-primary-20 border border-primary-50 text-primary-400'
                 : 'bg-white/5 border border-white/10 text-neutral-400 hover:bg-white/10 hover:border-white/20'
             }`}
           >

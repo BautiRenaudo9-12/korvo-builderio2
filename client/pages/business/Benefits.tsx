@@ -228,7 +228,7 @@ export default function BusinessBenefits() {
             onClick={() => setActiveTab(tab.id)}
             className={`pb-4 px-2 md:px-4 font-medium text-sm md:text-base whitespace-nowrap border-b-2 transition-all ${
               activeTab === tab.id
-                ? 'border-amber-500 text-amber-500'
+                ? 'border-primary text-primary'
                 : 'border-transparent text-neutral-400 hover:text-white'
             }`}
           >
@@ -248,7 +248,7 @@ export default function BusinessBenefits() {
               </div>
               <button
                 onClick={() => setPointsConfigEditing(!pointsConfigEditing)}
-                className="px-4 py-2 bg-amber-500/20 text-amber-500 border border-amber-500/30 rounded-lg hover:bg-amber-500/30 transition-colors font-medium text-sm"
+                className="px-4 py-2 bg-primary-20 text-primary border border-primary-30 rounded-lg hover:bg-primary-20 transition-colors font-medium text-sm"
               >
                 {pointsConfigEditing ? 'Cancelar' : 'Editar'}
               </button>
@@ -268,7 +268,7 @@ export default function BusinessBenefits() {
                       })
                     }
                     step="0.1"
-                    className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-amber-500/50"
+                    className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-primary/50"
                     placeholder="1"
                   />
                   <p className="text-xs text-neutral-500 mt-2">El cliente ganará {pointsConfig.pointsPerDollar} puntos por cada $1 gastado</p>
@@ -285,7 +285,7 @@ export default function BusinessBenefits() {
                         expiryMonths: Math.max(1, parseInt(e.target.value)),
                       })
                     }
-                    className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-amber-500/50"
+                    className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-primary/50"
                     placeholder="12"
                   />
                   <p className="text-xs text-neutral-500 mt-2">Los puntos expirarán después de {pointsConfig.expiryMonths} meses de inactividad</p>
@@ -293,7 +293,7 @@ export default function BusinessBenefits() {
 
                 <button
                   onClick={() => setPointsConfigEditing(false)}
-                  className="w-full px-4 py-2 bg-amber-500 hover:bg-amber-600 text-black rounded-lg transition-colors font-semibold"
+                  className="w-full px-4 py-2 bg-primary hover:bg-primary-dark text-black rounded-lg transition-colors font-semibold"
                 >
                   Guardar Configuración
                 </button>
@@ -302,12 +302,12 @@ export default function BusinessBenefits() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="p-4 bg-white/5 rounded-lg border border-white/10">
                   <p className="text-sm text-neutral-400 mb-1">Ratio de Puntos</p>
-                  <p className="text-3xl font-bold text-amber-500">{pointsConfig.pointsPerDollar}</p>
+                  <p className="text-3xl font-bold text-primary">{pointsConfig.pointsPerDollar}</p>
                   <p className="text-xs text-neutral-500 mt-2">puntos por $1</p>
                 </div>
                 <div className="p-4 bg-white/5 rounded-lg border border-white/10">
                   <p className="text-sm text-neutral-400 mb-1">Expiración</p>
-                  <p className="text-3xl font-bold text-amber-500">{pointsConfig.expiryMonths}</p>
+                  <p className="text-3xl font-bold text-primary">{pointsConfig.expiryMonths}</p>
                   <p className="text-xs text-neutral-500 mt-2">meses de inactividad</p>
                 </div>
               </div>
@@ -322,7 +322,7 @@ export default function BusinessBenefits() {
           <div className="flex justify-end mb-4">
             <button
               onClick={handleAddNewReward}
-              className="flex items-center gap-2 px-4 py-2 bg-amber-500 hover:bg-amber-600 text-black font-semibold rounded-lg transition-colors"
+              className="flex items-center gap-2 px-4 py-2 bg-primary hover:bg-primary-dark text-black font-semibold rounded-lg transition-colors"
             >
               <Plus size={18} />
               Nueva Recompensa
@@ -344,7 +344,7 @@ export default function BusinessBenefits() {
                       type="text"
                       value={rewardFormData?.name || ''}
                       onChange={(e) => setRewardFormData({ ...rewardFormData!, name: e.target.value })}
-                      className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-amber-500/50"
+                      className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-primary/50"
                       placeholder="Ej: Café Gratis"
                     />
                   </div>
@@ -354,7 +354,7 @@ export default function BusinessBenefits() {
                     <textarea
                       value={rewardFormData?.description || ''}
                       onChange={(e) => setRewardFormData({ ...rewardFormData!, description: e.target.value })}
-                      className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-amber-500/50 min-h-20 resize-none"
+                      className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-primary/50 min-h-20 resize-none"
                       placeholder="Ej: Taza de café americano o capuchino"
                     />
                   </div>
@@ -365,7 +365,7 @@ export default function BusinessBenefits() {
                       type="number"
                       value={rewardFormData?.cost || 0}
                       onChange={(e) => setRewardFormData({ ...rewardFormData!, cost: parseInt(e.target.value) })}
-                      className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-amber-500/50"
+                      className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-primary/50"
                       placeholder="300"
                     />
                   </div>
@@ -375,7 +375,7 @@ export default function BusinessBenefits() {
                     <select
                       value={rewardFormData?.category || ''}
                       onChange={(e) => setRewardFormData({ ...rewardFormData!, category: e.target.value })}
-                      className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-1 focus:ring-amber-500/50"
+                      className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-1 focus:ring-primary/50"
                     >
                       <option value="" disabled>
                         Seleccionar categoría
@@ -412,7 +412,7 @@ export default function BusinessBenefits() {
                   </button>
                   <button
                     onClick={handleSaveReward}
-                    className="flex-1 px-4 py-2 bg-amber-500 hover:bg-amber-600 text-black rounded-lg transition-colors font-semibold"
+                    className="flex-1 px-4 py-2 bg-primary hover:bg-primary-dark text-black rounded-lg transition-colors font-semibold"
                   >
                     Guardar
                   </button>
@@ -461,7 +461,7 @@ export default function BusinessBenefits() {
                         </div>
                       </td>
                       <td className="px-4 md:px-6 py-4">
-                        <span className="text-amber-400 font-semibold">{reward.cost} pts</span>
+                        <span className="text-primary-400 font-semibold">{reward.cost} pts</span>
                       </td>
                       <td className="px-4 md:px-6 py-4">
                         <span className="text-xs text-neutral-400">{reward.category}</span>
@@ -485,7 +485,7 @@ export default function BusinessBenefits() {
                         <div className="flex gap-2">
                           <button
                             onClick={() => handleEditReward(reward)}
-                            className="p-2 hover:bg-white/10 rounded-lg transition-colors text-amber-500 hover:text-amber-400"
+                            className="p-2 hover:bg-white/10 rounded-lg transition-colors text-primary hover:text-primary-400"
                           >
                             <Edit2 size={16} />
                           </button>
@@ -518,7 +518,7 @@ export default function BusinessBenefits() {
           <div className="flex justify-end mb-4">
             <button
               onClick={handleAddNewPromo}
-              className="flex items-center gap-2 px-4 py-2 bg-amber-500 hover:bg-amber-600 text-black font-semibold rounded-lg transition-colors"
+              className="flex items-center gap-2 px-4 py-2 bg-primary hover:bg-primary-dark text-black font-semibold rounded-lg transition-colors"
             >
               <Plus size={18} />
               Nueva Promoción
@@ -540,7 +540,7 @@ export default function BusinessBenefits() {
                       type="text"
                       value={promoFormData?.title || ''}
                       onChange={(e) => setPromoFormData({ ...promoFormData!, title: e.target.value })}
-                      className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-amber-500/50"
+                      className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-primary/50"
                       placeholder="Ej: Doble Puntos"
                     />
                   </div>
@@ -550,7 +550,7 @@ export default function BusinessBenefits() {
                     <textarea
                       value={promoFormData?.description || ''}
                       onChange={(e) => setPromoFormData({ ...promoFormData!, description: e.target.value })}
-                      className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-amber-500/50 min-h-20 resize-none"
+                      className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-primary/50 min-h-20 resize-none"
                       placeholder="Ej: Gana el doble de puntos en todas las compras"
                     />
                   </div>
@@ -560,7 +560,7 @@ export default function BusinessBenefits() {
                     <select
                       value={promoFormData?.type || 'percentage'}
                       onChange={(e) => setPromoFormData({ ...promoFormData!, type: e.target.value as any })}
-                      className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-1 focus:ring-amber-500/50"
+                      className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-1 focus:ring-primary/50"
                     >
                       <option value="percentage">% Descuento</option>
                       <option value="fixed">Descuento Fijo</option>
@@ -574,7 +574,7 @@ export default function BusinessBenefits() {
                       type="number"
                       value={promoFormData?.discount || 0}
                       onChange={(e) => setPromoFormData({ ...promoFormData!, discount: parseInt(e.target.value) })}
-                      className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-amber-500/50"
+                      className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-primary/50"
                       placeholder="10"
                     />
                   </div>
@@ -586,7 +586,7 @@ export default function BusinessBenefits() {
                         type="date"
                         value={promoFormData?.startDate || ''}
                         onChange={(e) => setPromoFormData({ ...promoFormData!, startDate: e.target.value })}
-                        className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-1 focus:ring-amber-500/50"
+                        className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-1 focus:ring-primary/50"
                       />
                     </div>
                     <div>
@@ -595,7 +595,7 @@ export default function BusinessBenefits() {
                         type="date"
                         value={promoFormData?.endDate || ''}
                         onChange={(e) => setPromoFormData({ ...promoFormData!, endDate: e.target.value })}
-                        className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-1 focus:ring-amber-500/50"
+                        className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-1 focus:ring-primary/50"
                       />
                     </div>
                   </div>
@@ -624,7 +624,7 @@ export default function BusinessBenefits() {
                   </button>
                   <button
                     onClick={handleSavePromo}
-                    className="flex-1 px-4 py-2 bg-amber-500 hover:bg-amber-600 text-black rounded-lg transition-colors font-semibold"
+                    className="flex-1 px-4 py-2 bg-primary hover:bg-primary-dark text-black rounded-lg transition-colors font-semibold"
                   >
                     Guardar
                   </button>
@@ -676,7 +676,7 @@ export default function BusinessBenefits() {
                         <span className="text-xs text-neutral-400">{getTypeLabel(promo.type)}</span>
                       </td>
                       <td className="px-4 md:px-6 py-4">
-                        <span className="text-amber-400 font-semibold">
+                        <span className="text-primary-400 font-semibold">
                           {promo.discount}
                           {promo.type === 'percentage' && '%'}
                           {promo.type === 'bonus-points' && ' pts'}
@@ -702,7 +702,7 @@ export default function BusinessBenefits() {
                         <div className="flex gap-2">
                           <button
                             onClick={() => handleEditPromo(promo)}
-                            className="p-2 hover:bg-white/10 rounded-lg transition-colors text-amber-500 hover:text-amber-400"
+                            className="p-2 hover:bg-white/10 rounded-lg transition-colors text-primary hover:text-primary-400"
                           >
                             <Edit2 size={16} />
                           </button>

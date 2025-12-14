@@ -36,7 +36,7 @@ export default function BusinessPoints() {
           </div>
           <button
             onClick={() => setPointsConfigEditing(!pointsConfigEditing)}
-            className="px-3 py-2 sm:px-4 bg-amber-500/20 text-amber-500 border border-amber-500/30 rounded-lg hover:bg-amber-500/30 transition-colors font-medium text-xs sm:text-sm whitespace-nowrap"
+            className="px-3 py-2 sm:px-4 bg-primary-20 text-primary border border-primary-30 rounded-lg hover:bg-primary-20 transition-colors font-medium text-xs sm:text-sm whitespace-nowrap"
           >
             {pointsConfigEditing ? 'Cancelar' : 'Editar'}
           </button>
@@ -56,7 +56,7 @@ export default function BusinessPoints() {
                   })
                 }
                 step="0.1"
-                className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-amber-500/50"
+                className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-primary/50"
                 placeholder="1"
               />
               <p className="text-xs text-neutral-500 mt-2">El cliente ganará {pointsConfig.pointsPerDollar} puntos por cada $1 gastado</p>
@@ -73,7 +73,7 @@ export default function BusinessPoints() {
                     expiryMonths: Math.max(1, parseInt(e.target.value)),
                   })
                 }
-                className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-amber-500/50"
+                className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-primary/50"
                 placeholder="12"
               />
               <p className="text-xs text-neutral-500 mt-2">Los puntos expirarán después de {pointsConfig.expiryMonths} meses de inactividad</p>
@@ -81,7 +81,7 @@ export default function BusinessPoints() {
 
             <button
               onClick={handleSaveConfig}
-              className="w-full px-4 py-2 bg-amber-500 hover:bg-amber-600 text-black rounded-lg transition-colors font-semibold"
+              className="w-full px-4 py-2 bg-primary hover:bg-primary-dark text-black rounded-lg transition-colors font-semibold"
             >
               Guardar Configuración
             </button>
@@ -90,12 +90,12 @@ export default function BusinessPoints() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
             <div className="p-3 sm:p-4 bg-white/5 rounded-lg border border-white/10">
               <p className="text-xs sm:text-sm text-neutral-400 mb-2">Ratio de Puntos</p>
-              <p className="text-2xl sm:text-3xl font-bold text-amber-500">{pointsConfig.pointsPerDollar}</p>
+              <p className="text-2xl sm:text-3xl font-bold text-primary">{pointsConfig.pointsPerDollar}</p>
               <p className="text-xs text-neutral-500 mt-2">puntos por $1</p>
             </div>
             <div className="p-3 sm:p-4 bg-white/5 rounded-lg border border-white/10">
               <p className="text-xs sm:text-sm text-neutral-400 mb-2">Expiración</p>
-              <p className="text-2xl sm:text-3xl font-bold text-amber-500">{pointsConfig.expiryMonths}</p>
+              <p className="text-2xl sm:text-3xl font-bold text-primary">{pointsConfig.expiryMonths}</p>
               <p className="text-xs text-neutral-500 mt-2">meses de inactividad</p>
             </div>
           </div>

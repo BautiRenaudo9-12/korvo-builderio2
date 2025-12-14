@@ -91,7 +91,7 @@ export const BusinessDetailView = ({ business, onBack }: BusinessDetailViewProps
             {/* Progress Section */}
             <div className="glass-panel rounded-lg p-6 md:p-8 border border-white/5">
               <div className="flex items-center gap-2 mb-4">
-                <TrendingUp size={18} className="text-amber-500" />
+                <TrendingUp size={18} className="text-violet-500" />
                 <h3 className="text-base md:text-lg font-semibold text-white">
                   Progreso de Sellos
                 </h3>
@@ -129,7 +129,7 @@ export const BusinessDetailView = ({ business, onBack }: BusinessDetailViewProps
             {/* Last Visit Info */}
             <div className="glass-panel rounded-lg p-6 md:p-8 border border-white/5">
               <div className="flex items-center gap-2 mb-4">
-                <Clock size={18} className="text-amber-500" />
+                <Clock size={18} className="text-violet-500" />
                 <h3 className="text-base md:text-lg font-semibold text-white">
                   Última Visita
                 </h3>
@@ -140,7 +140,7 @@ export const BusinessDetailView = ({ business, onBack }: BusinessDetailViewProps
             {/* Available Rewards */}
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <Gift size={18} className="text-amber-500" />
+                <Gift size={18} className="text-violet-500" />
                 <h3 className="text-base md:text-lg font-semibold text-white">
                   Recompensas Disponibles
                 </h3>
@@ -153,7 +153,7 @@ export const BusinessDetailView = ({ business, onBack }: BusinessDetailViewProps
                     className={`glass-panel rounded-lg p-4 md:p-5 border transition-all ${
                       reward.locked
                         ? 'border-white/5 opacity-60'
-                        : 'border-amber-500/30 bg-amber-500/5'
+                        : 'border-violet-500/30 bg-violet-500/5'
                     }`}
                   >
                     <div className="flex items-start justify-between gap-4">
@@ -161,7 +161,7 @@ export const BusinessDetailView = ({ business, onBack }: BusinessDetailViewProps
                         <h4 className="text-sm md:text-base font-semibold text-white mb-1">
                           {reward.name}
                         </h4>
-                        <p className="text-sm md:text-base font-bold text-amber-500">
+                        <p className="text-sm md:text-base font-bold text-violet-500">
                           {reward.cost} pts
                         </p>
                       </div>
@@ -172,7 +172,7 @@ export const BusinessDetailView = ({ business, onBack }: BusinessDetailViewProps
                             <Lock size={16} />
                           </div>
                         ) : (
-                          <div className="flex items-center justify-center w-8 h-8 rounded-full bg-amber-500/20 text-amber-400">
+                          <div className="flex items-center justify-center w-8 h-8 rounded-full bg-violet-500/20 text-violet-400">
                             <Gift size={16} />
                           </div>
                         )}

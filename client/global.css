@@ -30,6 +30,73 @@
   scrollbar-width: none;
 }
 
+/* Color utilities using CSS variables */
+.text-primary {
+  color: hsl(var(--primary));
+}
+
+.text-primary-400 {
+  color: hsl(var(--primary) / 0.6);
+}
+
+.text-primary-hover:hover {
+  color: hsl(var(--primary) / 0.8);
+}
+
+.bg-primary {
+  background-color: hsl(var(--primary));
+}
+
+.bg-primary-dark:hover {
+  background-color: hsl(var(--primary) / 0.9);
+}
+
+.bg-primary-10 {
+  background-color: hsl(var(--primary) / 0.1);
+}
+
+.bg-primary-20 {
+  background-color: hsl(var(--primary) / 0.2);
+}
+
+.border-primary {
+  border-color: hsl(var(--primary));
+}
+
+.border-primary-20 {
+  border-color: hsl(var(--primary) / 0.2);
+}
+
+.border-primary-30 {
+  border-color: hsl(var(--primary) / 0.3);
+}
+
+.border-primary-50 {
+  border-color: hsl(var(--primary) / 0.5);
+}
+
+.ring-primary:focus {
+  outline: none;
+  ring: 1px solid hsl(var(--primary) / 0.5);
+}
+
+.focus-ring-primary:focus {
+  outline: none;
+  --tw-ring-color: hsl(var(--primary) / 0.5);
+}
+
+.hover-primary-10:hover {
+  background-color: hsl(var(--primary) / 0.1);
+}
+
+.from-primary {
+  --tw-gradient-from: hsl(var(--primary));
+}
+
+.to-primary-dark {
+  --tw-gradient-to: hsl(var(--primary) / 0.8);
+}
+
 /* Glassmorphism utilities */
 .glass-panel {
   background: rgba(255, 255, 255, 0.03);
@@ -96,12 +163,12 @@
 .qr-scan-line {
   height: 2px;
   width: 100%;
-  background: #f59e0b;
+  background: #a855f7;
   position: absolute;
   top: 0;
   left: 0;
   animation: scan 2s infinite linear;
-  box-shadow: 0 0 10px #f59e0b;
+  box-shadow: 0 0 10px #a855f7;
 }
 
 @keyframes scan {
@@ -136,7 +203,7 @@
     --popover: 0 0% 10%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 45 93% 56%;
+    --primary: 280 85% 65%;
     --primary-foreground: 0 0% 10%;
 
     --secondary: 217.2 32.6% 17.5%;
@@ -145,7 +212,7 @@
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 45 93% 56%;
+    --accent: 280 85% 65%;
     --accent-foreground: 0 0% 10%;
 
     --destructive: 0 62.8% 30.6%;
@@ -153,18 +220,18 @@
 
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 45 93% 56%;
+    --ring: 280 85% 65%;
 
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 10%;
     --sidebar-foreground: 210 40% 98%;
-    --sidebar-primary: 45 93% 56%;
+    --sidebar-primary: 280 85% 65%;
     --sidebar-primary-foreground: 0 0% 10%;
     --sidebar-accent: 217.2 32.6% 17.5%;
     --sidebar-accent-foreground: 210 40% 98%;
     --sidebar-border: 217.2 32.6% 17.5%;
-    --sidebar-ring: 45 93% 56%;
+    --sidebar-ring: 280 85% 65%;
   }
 }
 

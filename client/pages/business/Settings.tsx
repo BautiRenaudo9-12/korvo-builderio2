@@ -101,7 +101,7 @@ export default function BusinessSettings() {
                 type="text"
                 value={formData.name}
                 onChange={(e) => handleInputChange('name', e.target.value)}
-                className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-amber-500/50 focus:border-amber-500/50"
+                className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-primary/50 focus:border-primary/50"
               />
             </div>
 
@@ -111,7 +111,7 @@ export default function BusinessSettings() {
               <select
                 value={formData.category}
                 onChange={(e) => handleInputChange('category', e.target.value)}
-                className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-1 focus:ring-amber-500/50"
+                className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-1 focus:ring-primary/50"
               >
                 {categories.map((cat) => (
                   <option key={cat} value={cat}>
@@ -127,7 +127,7 @@ export default function BusinessSettings() {
               <textarea
                 value={formData.description}
                 onChange={(e) => handleInputChange('description', e.target.value)}
-                className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-amber-500/50 resize-none min-h-24"
+                className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-primary/50 resize-none min-h-24"
                 placeholder="Describe tu negocio..."
               />
             </div>
@@ -139,7 +139,7 @@ export default function BusinessSettings() {
                 type="email"
                 value={formData.email}
                 onChange={(e) => handleInputChange('email', e.target.value)}
-                className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-amber-500/50"
+                className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-primary/50"
               />
             </div>
 
@@ -150,7 +150,7 @@ export default function BusinessSettings() {
                 type="tel"
                 value={formData.phone}
                 onChange={(e) => handleInputChange('phone', e.target.value)}
-                className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-amber-500/50"
+                className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-primary/50"
               />
             </div>
 
@@ -162,7 +162,7 @@ export default function BusinessSettings() {
                   type="text"
                   value={formData.address}
                   onChange={(e) => handleInputChange('address', e.target.value)}
-                  className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-amber-500/50"
+                  className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-primary/50"
                 />
               </div>
               <div>
@@ -171,7 +171,7 @@ export default function BusinessSettings() {
                   type="text"
                   value={formData.city}
                   onChange={(e) => handleInputChange('city', e.target.value)}
-                  className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-amber-500/50"
+                  className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-primary/50"
                 />
               </div>
             </div>
@@ -192,7 +192,7 @@ export default function BusinessSettings() {
                   type="text"
                   value={formData.openingHours[day.key as keyof typeof formData.openingHours]}
                   onChange={(e) => handleHourChange(day.key, e.target.value)}
-                  className="flex-1 bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-amber-500/50"
+                  className="flex-1 bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-primary/50"
                   placeholder="Ej: 09:00 - 21:00"
                 />
               </div>
@@ -215,7 +215,7 @@ export default function BusinessSettings() {
         <div className="flex gap-4">
           <button
             onClick={handleSave}
-            className="flex items-center gap-2 px-6 py-3 bg-amber-500 hover:bg-amber-600 text-black rounded-lg transition-colors font-semibold flex-1"
+            className="flex items-center gap-2 px-6 py-3 bg-primary hover:bg-primary-dark text-black rounded-lg transition-colors font-semibold flex-1"
           >
             <Save size={18} />
             Guardar Cambios

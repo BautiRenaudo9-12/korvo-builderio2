@@ -46,7 +46,7 @@ export default function BusinessCustomers() {
         </div>
         <div className="glass-panel rounded-lg p-4 md:p-6 border border-white/5">
           <p className="text-neutral-400 text-xs md:text-sm mb-2">Puntos en Circulación</p>
-          <p className="text-2xl md:text-3xl font-bold text-amber-400">{totalPointsInCirculation.toLocaleString()}</p>
+          <p className="text-2xl md:text-3xl font-bold text-primary-400">{totalPointsInCirculation.toLocaleString()}</p>
         </div>
         <div className="glass-panel rounded-lg p-4 md:p-6 border border-white/5">
           <p className="text-neutral-400 text-xs md:text-sm mb-2">Activos este mes</p>
@@ -66,7 +66,7 @@ export default function BusinessCustomers() {
             placeholder="Buscar por nombre, email o teléfono..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full bg-white/5 border border-white/10 rounded-lg pl-10 pr-4 py-2.5 text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-amber-500/50"
+            className="w-full bg-white/5 border border-white/10 rounded-lg pl-10 pr-4 py-2.5 text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-primary/50"
           />
         </div>
 
@@ -77,7 +77,7 @@ export default function BusinessCustomers() {
               onClick={() => setSortBy(option)}
               className={`px-4 py-2 rounded-lg transition-all text-sm font-medium ${
                 sortBy === option
-                  ? 'bg-amber-500/20 border border-amber-500/50 text-amber-400'
+                  ? 'bg-primary-20 border border-primary-50 text-primary-400'
                   : 'bg-white/5 border border-white/10 text-neutral-400 hover:bg-white/10'
               }`}
             >
@@ -135,7 +135,7 @@ export default function BusinessCustomers() {
                     </div>
                   </td>
                   <td className="px-4 md:px-6 py-4">
-                    <span className="text-amber-400 font-bold text-lg">{customer.points}</span>
+                    <span className="text-primary-400 font-bold text-lg">{customer.points}</span>
                   </td>
                   <td className="px-4 md:px-6 py-4">
                     <div className="space-y-1">
@@ -144,7 +144,7 @@ export default function BusinessCustomers() {
                       </p>
                       <div className="w-16 h-1.5 bg-white/5 rounded-full overflow-hidden">
                         <div
-                          className="h-full bg-gradient-to-r from-amber-500 to-amber-400 rounded-full"
+                          className="h-full bg-gradient-to-r from-primary to-primary-400 rounded-full"
                           style={{
                             width: `${(customer.stamps / customer.totalStamps) * 100}%`,
                           }}

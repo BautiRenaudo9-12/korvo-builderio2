@@ -79,7 +79,7 @@ export const BusinessListView = ({ businesses, onClose }: BusinessListViewProps)
               placeholder="Buscar negocio o dirección..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-white/5 border border-white/10 rounded-lg pl-10 pr-4 py-2.5 md:py-3 text-sm md:text-base text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-amber-500/50 focus:border-amber-500/50 transition-all"
+              className="w-full bg-white/5 border border-white/10 rounded-lg pl-10 pr-4 py-2.5 md:py-3 text-sm md:text-base text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-primary/50 focus:border-primary/50 transition-all"
             />
           </div>
 
@@ -105,7 +105,7 @@ export const BusinessListView = ({ businesses, onClose }: BusinessListViewProps)
                     onClick={() => setSortBy(option)}
                     className={`flex items-center gap-1.5 px-3 py-2 rounded-lg transition-all whitespace-nowrap text-xs md:text-sm font-medium ${
                       sortBy === option
-                        ? 'bg-amber-500/20 border border-amber-500/50 text-amber-400'
+                        ? 'bg-primary-20 border border-primary-50 text-primary-400'
                         : 'bg-white/5 border border-white/10 text-neutral-400 hover:bg-white/10 hover:border-white/20'
                     }`}
                   >
@@ -132,7 +132,7 @@ export const BusinessListView = ({ businesses, onClose }: BusinessListViewProps)
               onClick={() => setShowFilters(!showFilters)}
               className={`flex items-center gap-1.5 px-3 py-2 rounded-lg transition-all text-xs md:text-sm font-medium whitespace-nowrap ${
                 showFilters
-                  ? 'bg-amber-500/20 border border-amber-500/50 text-amber-400'
+                  ? 'bg-primary-20 border border-primary-50 text-primary-400'
                   : 'bg-white/5 border border-white/10 text-neutral-400 hover:bg-white/10 hover:border-white/20'
               }`}
             >
@@ -155,7 +155,7 @@ export const BusinessListView = ({ businesses, onClose }: BusinessListViewProps)
                 <button
                   key={business.id}
                   onClick={() => setSelectedBusiness(business)}
-                  className="w-full text-left glass-panel rounded-xl border border-white/5 hover:border-amber-500/30 transition-all hover:bg-white/[0.03] overflow-hidden group animate-fade-in"
+                  className="w-full text-left glass-panel rounded-xl border border-white/5 hover:border-primary/30 transition-all hover:bg-white/[0.03] overflow-hidden group animate-fade-in"
                   style={{ animationDelay: `${index * 50}ms` }}
                 >
                   {/* Business Card */}
@@ -180,7 +180,7 @@ export const BusinessListView = ({ businesses, onClose }: BusinessListViewProps)
                       {/* Title & Address */}
                       <div className="mb-3">
                         <div className="flex items-start justify-between gap-2 mb-1">
-                          <h3 className="text-base md:text-lg font-semibold text-white truncate group-hover:text-amber-400 transition-colors">
+                          <h3 className="text-base md:text-lg font-semibold text-white truncate group-hover:text-primary-400 transition-colors">
                             {business.shop}
                           </h3>
                           <button

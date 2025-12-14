@@ -49,7 +49,7 @@ export const MapContent = ({ shops }: MapContentProps) => {
             <span class="text-xs text-neutral-700">⭐ ${shop.rating}</span>
             <span class="text-xs text-neutral-700">📍 ${shop.distance}</span>
           </div>
-          ${shop.promo ? `<div class="bg-amber-50 rounded px-2 py-1 mb-2"><p class="text-xs font-medium text-amber-900">${shop.promo}</p></div>` : ''}
+          ${shop.promo ? `<div class="rounded px-2 py-1 mb-2" style="background-color: hsl(var(--primary) / 0.1)"><p class="text-xs font-medium" style="color: hsl(var(--primary))">${shop.promo}</p></div>` : ''}
           <button class="w-full bg-neutral-900 text-white text-xs py-1.5 rounded font-medium hover:bg-neutral-800 transition-colors">
             Ver detalles
           </button>
@@ -68,7 +68,7 @@ export const MapContent = ({ shops }: MapContentProps) => {
 
           // Add user location marker
           const userMarkerIcon = L.icon({
-            iconUrl: 'data:image/svg+xml;utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" fill="%23f59e0b" stroke="%23fff" stroke-width="2"/><circle cx="16" cy="16" r="6" fill="%23fff"/></svg>',
+            iconUrl: 'data:image/svg+xml;utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" fill="%23a855f7" stroke="%23fff" stroke-width="2"/><circle cx="16" cy="16" r="6" fill="%23fff"/></svg>',
             iconSize: [32, 32],
             iconAnchor: [16, 16],
             popupAnchor: [0, -16],

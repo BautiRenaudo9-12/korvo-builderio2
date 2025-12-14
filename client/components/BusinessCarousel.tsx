@@ -16,7 +16,7 @@ export const BusinessCarousel = ({ businesses, onViewAll }: BusinessCarouselProp
         <h3 className="text-sm md:text-base font-semibold text-white">Mis Negocios</h3>
         <button
           onClick={onViewAll}
-          className="text-xs md:text-sm text-neutral-400 hover:text-amber-500 transition-colors flex items-center gap-1 group"
+          className="text-xs md:text-sm text-neutral-400 hover:text-primary transition-colors flex items-center gap-1 group"
         >
           Ver todos
           <ChevronRight size={14} className="group-hover:translate-x-1 transition-transform" />
