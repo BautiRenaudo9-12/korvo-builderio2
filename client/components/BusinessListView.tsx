@@ -155,7 +155,7 @@ export const BusinessListView = ({ businesses, onClose }: BusinessListViewProps)
                 <button
                   key={business.id}
                   onClick={() => setSelectedBusiness(business)}
-                  className="w-full text-left glass-panel rounded-xl border border-white/5 hover:border-amber-500/30 transition-all hover:bg-white/[0.03] overflow-hidden group animate-fade-in"
+                  className="w-full text-left glass-panel rounded-xl border border-white/5 hover:border-primary/30 transition-all hover:bg-white/[0.03] overflow-hidden group animate-fade-in"
                   style={{ animationDelay: `${index * 50}ms` }}
                 >
                   {/* Business Card */}
