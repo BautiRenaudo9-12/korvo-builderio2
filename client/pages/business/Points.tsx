@@ -81,7 +81,7 @@ export default function BusinessPoints() {
 
             <button
               onClick={handleSaveConfig}
-              className="w-full px-4 py-2 bg-amber-500 hover:bg-amber-600 text-black rounded-lg transition-colors font-semibold"
+              className="w-full px-4 py-2 bg-primary hover:bg-primary-dark text-black rounded-lg transition-colors font-semibold"
             >
               Guardar Configuración
             </button>

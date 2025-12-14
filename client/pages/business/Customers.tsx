@@ -144,7 +144,7 @@ export default function BusinessCustomers() {
                       </p>
                       <div className="w-16 h-1.5 bg-white/5 rounded-full overflow-hidden">
                         <div
-                          className="h-full bg-gradient-to-r from-amber-500 to-amber-400 rounded-full"
+                          className="h-full bg-gradient-to-r from-primary to-primary-400 rounded-full"
                           style={{
                             width: `${(customer.stamps / customer.totalStamps) * 100}%`,
                           }}

@@ -228,7 +228,7 @@ export default function BusinessBenefits() {
             onClick={() => setActiveTab(tab.id)}
             className={`pb-4 px-2 md:px-4 font-medium text-sm md:text-base whitespace-nowrap border-b-2 transition-all ${
               activeTab === tab.id
-                ? 'border-amber-500 text-primary'
+                ? 'border-primary text-primary'
                 : 'border-transparent text-neutral-400 hover:text-white'
             }`}
           >
@@ -293,7 +293,7 @@ export default function BusinessBenefits() {
 
                 <button
                   onClick={() => setPointsConfigEditing(false)}
-                  className="w-full px-4 py-2 bg-amber-500 hover:bg-amber-600 text-black rounded-lg transition-colors font-semibold"
+                  className="w-full px-4 py-2 bg-primary hover:bg-primary-dark text-black rounded-lg transition-colors font-semibold"
                 >
                   Guardar Configuración
                 </button>
@@ -322,7 +322,7 @@ export default function BusinessBenefits() {
           <div className="flex justify-end mb-4">
             <button
               onClick={handleAddNewReward}
-              className="flex items-center gap-2 px-4 py-2 bg-amber-500 hover:bg-amber-600 text-black font-semibold rounded-lg transition-colors"
+              className="flex items-center gap-2 px-4 py-2 bg-primary hover:bg-primary-dark text-black font-semibold rounded-lg transition-colors"
             >
               <Plus size={18} />
               Nueva Recompensa
@@ -412,7 +412,7 @@ export default function BusinessBenefits() {
                   </button>
                   <button
                     onClick={handleSaveReward}
-                    className="flex-1 px-4 py-2 bg-amber-500 hover:bg-amber-600 text-black rounded-lg transition-colors font-semibold"
+                    className="flex-1 px-4 py-2 bg-primary hover:bg-primary-dark text-black rounded-lg transition-colors font-semibold"
                   >
                     Guardar
                   </button>
@@ -518,7 +518,7 @@ export default function BusinessBenefits() {
           <div className="flex justify-end mb-4">
             <button
               onClick={handleAddNewPromo}
-              className="flex items-center gap-2 px-4 py-2 bg-amber-500 hover:bg-amber-600 text-black font-semibold rounded-lg transition-colors"
+              className="flex items-center gap-2 px-4 py-2 bg-primary hover:bg-primary-dark text-black font-semibold rounded-lg transition-colors"
             >
               <Plus size={18} />
               Nueva Promoción
@@ -624,7 +624,7 @@ export default function BusinessBenefits() {
                   </button>
                   <button
                     onClick={handleSavePromo}
-                    className="flex-1 px-4 py-2 bg-amber-500 hover:bg-amber-600 text-black rounded-lg transition-colors font-semibold"
+                    className="flex-1 px-4 py-2 bg-primary hover:bg-primary-dark text-black rounded-lg transition-colors font-semibold"
                   >
                     Guardar
                   </button>
