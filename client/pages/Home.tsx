@@ -52,7 +52,7 @@ export default function Home() {
           onClick={goToWallet}
           className="glass-panel p-4 md:p-6 rounded-xl flex items-center gap-3 hover:bg-white/5 transition-colors text-left group border border-white/5 md:col-span-2"
         >
-          <div className="w-9 md:w-12 h-9 md:h-12 rounded-full bg-neutral-800 flex items-center justify-center border border-white/5 group-hover:border-amber-500/50 transition-colors flex-shrink-0">
+          <div className="w-9 md:w-12 h-9 md:h-12 rounded-full bg-neutral-800 flex items-center justify-center border border-white/5 group-hover:border-primary/50 transition-colors flex-shrink-0">
             <Gift size={16} className="text-neutral-300 md:hidden" />
             <Gift size={20} className="text-neutral-300 hidden md:block" />
           </div>
@@ -65,7 +65,7 @@ export default function Home() {
           onClick={goToActivity}
           className="glass-panel p-4 md:p-6 rounded-xl flex items-center gap-3 hover:bg-white/5 transition-colors text-left group border border-white/5 md:col-span-2"
         >
-          <div className="w-9 md:w-12 h-9 md:h-12 rounded-full bg-neutral-800 flex items-center justify-center border border-white/5 group-hover:border-amber-500/50 transition-colors flex-shrink-0">
+          <div className="w-9 md:w-12 h-9 md:h-12 rounded-full bg-neutral-800 flex items-center justify-center border border-white/5 group-hover:border-primary/50 transition-colors flex-shrink-0">
             <History size={16} className="text-neutral-300 md:hidden" />
             <History size={20} className="text-neutral-300 hidden md:block" />
           </div>
