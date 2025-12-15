@@ -194,7 +194,7 @@
    * Dark mode theme with amber accents
    */
   :root {
-      --background: 24 15% 8%;
+      --background: 0 0% 8%;
       --foreground: 30 10% 92%;
   
       --card: 24 15% 10%;
