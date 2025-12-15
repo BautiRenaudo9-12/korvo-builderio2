@@ -41,15 +41,15 @@ export default function BusinessCustomers() {
       {/* Stats Cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4 mb-6 md:mb-8">
         <div className="glass-panel rounded-lg p-4 md:p-6 border border-white/5">
-          <p className="text-neutral-400 text-xs md:text-sm mb-2">Total de Clientes</p>
+          <p className="text-muted-foreground text-xs md:text-sm mb-2">Total de Clientes</p>
           <p className="text-2xl md:text-3xl font-bold text-white">{totalCustomers}</p>
         </div>
         <div className="glass-panel rounded-lg p-4 md:p-6 border border-white/5">
-          <p className="text-neutral-400 text-xs md:text-sm mb-2">Puntos en Circulación</p>
-          <p className="text-2xl md:text-3xl font-bold text-primary-400">{totalPointsInCirculation.toLocaleString()}</p>
+          <p className="text-muted-foreground text-xs md:text-sm mb-2">Puntos en Circulación</p>
+          <p className="text-2xl md:text-3xl font-bold text-primary/80">{totalPointsInCirculation.toLocaleString()}</p>
         </div>
         <div className="glass-panel rounded-lg p-4 md:p-6 border border-white/5">
-          <p className="text-neutral-400 text-xs md:text-sm mb-2">Activos este mes</p>
+          <p className="text-muted-foreground text-xs md:text-sm mb-2">Activos este mes</p>
           <p className="text-2xl md:text-3xl font-bold text-emerald-500">{activeThisMonth}</p>
         </div>
       </div>
@@ -59,7 +59,7 @@ export default function BusinessCustomers() {
         <div className="relative mb-4">
           <Search
             size={18}
-            className="absolute left-3 top-1/2 -translate-y-1/2 text-neutral-500"
+            className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground"
           />
           <input
             type="text"
@@ -78,7 +78,7 @@ export default function BusinessCustomers() {
               className={`px-4 py-2 rounded-lg transition-all text-sm font-medium ${
                 sortBy === option
                   ? 'bg-primary-20 border border-primary-50 text-primary-400'
-                  : 'bg-white/5 border border-white/10 text-neutral-400 hover:bg-white/10'
+                  : 'bg-white/5 border border-white/10 text-muted-foreground hover:bg-white/10'
               }`}
             >
               {option === 'points' && 'Más Puntos'}
@@ -129,7 +129,7 @@ export default function BusinessCustomers() {
                     </div>
                   </td>
                   <td className="px-4 md:px-6 py-4">
-                    <div className="text-sm text-neutral-400">
+                    <div className="text-sm text-muted-foreground">
                       <p>{customer.email}</p>
                       <p>{customer.phone}</p>
                     </div>
@@ -166,8 +166,8 @@ export default function BusinessCustomers() {
 
         {filtered.length === 0 && (
           <div className="text-center py-12">
-            <Search className="mx-auto mb-4 text-neutral-600" size={32} />
-            <p className="text-neutral-400 text-sm">No se encontraron clientes</p>
+            <Search className="mx-auto mb-4 text-muted-foreground/60" size={32} />
+            <p className="text-muted-foreground text-sm">No se encontraron clientes</p>
           </div>
         )}
       </div>

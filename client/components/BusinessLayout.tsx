@@ -8,7 +8,7 @@ interface BusinessLayoutProps {
 
 export const BusinessLayout = ({ children }: BusinessLayoutProps) => {
   return (
-    <div className="w-full h-[100dvh] bg-[#1a1a1a] flex flex-col overflow-hidden">
+    <div className="w-full h-[100dvh] bg-background flex flex-col overflow-hidden">
       {/* Mobile Header */}
       <BusinessHeader />
 
@@ -18,7 +18,7 @@ export const BusinessLayout = ({ children }: BusinessLayoutProps) => {
         <BusinessSideNav />
 
         {/* Content Area */}
-        <main className="flex-1 overflow-y-auto w-full bg-[#1a1a1a]">
+        <main className="flex-1 overflow-y-auto w-full bg-background">
           <div className="w-full h-full">
             {children}
           </div>

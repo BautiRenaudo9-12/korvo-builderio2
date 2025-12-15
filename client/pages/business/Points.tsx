@@ -24,7 +24,7 @@ export default function BusinessPoints() {
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-6">
         <div>
           <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-1">Configuración de Puntos</h1>
-          <p className="text-neutral-400 text-xs sm:text-sm">Define cómo ganan puntos tus clientes</p>
+          <p className="text-muted-foreground text-xs sm:text-sm">Define cómo ganan puntos tus clientes</p>
         </div>
       </div>
 
@@ -32,7 +32,7 @@ export default function BusinessPoints() {
         <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 sm:gap-4 mb-6">
           <div className="flex-1">
             <h2 className="text-lg sm:text-xl font-semibold text-white mb-1">Parámetros de Puntos</h2>
-            <p className="text-xs sm:text-sm text-neutral-400">Configura las reglas de acumulación y expiración</p>
+            <p className="text-xs sm:text-sm text-muted-foreground">Configura las reglas de acumulación y expiración</p>
           </div>
           <button
             onClick={() => setPointsConfigEditing(!pointsConfigEditing)}
@@ -45,7 +45,7 @@ export default function BusinessPoints() {
         {pointsConfigEditing ? (
           <div className="space-y-4">
             <div>
-              <label className="block text-sm text-neutral-400 mb-2">Puntos por cada peso ($)</label>
+              <label className="block text-sm text-muted-foreground mb-2">Puntos por cada peso ($)</label>
               <input
                 type="number"
                 value={pointsConfig.pointsPerDollar}
@@ -56,14 +56,14 @@ export default function BusinessPoints() {
                   })
                 }
                 step="0.1"
-                className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-primary/50"
+                className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white placeholder-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary/50"
                 placeholder="1"
               />
-              <p className="text-xs text-neutral-500 mt-2">El cliente ganará {pointsConfig.pointsPerDollar} puntos por cada $1 gastado</p>
+              <p className="text-xs text-muted-foreground mt-2">El cliente ganará {pointsConfig.pointsPerDollar} puntos por cada $1 gastado</p>
             </div>
 
             <div>
-              <label className="block text-sm text-neutral-400 mb-2">Meses de expiración</label>
+              <label className="block text-sm text-muted-foreground mb-2">Meses de expiración</label>
               <input
                 type="number"
                 value={pointsConfig.expiryMonths}
@@ -73,10 +73,10 @@ export default function BusinessPoints() {
                     expiryMonths: Math.max(1, parseInt(e.target.value)),
                   })
                 }
-                className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-primary/50"
+                className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white placeholder-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary/50"
                 placeholder="12"
               />
-              <p className="text-xs text-neutral-500 mt-2">Los puntos expirarán después de {pointsConfig.expiryMonths} meses de inactividad</p>
+              <p className="text-xs text-muted-foreground mt-2">Los puntos expirarán después de {pointsConfig.expiryMonths} meses de inactividad</p>
             </div>
 
             <button
@@ -89,21 +89,21 @@ export default function BusinessPoints() {
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
             <div className="p-3 sm:p-4 bg-white/5 rounded-lg border border-white/10">
-              <p className="text-xs sm:text-sm text-neutral-400 mb-2">Ratio de Puntos</p>
+              <p className="text-xs sm:text-sm text-muted-foreground mb-2">Ratio de Puntos</p>
               <p className="text-2xl sm:text-3xl font-bold text-primary">{pointsConfig.pointsPerDollar}</p>
-              <p className="text-xs text-neutral-500 mt-2">puntos por $1</p>
+              <p className="text-xs text-muted-foreground mt-2">puntos por $1</p>
             </div>
             <div className="p-3 sm:p-4 bg-white/5 rounded-lg border border-white/10">
-              <p className="text-xs sm:text-sm text-neutral-400 mb-2">Expiración</p>
+              <p className="text-xs sm:text-sm text-muted-foreground mb-2">Expiración</p>
               <p className="text-2xl sm:text-3xl font-bold text-primary">{pointsConfig.expiryMonths}</p>
-              <p className="text-xs text-neutral-500 mt-2">meses de inactividad</p>
+              <p className="text-xs text-muted-foreground mt-2">meses de inactividad</p>
             </div>
           </div>
         )}
       </div>
 
       {saveMessage && (
-        <div className="fixed bottom-4 right-4 px-4 py-3 bg-emerald-500/20 text-emerald-400 border border-emerald-500/50 rounded-lg animate-fade-in">
+        <div className="fixed bottom-4 right-4 px-4 py-3 bg-success-20 text-success-400 border border-success/50 rounded-lg animate-fade-in">
           ✓ Configuración guardada
         </div>
       )}

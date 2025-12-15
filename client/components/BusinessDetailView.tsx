@@ -55,7 +55,7 @@ export const BusinessDetailView = ({ business, onBack }: BusinessDetailViewProps
             <div className="grid grid-cols-3 gap-3 md:gap-4">
               {/* Points */}
               <div className="glass-panel rounded-lg p-4 md:p-6 border border-white/5 text-center">
-                <p className="text-[10px] md:text-xs text-neutral-500 font-medium mb-2">
+                <p className="text-[10px] md:text-xs text-muted-foreground font-medium mb-2">
                   Puntos Acumulados
                 </p>
                 <p
@@ -68,18 +68,18 @@ export const BusinessDetailView = ({ business, onBack }: BusinessDetailViewProps
 
               {/* Stamps */}
               <div className="glass-panel rounded-lg p-4 md:p-6 border border-white/5 text-center">
-                <p className="text-[10px] md:text-xs text-neutral-500 font-medium mb-2">
+                <p className="text-[10px] md:text-xs text-muted-foreground font-medium mb-2">
                   Sellos Conseguidos
                 </p>
                 <p className="text-2xl md:text-3xl font-bold text-white">
                   {business.stamps}
                 </p>
-                <p className="text-[10px] text-neutral-600 mt-1">de {business.total}</p>
+                <p className="text-[10px] text-muted-foreground/70 mt-1">de {business.total}</p>
               </div>
 
               {/* Exchange Rate */}
               <div className="glass-panel rounded-lg p-4 md:p-6 border border-white/5 text-center">
-                <p className="text-[10px] md:text-xs text-neutral-500 font-medium mb-2">
+                <p className="text-[10px] md:text-xs text-muted-foreground font-medium mb-2">
                   Tasa
                 </p>
                 <p className="text-xs md:text-sm font-semibold text-white">
@@ -91,7 +91,7 @@ export const BusinessDetailView = ({ business, onBack }: BusinessDetailViewProps
             {/* Progress Section */}
             <div className="glass-panel rounded-lg p-6 md:p-8 border border-white/5">
               <div className="flex items-center gap-2 mb-4">
-                <TrendingUp size={18} className="text-violet-500" />
+                <TrendingUp size={18} className="text-primary" />
                 <h3 className="text-base md:text-lg font-semibold text-white">
                   Progreso de Sellos
                 </h3>
@@ -120,7 +120,7 @@ export const BusinessDetailView = ({ business, onBack }: BusinessDetailViewProps
                   ></div>
                 </div>
 
-                <p className="text-xs md:text-sm text-neutral-500">
+                <p className="text-xs md:text-sm text-muted-foreground">
                   {business.total - business.stamps} sello{business.total - business.stamps !== 1 ? 's' : ''} para completar
                 </p>
               </div>
@@ -129,7 +129,7 @@ export const BusinessDetailView = ({ business, onBack }: BusinessDetailViewProps
             {/* Last Visit Info */}
             <div className="glass-panel rounded-lg p-6 md:p-8 border border-white/5">
               <div className="flex items-center gap-2 mb-4">
-                <Clock size={18} className="text-violet-500" />
+                <Clock size={18} className="text-primary" />
                 <h3 className="text-base md:text-lg font-semibold text-white">
                   Última Visita
                 </h3>
@@ -140,7 +140,7 @@ export const BusinessDetailView = ({ business, onBack }: BusinessDetailViewProps
             {/* Available Rewards */}
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <Gift size={18} className="text-violet-500" />
+                <Gift size={18} className="text-primary" />
                 <h3 className="text-base md:text-lg font-semibold text-white">
                   Recompensas Disponibles
                 </h3>
@@ -153,7 +153,7 @@ export const BusinessDetailView = ({ business, onBack }: BusinessDetailViewProps
                     className={`glass-panel rounded-lg p-4 md:p-5 border transition-all ${
                       reward.locked
                         ? 'border-white/5 opacity-60'
-                        : 'border-violet-500/30 bg-violet-500/5'
+                        : 'border-primary-30 bg-primary/5'
                     }`}
                   >
                     <div className="flex items-start justify-between gap-4">
@@ -161,18 +161,18 @@ export const BusinessDetailView = ({ business, onBack }: BusinessDetailViewProps
                         <h4 className="text-sm md:text-base font-semibold text-white mb-1">
                           {reward.name}
                         </h4>
-                        <p className="text-sm md:text-base font-bold text-violet-500">
+                        <p className="text-sm md:text-base font-bold text-primary">
                           {reward.cost} pts
                         </p>
                       </div>
 
                       <div className="flex-shrink-0">
                         {reward.locked ? (
-                          <div className="flex items-center justify-center w-8 h-8 rounded-full bg-white/10 text-neutral-500">
+                          <div className="flex items-center justify-center w-8 h-8 rounded-full bg-white/10 text-muted-foreground">
                             <Lock size={16} />
                           </div>
                         ) : (
-                          <div className="flex items-center justify-center w-8 h-8 rounded-full bg-violet-500/20 text-violet-400">
+                          <div className="flex items-center justify-center w-8 h-8 rounded-full bg-primary-20 text-primary/80">
                             <Gift size={16} />
                           </div>
                         )}
@@ -180,7 +180,7 @@ export const BusinessDetailView = ({ business, onBack }: BusinessDetailViewProps
                     </div>
 
                     {reward.locked && (
-                      <p className="text-xs text-neutral-600 mt-2">
+                      <p className="text-xs text-muted-foreground/70 mt-2">
                         Acumula más puntos para desbloquear
                       </p>
                     )}

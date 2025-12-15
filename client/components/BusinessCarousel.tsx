@@ -48,7 +48,7 @@ export const BusinessCarousel = ({ businesses, onViewAll }: BusinessCarouselProp
                   size={16}
                   className={`transition-all ${
                     isFavorite(business.id)
-                      ? 'fill-red-500 text-red-500'
+                      ? 'fill-destructive text-destructive'
                       : 'text-white/70 hover:text-white'
                   }`}
                 />
@@ -72,10 +72,10 @@ export const BusinessCarousel = ({ businesses, onViewAll }: BusinessCarouselProp
               {/* Stamps Progress */}
               <div className="space-y-1">
                 <div className="flex items-center justify-between">
-                  <span className="text-[10px] text-neutral-500">
+                  <span className="text-[10px] text-muted-foreground">
                     {business.stamps}/{business.total}
                   </span>
-                  <span className="text-[10px] text-neutral-600">sellos</span>
+                  <span className="text-[10px] text-muted-foreground/70">sellos</span>
                 </div>
                 <div className="w-full h-1 bg-white/5 rounded-full overflow-hidden">
                   <div

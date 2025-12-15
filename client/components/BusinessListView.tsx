@@ -79,7 +79,7 @@ export const BusinessListView = ({ businesses, onClose }: BusinessListViewProps)
               placeholder="Buscar negocio o dirección..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-white/5 border border-white/10 rounded-lg pl-10 pr-4 py-2.5 md:py-3 text-sm md:text-base text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-primary/50 focus:border-primary/50 transition-all"
+              className="w-full bg-white/5 border border-white/10 rounded-lg pl-10 pr-4 py-2.5 md:py-3 text-sm md:text-base text-white placeholder-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary/50 focus:border-primary/50 transition-all"
             />
           </div>
 
@@ -120,8 +120,8 @@ export const BusinessListView = ({ businesses, onClose }: BusinessListViewProps)
               onClick={() => setShowOnlyFavorites(!showOnlyFavorites)}
               className={`flex items-center gap-1.5 px-3 py-2 rounded-lg transition-all text-xs md:text-sm font-medium whitespace-nowrap ${
                 showOnlyFavorites
-                  ? 'bg-red-500/20 border border-red-500/50 text-red-400'
-                  : 'bg-white/5 border border-white/10 text-neutral-400 hover:bg-white/10 hover:border-white/20'
+                  ? 'bg-destructive-20 border border-destructive/50 text-destructive-400'
+                  : 'bg-white/5 border border-white/10 text-muted-foreground hover:bg-white/10 hover:border-white/20'
               }`}
             >
               <Heart size={14} />
@@ -209,7 +209,7 @@ export const BusinessListView = ({ businesses, onClose }: BusinessListViewProps)
                       <div className="grid grid-cols-3 gap-3 md:gap-4">
                         {/* Points Card */}
                         <div className="bg-white/[0.02] rounded-lg p-2 md:p-3 border border-white/5">
-                          <p className="text-[10px] md:text-xs text-neutral-500 font-medium mb-1">
+                          <p className="text-[10px] md:text-xs text-muted-foreground font-medium mb-1">
                             Puntos
                           </p>
                           <p
@@ -222,7 +222,7 @@ export const BusinessListView = ({ businesses, onClose }: BusinessListViewProps)
 
                         {/* Stamps Card */}
                         <div className="bg-white/[0.02] rounded-lg p-2 md:p-3 border border-white/5">
-                          <p className="text-[10px] md:text-xs text-neutral-500 font-medium mb-1">
+                          <p className="text-[10px] md:text-xs text-muted-foreground font-medium mb-1">
                             Sellos
                           </p>
                           <p className="text-sm md:text-base font-bold text-white">
@@ -232,7 +232,7 @@ export const BusinessListView = ({ businesses, onClose }: BusinessListViewProps)
 
                         {/* Progress Bar Card */}
                         <div className="bg-white/[0.02] rounded-lg p-2 md:p-3 border border-white/5">
-                          <p className="text-[10px] md:text-xs text-neutral-500 font-medium mb-1">
+                          <p className="text-[10px] md:text-xs text-muted-foreground font-medium mb-1">
                             Avance
                           </p>
                           <div className="w-full h-1.5 bg-white/5 rounded-full overflow-hidden">

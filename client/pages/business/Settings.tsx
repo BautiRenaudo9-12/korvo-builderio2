@@ -88,8 +88,8 @@ export default function BusinessSettings() {
               <label className="block text-sm font-semibold text-white mb-3">Foto del Negocio</label>
               <div className="w-full h-32 rounded-lg border-2 border-dashed border-white/20 flex items-center justify-center hover:border-white/40 transition-colors bg-white/5 cursor-pointer group">
                 <div className="text-center">
-                  <Upload size={24} className="text-neutral-500 group-hover:text-white mx-auto mb-2" />
-                  <p className="text-xs text-neutral-400">Haz clic para subir una imagen</p>
+                  <Upload size={24} className="text-muted-foreground group-hover:text-white mx-auto mb-2" />
+                  <p className="text-xs text-muted-foreground">Haz clic para subir una imagen</p>
                 </div>
               </div>
             </div>
@@ -101,7 +101,7 @@ export default function BusinessSettings() {
                 type="text"
                 value={formData.name}
                 onChange={(e) => handleInputChange('name', e.target.value)}
-                className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-primary/50 focus:border-primary/50"
+                className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary/50 focus:border-primary/50"
               />
             </div>
 

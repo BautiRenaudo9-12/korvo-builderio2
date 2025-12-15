@@ -12,7 +12,7 @@ export const SideNav = () => {
   const location = useLocation();
 
   return (
-    <aside className="hidden md:flex flex-col w-64 bg-[#1a1a1a] border-r border-white/5 p-6 h-[100dvh] sticky top-0">
+    <aside className="hidden md:flex flex-col w-64 bg-background border-r border-white/5 p-6 h-[100dvh] sticky top-0">
       {/* Logo */}
       <div className="flex items-center gap-2 mb-12">
         <div className="w-10 h-10 bg-primary-10 rounded-lg flex items-center justify-center border border-primary-20">

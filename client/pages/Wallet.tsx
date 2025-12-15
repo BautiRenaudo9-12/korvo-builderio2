@@ -31,11 +31,11 @@ export default function Wallet() {
                   <div className="flex items-center gap-3 flex-1">
                     <div className="w-10 md:w-12 h-10 md:h-12 rounded-lg bg-black/40 backdrop-blur-md flex items-center justify-center border border-white/5 shadow-lg flex-shrink-0">
                       {/* Icon rendering */}
-                      <span className={`text-neutral-200 text-lg md:text-xl`}>☕</span>
+                      <span className={`text-foreground/90 text-lg md:text-xl`}>☕</span>
                     </div>
                     <div className="min-w-0">
                       <h3 className="font-semibold text-white tracking-tight text-sm md:text-base">{card.shop}</h3>
-                      <p className="text-[10px] md:text-xs text-neutral-400">{card.ptsBalance} Pts disponibles</p>
+                      <p className="text-[10px] md:text-xs text-muted-foreground">{card.ptsBalance} Pts disponibles</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-2 flex-shrink-0 ml-2">
@@ -50,7 +50,7 @@ export default function Wallet() {
                         size={16}
                         className={`transition-all ${
                           isFavorite(card.id)
-                            ? 'fill-red-500 text-red-500'
+                            ? 'fill-destructive text-destructive'
                             : 'text-white/50 hover:text-white/80'
                         }`}
                       />

@@ -109,7 +109,7 @@ export default function Activity() {
           <div className="relative">
             <Search
               size={18}
-              className="absolute left-3 top-1/2 -translate-y-1/2 text-neutral-500"
+              className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground"
             />
             <input
               type="text"
@@ -139,8 +139,8 @@ export default function Activity() {
             onClick={() => setTypeFilter('earn')}
             className={`flex items-center gap-1.5 px-3 py-2 rounded-lg transition-all text-xs md:text-sm font-medium ${
               typeFilter === 'earn'
-                ? 'bg-emerald-500/20 border border-emerald-500/50 text-emerald-400'
-                : 'bg-white/5 border border-white/10 text-neutral-400 hover:bg-white/10 hover:border-white/20'
+                ? 'bg-success-20 border border-success/50 text-success-400'
+                : 'bg-white/5 border border-white/10 text-muted-foreground hover:bg-white/10 hover:border-white/20'
             }`}
           >
             <ArrowDownLeft size={14} />
@@ -151,8 +151,8 @@ export default function Activity() {
             onClick={() => setTypeFilter('burn')}
             className={`flex items-center gap-1.5 px-3 py-2 rounded-lg transition-all text-xs md:text-sm font-medium ${
               typeFilter === 'burn'
-                ? 'bg-red-500/20 border border-red-500/50 text-red-400'
-                : 'bg-white/5 border border-white/10 text-neutral-400 hover:bg-white/10 hover:border-white/20'
+                ? 'bg-destructive-20 border border-destructive/50 text-destructive-400'
+                : 'bg-white/5 border border-white/10 text-muted-foreground hover:bg-white/10 hover:border-white/20'
             }`}
           >
             <ArrowUpRight size={14} />
@@ -164,13 +164,13 @@ export default function Activity() {
       {/* Stats Cards */}
       <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 mb-8">
         <div className="glass-panel rounded-lg p-4 border border-white/5">
-          <p className="text-[10px] md:text-xs text-neutral-500 font-medium mb-2">Pts Ganados</p>
-          <p className="text-lg md:text-2xl font-bold text-emerald-500">+{totalEarn}</p>
+          <p className="text-[10px] md:text-xs text-muted-foreground font-medium mb-2">Pts Ganados</p>
+          <p className="text-lg md:text-2xl font-bold text-success">+{totalEarn}</p>
         </div>
 
         <div className="glass-panel rounded-lg p-4 border border-white/5">
-          <p className="text-[10px] md:text-xs text-neutral-500 font-medium mb-2">Pts Canjeados</p>
-          <p className="text-lg md:text-2xl font-bold text-red-400">-{totalBurn}</p>
+          <p className="text-[10px] md:text-xs text-muted-foreground font-medium mb-2">Pts Canjeados</p>
+          <p className="text-lg md:text-2xl font-bold text-destructive-400">-{totalBurn}</p>
         </div>
 
         <div className="glass-panel rounded-lg p-4 border border-white/5">
@@ -215,7 +215,7 @@ export default function Activity() {
                           <p className="text-sm md:text-base font-medium text-white truncate">
                             {transaction.item || (isEarn ? 'Puntos ganados' : 'Canjeado')}
                           </p>
-                          <p className="text-[10px] md:text-xs text-neutral-500 truncate">
+                          <p className="text-[10px] md:text-xs text-muted-foreground truncate">
                             {transaction.shop} • {transaction.date}
                           </p>
                         </div>
@@ -231,8 +231,8 @@ export default function Activity() {
           ))
         ) : (
           <div className="flex flex-col items-center justify-center py-16 text-center">
-            <Search size={32} className="text-neutral-600 mb-4" />
-            <p className="text-neutral-400 text-sm">
+            <Search size={32} className="text-muted-foreground/60 mb-4" />
+            <p className="text-muted-foreground text-sm">
               No encontramos transacciones que coincidan con tu búsqueda
             </p>
           </div>

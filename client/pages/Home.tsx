@@ -20,7 +20,7 @@ export default function Home() {
           <h2 className="text-4xl md:text-6xl font-semibold text-white tracking-tighter">
             {mockUser.points.toLocaleString()}
           </h2>
-          <span className="text-violet-500 font-medium pb-1.5 md:pb-3 text-xs md:text-sm tracking-wide">PTS TOTALES</span>
+          <span className="text-primary font-medium pb-1.5 md:pb-3 text-xs md:text-sm tracking-wide">PTS TOTALES</span>
         </div>
       </div>
 

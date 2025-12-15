@@ -33,7 +33,7 @@ export const MapContent = ({ shops }: MapContentProps) => {
     // Add shop markers
     shops.forEach((shop) => {
       const markerIcon = L.icon({
-        iconUrl: `data:image/svg+xml;utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="40" viewBox="0 0 32 40" fill="none"><path d="M16 0C9.4 0 4 5.4 4 12c0 8 12 28 12 28s12-20 12-28c0-6.6-5.4-12-12-12z" fill="%23e5e7eb" stroke="%231a1a1a" stroke-width="1"/><circle cx="16" cy="12" r="5" fill="%231a1a1a"/></svg>`,
+        iconUrl: `data:image/svg+xml;utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="40" viewBox="0 0 32 40" fill="none"><path d="M16 0C9.4 0 4 5.4 4 12c0 8 12 28 12 28s12-20 12-28c0-6.6-5.4-12-12-12z" fill="%23d4d4d8" stroke="%231a1a1a" stroke-width="1"/><circle cx="16" cy="12" r="5" fill="%231a1a1a"/></svg>`,
         iconSize: [32, 40],
         iconAnchor: [16, 40],
         popupAnchor: [0, -40],
@@ -68,7 +68,7 @@ export const MapContent = ({ shops }: MapContentProps) => {
 
           // Add user location marker
           const userMarkerIcon = L.icon({
-            iconUrl: 'data:image/svg+xml;utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" fill="%23a855f7" stroke="%23fff" stroke-width="2"/><circle cx="16" cy="16" r="6" fill="%23fff"/></svg>',
+            iconUrl: 'data:image/svg+xml;utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" fill="%23c084fc" stroke="%23f4f4f5" stroke-width="2"/><circle cx="16" cy="16" r="6" fill="%23f4f4f5"/></svg>',
             iconSize: [32, 32],
             iconAnchor: [16, 16],
             popupAnchor: [0, -16],

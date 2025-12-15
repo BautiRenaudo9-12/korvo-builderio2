@@ -24,11 +24,11 @@ export const BusinessSideNav = () => {
   const isBenefitsActive = ['/business/points', '/business/rewards', '/business/promotions'].includes(pathname);
 
   return (
-    <aside className="hidden md:flex flex-col w-64 bg-[#1a1a1a] border-r border-white/5 p-6 h-[100dvh] sticky top-0">
+    <aside className="hidden md:flex flex-col w-64 bg-background border-r border-white/5 p-6 h-[100dvh] sticky top-0">
       {/* Logo */}
       <div className="flex items-center gap-2 mb-12">
-        <div className="w-10 h-10 bg-violet-500/10 rounded-lg flex items-center justify-center border border-violet-500/20">
-          <span className="text-violet-500 font-bold text-lg">K</span>
+        <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center border border-primary-20">
+          <span className="text-primary font-bold text-lg">K</span>
         </div>
         <h1 className="text-2xl font-semibold tracking-tighter text-white">KORVO</h1>
       </div>
@@ -45,8 +45,8 @@ export const BusinessSideNav = () => {
               onClick={() => navigate(item.path)}
               className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all font-medium text-sm ${
                 active
-                  ? 'bg-violet-500/10 text-violet-500 border border-violet-500/20'
-                  : 'text-neutral-400 hover:text-white hover:bg-white/5 border border-transparent'
+                  ? 'bg-primary/10 text-primary border border-primary-20'
+                  : 'text-muted-foreground hover:text-white hover:bg-white/5 border border-transparent'
               }`}
             >
               <Icon size={20} strokeWidth={1.5} />
@@ -61,8 +61,8 @@ export const BusinessSideNav = () => {
             onClick={() => setBenefitsExpanded(!benefitsExpanded)}
             className={`w-full flex items-center justify-between px-4 py-3 rounded-lg transition-all font-medium text-sm ${
               isBenefitsActive
-                ? 'bg-violet-500/10 text-violet-500 border border-violet-500/20'
-                : 'text-neutral-400 hover:text-white hover:bg-white/5 border border-transparent'
+                ? 'bg-primary/10 text-primary border border-primary-20'
+                : 'text-muted-foreground hover:text-white hover:bg-white/5 border border-transparent'
             }`}
           >
             <div className="flex items-center gap-3">
@@ -84,10 +84,10 @@ export const BusinessSideNav = () => {
                   onClick={() => {
                     navigate(item.path);
                   }}
-                  className="w-full flex flex-col items-start px-4 py-2 rounded-lg transition-all hover:bg-white/5 border border-transparent text-neutral-400 hover:text-white text-left text-xs"
+                  className="w-full flex flex-col items-start px-4 py-2 rounded-lg transition-all hover:bg-white/5 border border-transparent text-muted-foreground hover:text-white text-left text-xs"
                 >
                   <span className="font-medium">{item.label}</span>
-                  <span className="text-[10px] text-neutral-600 mt-0.5">{item.description}</span>
+                  <span className="text-[10px] text-muted-foreground/70 mt-0.5">{item.description}</span>
                 </button>
               ))}
             </div>

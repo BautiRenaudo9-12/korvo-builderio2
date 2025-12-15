@@ -60,11 +60,11 @@ export const BusinessHeader = () => {
   };
 
   return (
-    <header className="md:hidden sticky top-0 z-40 px-4 py-4 bg-[#1a1a1a] border-b border-white/5">
+    <header className="md:hidden sticky top-0 z-40 px-4 py-4 bg-background border-b border-white/5">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
           <div class="flex items-center gap-2">
-            <div class="w-8 h-8 bg-violet-500/10 rounded-lg flex items-center justify-center border border-violet-500/20">
+            <div class="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center border border-primary/20">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="18"
@@ -75,7 +75,7 @@ export const BusinessHeader = () => {
                 stroke-width="1.5"
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                class="lucide lucide-bird text-violet-500"
+                class="lucide lucide-bird text-primary"
                 aria-hidden="true"
               >
                 <path d="M16 7h.01"></path>
@@ -90,7 +90,7 @@ export const BusinessHeader = () => {
             <h1 class="text-lg font-semibold tracking-tighter text-white">
               KORVO
             </h1>
-            <span className="text-violet-400 italic font-medium text-xs uppercase tracking-wide pb-1 ">
+              <span className="text-primary italic font-medium text-xs uppercase tracking-wide pb-1 ">
               business
             </span>
             </div>
@@ -118,7 +118,7 @@ export const BusinessHeader = () => {
                 onClick={() => handleNavigate(item.path)}
                 className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all font-medium text-sm ${
                   active
-                    ? "bg-violet-500/10 text-violet-500 border border-violet-500/20"
+                    ? "bg-primary/10 text-primary border border-primary/20"
                     : "text-neutral-400 hover:text-white hover:bg-white/5 border border-transparent"
                 }`}
               >
@@ -134,7 +134,7 @@ export const BusinessHeader = () => {
               onClick={() => setBenefitsExpanded(!benefitsExpanded)}
               className={`w-full flex items-center justify-between px-4 py-3 rounded-lg transition-all font-medium text-sm ${
                 isBenefitsActive
-                  ? "bg-violet-500/10 text-violet-500 border border-violet-500/20"
+                  ? "bg-primary/10 text-primary border border-primary/20"
                   : "text-neutral-400 hover:text-white hover:bg-white/5 border border-transparent"
               }`}
             >
