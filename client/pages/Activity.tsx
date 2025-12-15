@@ -100,7 +100,7 @@ export default function Activity() {
     <div className="px-6 md:px-8 pt-4 md:pt-8 pb-20 md:pb-8">
       {/* Header */}
       <div className="mb-8">
-        <h2 className="text-xl md:text-3xl font-semibold text-white tracking-tight mb-6">
+        <h2 className="text-xl md:text-3xl font-semibold text-foreground tracking-tight mb-6">
           Actividad Reciente
         </h2>
 
@@ -116,7 +116,7 @@ export default function Activity() {
               placeholder="Buscar por negocio o transacción..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-white/5 border border-white/10 rounded-lg pl-10 pr-4 py-2.5 md:py-3 text-sm md:text-base text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-primary/50 focus:border-primary/50 transition-all"
+              className="w-full bg-secondary border border-border rounded-lg pl-10 pr-4 py-2.5 md:py-3 text-sm md:text-base text-foreground placeholder-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary/50 focus:border-primary/50 transition-all"
             />
           </div>
         </div>
@@ -127,8 +127,8 @@ export default function Activity() {
             onClick={() => setTypeFilter('all')}
             className={`flex items-center gap-1.5 px-3 py-2 rounded-lg transition-all text-xs md:text-sm font-medium ${
               typeFilter === 'all'
-                ? 'bg-primary-20 border border-primary-50 text-primary-400'
-                : 'bg-white/5 border border-white/10 text-neutral-400 hover:bg-white/10 hover:border-white/20'
+                ? 'bg-primary/10 border border-primary-20 text-primary'
+                : 'bg-secondary border border-border text-secondary-foreground hover:bg-secondary/80 hover:border-border'
             }`}
           >
             <Filter size={14} />
@@ -139,8 +139,8 @@ export default function Activity() {
             onClick={() => setTypeFilter('earn')}
             className={`flex items-center gap-1.5 px-3 py-2 rounded-lg transition-all text-xs md:text-sm font-medium ${
               typeFilter === 'earn'
-                ? 'bg-success-20 border border-success/50 text-success-400'
-                : 'bg-white/5 border border-white/10 text-muted-foreground hover:bg-white/10 hover:border-white/20'
+                ? 'bg-success/10 border border-success/50 text-success'
+                : 'bg-secondary border border-border text-secondary-foreground hover:bg-secondary/80 hover:border-border'
             }`}
           >
             <ArrowDownLeft size={14} />
@@ -151,8 +151,8 @@ export default function Activity() {
             onClick={() => setTypeFilter('burn')}
             className={`flex items-center gap-1.5 px-3 py-2 rounded-lg transition-all text-xs md:text-sm font-medium ${
               typeFilter === 'burn'
-                ? 'bg-destructive-20 border border-destructive/50 text-destructive-400'
-                : 'bg-white/5 border border-white/10 text-muted-foreground hover:bg-white/10 hover:border-white/20'
+                ? 'bg-destructive/10 border border-destructive/50 text-destructive'
+                : 'bg-secondary border border-border text-secondary-foreground hover:bg-secondary/80 hover:border-border'
             }`}
           >
             <ArrowUpRight size={14} />
@@ -163,19 +163,19 @@ export default function Activity() {
 
       {/* Stats Cards */}
       <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 mb-8">
-        <div className="glass-panel rounded-lg p-4 border border-white/5">
+        <div className="glass-panel rounded-lg p-4 border border-border">
           <p className="text-[10px] md:text-xs text-muted-foreground font-medium mb-2">Pts Ganados</p>
           <p className="text-lg md:text-2xl font-bold text-success">+{totalEarn}</p>
         </div>
 
-        <div className="glass-panel rounded-lg p-4 border border-white/5">
+        <div className="glass-panel rounded-lg p-4 border border-border">
           <p className="text-[10px] md:text-xs text-muted-foreground font-medium mb-2">Pts Canjeados</p>
-          <p className="text-lg md:text-2xl font-bold text-destructive-400">-{totalBurn}</p>
+          <p className="text-lg md:text-2xl font-bold text-destructive">-{totalBurn}</p>
         </div>
 
-        <div className="glass-panel rounded-lg p-4 border border-white/5">
-          <p className="text-[10px] md:text-xs text-neutral-500 font-medium mb-2">Total Transacciones</p>
-          <p className="text-lg md:text-2xl font-bold text-white">{mockTransactions.length}</p>
+        <div className="glass-panel rounded-lg p-4 border border-border">
+          <p className="text-[10px] md:text-xs text-muted-foreground font-medium mb-2">Total Transacciones</p>
+          <p className="text-lg md:text-2xl font-bold text-foreground">{mockTransactions.length}</p>
         </div>
       </div>
 
@@ -185,7 +185,7 @@ export default function Activity() {
           filteredAndGrouped.map((group) => (
             <div key={`${group.month}-${group.year}`}>
               {/* Month Header */}
-              <h3 className="text-sm font-semibold text-neutral-400 mb-3 uppercase tracking-wider">
+              <h3 className="text-sm font-semibold text-muted-foreground mb-3 uppercase tracking-wider">
                 {group.month} {group.year}
               </h3>
 
@@ -201,7 +201,7 @@ export default function Activity() {
                   return (
                     <div
                       key={transaction.id}
-                      className="flex items-center justify-between py-4 md:py-5 px-4 md:px-5 glass-panel rounded-lg border border-white/5 hover:border-white/10 hover:bg-white/[0.02] transition-all animate-fade-in"
+                      className="flex items-center justify-between py-4 md:py-5 px-4 md:px-5 glass-panel rounded-lg border border-border hover:border-primary/30 hover:bg-black/[0.02] transition-all animate-fade-in"
                       style={{ animationDelay: `${i * 30}ms` }}
                     >
                       <div className="flex items-center gap-3 md:gap-4 flex-1">
@@ -212,7 +212,7 @@ export default function Activity() {
                           <Icon size={18} className="hidden md:block" />
                         </div>
                         <div className="min-w-0 flex-1">
-                          <p className="text-sm md:text-base font-medium text-white truncate">
+                          <p className="text-sm md:text-base font-medium text-foreground truncate">
                             {transaction.item || (isEarn ? 'Puntos ganados' : 'Canjeado')}
                           </p>
                           <p className="text-[10px] md:text-xs text-muted-foreground truncate">
