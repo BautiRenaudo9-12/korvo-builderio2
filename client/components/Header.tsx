@@ -10,7 +10,7 @@ export const Header = ({ isDetailRoute, onBack }: HeaderProps) => {
   const navigate = useNavigate();
 
   return (
-    <header className="md:hidden pt-6 pb-2 px-6 flex justify-between items-center z-20 bg-background backdrop-blur-sm sticky top-0 transition-all duration-300 border-b border-border">
+    <header className="md:hidden pt-6 pb-2 px-6 flex justify-between items-center z-20 bg-background backdrop-blur-sm sticky top-0 transition-all duration-300 ">
       {isDetailRoute ? (
         <button
           onClick={onBack}
