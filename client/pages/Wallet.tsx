@@ -22,10 +22,10 @@ export default function Wallet() {
               className="glass-panel rounded-2xl p-5 md:p-6 relative overflow-hidden group animate-fade-in cursor-pointer active:scale-95 transition-all border border-border hover:border-primary/30"
               style={{
                 animationDelay: `${index * 50}ms`,
-                background: `linear-gradient(to bottom right, rgba(0,0,0,0), rgba(0,0,0,0)), linear-gradient(to bottom right, var(--card-bg))`,
+                background: `rgba(255, 255, 255, 0.7)`,
               }}
             >
-              <div className={`absolute inset-0 bg-gradient-to-br ${card.bg} opacity-40 group-hover:opacity-50 transition-opacity`}></div>
+              <div className={`absolute inset-0 bg-gradient-to-br ${card.bg} opacity-15 group-hover:opacity-25 transition-opacity`}></div>
               <div className="relative z-10">
                 <div className="flex justify-between items-start mb-6">
                   <div className="flex items-center gap-3 flex-1">
@@ -34,8 +34,8 @@ export default function Wallet() {
                       <span className={`text-foreground/90 text-lg md:text-xl`}>☕</span>
                     </div>
                     <div className="min-w-0">
-                      <h3 className="font-semibold text-foreground tracking-tight text-sm md:text-base">{card.shop}</h3>
-                      <p className="text-[10px] md:text-xs text-muted-foreground">{card.ptsBalance} Pts disponibles</p>
+                      <h3 className="font-semibold text-foreground tracking-tight text-sm md:text-base font-bold">{card.shop}</h3>
+                      <p className="text-[10px] md:text-xs text-foreground/70 font-semibold">{card.ptsBalance} Pts disponibles</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-2 flex-shrink-0 ml-2">
@@ -58,7 +58,7 @@ export default function Wallet() {
                     <ChevronRight size={18} className="text-foreground/20 group-hover:text-foreground/60 transition-colors" />
                   </div>
                 </div>
-                <div className="w-full h-1.5 md:h-2 bg-secondary rounded-full overflow-hidden border border-border">
+                <div className="w-full h-1.5 md:h-2 bg-secondary/60 rounded-full overflow-hidden border border-border/50">
                   <div
                     className="h-full rounded-full transition-all duration-1000"
                     style={{
