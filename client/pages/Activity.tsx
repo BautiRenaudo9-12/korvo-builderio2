@@ -125,10 +125,10 @@ export default function Activity() {
         <div className="flex gap-2 md:gap-3 flex-wrap">
           <button
             onClick={() => setTypeFilter('all')}
-            className={`flex items-center gap-1.5 px-3 py-2 rounded-lg transition-all text-xs md:text-sm font-medium ${
+            className={`flex items-center gap-1.5 px-3 py-2 rounded-lg transition-all text-xs md:text-sm font-medium font-semibold ${
               typeFilter === 'all'
-                ? 'bg-primary/10 border border-primary-20 text-primary'
-                : 'bg-secondary border border-border text-secondary-foreground hover:bg-secondary/80 hover:border-border'
+                ? 'bg-primary text-primary-foreground border border-primary'
+                : 'bg-secondary border border-border text-foreground hover:bg-secondary/60 hover:border-border font-bold'
             }`}
           >
             <Filter size={14} />
@@ -137,10 +137,10 @@ export default function Activity() {
 
           <button
             onClick={() => setTypeFilter('earn')}
-            className={`flex items-center gap-1.5 px-3 py-2 rounded-lg transition-all text-xs md:text-sm font-medium ${
+            className={`flex items-center gap-1.5 px-3 py-2 rounded-lg transition-all text-xs md:text-sm font-medium font-semibold ${
               typeFilter === 'earn'
-                ? 'bg-success/10 border border-success/50 text-success'
-                : 'bg-secondary border border-border text-secondary-foreground hover:bg-secondary/80 hover:border-border'
+                ? 'bg-success text-white border border-success'
+                : 'bg-secondary border border-border text-foreground hover:bg-secondary/60 hover:border-border font-bold'
             }`}
           >
             <ArrowDownLeft size={14} />
@@ -149,10 +149,10 @@ export default function Activity() {
 
           <button
             onClick={() => setTypeFilter('burn')}
-            className={`flex items-center gap-1.5 px-3 py-2 rounded-lg transition-all text-xs md:text-sm font-medium ${
+            className={`flex items-center gap-1.5 px-3 py-2 rounded-lg transition-all text-xs md:text-sm font-medium font-semibold ${
               typeFilter === 'burn'
-                ? 'bg-destructive/10 border border-destructive/50 text-destructive'
-                : 'bg-secondary border border-border text-secondary-foreground hover:bg-secondary/80 hover:border-border'
+                ? 'bg-destructive text-destructive-foreground border border-destructive'
+                : 'bg-secondary border border-border text-foreground hover:bg-secondary/60 hover:border-border font-bold'
             }`}
           >
             <ArrowUpRight size={14} />
@@ -163,18 +163,18 @@ export default function Activity() {
 
       {/* Stats Cards */}
       <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 mb-8">
-        <div className="glass-panel rounded-lg p-4 border border-border">
-          <p className="text-[10px] md:text-xs text-muted-foreground font-medium mb-2">Pts Ganados</p>
+        <div className="glass-panel rounded-lg p-4 border border-border" style={{ backgroundColor: 'rgba(255, 255, 255, 0.8)' }}>
+          <p className="text-[10px] md:text-xs text-foreground/60 font-semibold mb-2">Pts Ganados</p>
           <p className="text-lg md:text-2xl font-bold text-success">+{totalEarn}</p>
         </div>
 
-        <div className="glass-panel rounded-lg p-4 border border-border">
-          <p className="text-[10px] md:text-xs text-muted-foreground font-medium mb-2">Pts Canjeados</p>
+        <div className="glass-panel rounded-lg p-4 border border-border" style={{ backgroundColor: 'rgba(255, 255, 255, 0.8)' }}>
+          <p className="text-[10px] md:text-xs text-foreground/60 font-semibold mb-2">Pts Canjeados</p>
           <p className="text-lg md:text-2xl font-bold text-destructive">-{totalBurn}</p>
         </div>
 
-        <div className="glass-panel rounded-lg p-4 border border-border">
-          <p className="text-[10px] md:text-xs text-muted-foreground font-medium mb-2">Total Transacciones</p>
+        <div className="glass-panel rounded-lg p-4 border border-border" style={{ backgroundColor: 'rgba(255, 255, 255, 0.8)' }}>
+          <p className="text-[10px] md:text-xs text-foreground/60 font-semibold mb-2">Total Transacciones</p>
           <p className="text-lg md:text-2xl font-bold text-foreground">{mockTransactions.length}</p>
         </div>
       </div>
