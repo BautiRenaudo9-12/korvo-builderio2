@@ -155,7 +155,7 @@ export const BusinessListView = ({ businesses, onClose }: BusinessListViewProps)
                 <button
                   key={business.id}
                   onClick={() => setSelectedBusiness(business)}
-                  className="w-full text-left glass-panel rounded-xl border border-white/5 hover:border-primary/30 transition-all hover:bg-white/[0.03] overflow-hidden group animate-fade-in"
+                  className="w-full text-left glass-panel rounded-xl border border-border hover:border-primary/30 transition-all hover:bg-black/[0.02] overflow-hidden group animate-fade-in"
                   style={{ animationDelay: `${index * 50}ms` }}
                 >
                   {/* Business Card */}
@@ -180,7 +180,7 @@ export const BusinessListView = ({ businesses, onClose }: BusinessListViewProps)
                       {/* Title & Address */}
                       <div className="mb-3">
                         <div className="flex items-start justify-between gap-2 mb-1">
-                          <h3 className="text-base md:text-lg font-semibold text-white truncate group-hover:text-primary-400 transition-colors">
+                          <h3 className="text-base md:text-lg font-semibold text-foreground truncate group-hover:text-primary transition-colors">
                             {business.shop}
                           </h3>
                           <button
@@ -188,19 +188,19 @@ export const BusinessListView = ({ businesses, onClose }: BusinessListViewProps)
                               e.stopPropagation();
                               toggleFavorite(business.id);
                             }}
-                            className="flex-shrink-0 p-1 rounded-lg bg-white/5 hover:bg-white/10 transition-all"
+                            className="flex-shrink-0 p-1 rounded-lg bg-secondary hover:bg-secondary/80 transition-all"
                           >
                             <Heart
                               size={16}
                               className={`transition-all ${
                                 isFavorite(business.id)
                                   ? 'fill-red-500 text-red-500'
-                                  : 'text-white/50 hover:text-white/80'
+                                  : 'text-foreground/50 hover:text-foreground/80'
                               }`}
                             />
                           </button>
                         </div>
-                        <p className="text-xs md:text-sm text-neutral-400 line-clamp-2">
+                        <p className="text-xs md:text-sm text-muted-foreground line-clamp-2">
                           {business.address}
                         </p>
                       </div>
@@ -208,8 +208,8 @@ export const BusinessListView = ({ businesses, onClose }: BusinessListViewProps)
                       {/* Stats Grid */}
                       <div className="grid grid-cols-3 gap-3 md:gap-4">
                         {/* Points Card */}
-                        <div className="bg-white/[0.02] rounded-lg p-2 md:p-3 border border-white/5">
-                          <p className="text-[10px] md:text-xs text-muted-foreground font-medium mb-1">
+                        <div className="bg-secondary rounded-lg p-2 md:p-3 border border-border">
+                          <p className="text-[10px] md:text-xs text-secondary-foreground font-medium mb-1">
                             Puntos
                           </p>
                           <p
@@ -221,21 +221,21 @@ export const BusinessListView = ({ businesses, onClose }: BusinessListViewProps)
                         </div>
 
                         {/* Stamps Card */}
-                        <div className="bg-white/[0.02] rounded-lg p-2 md:p-3 border border-white/5">
-                          <p className="text-[10px] md:text-xs text-muted-foreground font-medium mb-1">
+                        <div className="bg-secondary rounded-lg p-2 md:p-3 border border-border">
+                          <p className="text-[10px] md:text-xs text-secondary-foreground font-medium mb-1">
                             Sellos
                           </p>
-                          <p className="text-sm md:text-base font-bold text-white">
+                          <p className="text-sm md:text-base font-bold text-foreground">
                             {business.stamps}/{business.total}
                           </p>
                         </div>
 
                         {/* Progress Bar Card */}
-                        <div className="bg-white/[0.02] rounded-lg p-2 md:p-3 border border-white/5">
-                          <p className="text-[10px] md:text-xs text-muted-foreground font-medium mb-1">
+                        <div className="bg-secondary rounded-lg p-2 md:p-3 border border-border">
+                          <p className="text-[10px] md:text-xs text-secondary-foreground font-medium mb-1">
                             Avance
                           </p>
-                          <div className="w-full h-1.5 bg-white/5 rounded-full overflow-hidden">
+                          <div className="w-full h-1.5 bg-secondary rounded-full overflow-hidden">
                             <div
                               className="h-full rounded-full transition-all"
                               style={{
