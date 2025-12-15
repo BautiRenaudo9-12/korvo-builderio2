@@ -158,14 +158,14 @@ export default function AllBusinesses() {
       <div className="relative mb-6 md:mb-8">
         <Search
           size={18}
-          className="absolute left-3 top-1/2 -translate-y-1/2 text-neutral-500"
+          className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground"
         />
         <input
           type="text"
           placeholder="Buscar negocio o dirección..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className="w-full bg-white/5 border border-white/10 rounded-lg pl-10 pr-4 py-2.5 md:py-3 text-sm md:text-base text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-primary/50 focus:border-primary/50 transition-all"
+          className="w-full bg-secondary border border-border rounded-lg pl-10 pr-4 py-2.5 md:py-3 text-sm md:text-base text-foreground placeholder-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary/50 focus:border-primary/50 transition-all"
         />
       </div>
 
@@ -190,8 +190,8 @@ export default function AllBusinesses() {
               onClick={() => setSortBy(option)}
               className={`flex items-center gap-1.5 px-3 py-2 rounded-lg transition-all whitespace-nowrap text-xs md:text-sm font-medium ${
                 sortBy === option
-                  ? 'bg-primary-20 border border-primary-50 text-primary-400'
-                  : 'bg-white/5 border border-white/10 text-neutral-400 hover:bg-white/10 hover:border-white/20'
+                  ? 'bg-primary/10 border border-primary-20 text-primary'
+                  : 'bg-secondary border border-border text-secondary-foreground hover:bg-secondary/80 hover:border-border'
               }`}
             >
               <Icon size={14} />
@@ -208,7 +208,7 @@ export default function AllBusinesses() {
             <button
               key={business.id}
               onClick={() => setSelectedBusiness(business)}
-              className="w-full text-left glass-panel rounded-xl border border-white/5 hover:border-primary/30 transition-all hover:bg-white/[0.03] overflow-hidden group animate-fade-in"
+              className="w-full text-left glass-panel rounded-xl border border-border hover:border-primary/30 transition-all hover:bg-black/[0.02] overflow-hidden group animate-fade-in"
               style={{ animationDelay: `${index * 50}ms` }}
             >
               <div className="p-4 md:p-5 flex gap-4 md:gap-5">
@@ -229,18 +229,18 @@ export default function AllBusinesses() {
                 {/* Business Info */}
                 <div className="flex-1 min-w-0">
                   <div className="mb-3">
-                    <h3 className="text-base md:text-lg font-semibold text-white truncate group-hover:text-primary-400 transition-colors">
+                    <h3 className="text-base md:text-lg font-semibold text-foreground truncate group-hover:text-primary transition-colors">
                       {business.shop}
                     </h3>
-                    <p className="text-xs md:text-sm text-neutral-400 line-clamp-2">
+                    <p className="text-xs md:text-sm text-muted-foreground line-clamp-2">
                       {business.address}
                     </p>
                   </div>
 
                   {/* Stats Grid */}
                   <div className="grid grid-cols-3 gap-3 md:gap-4">
-                    <div className="bg-white/[0.02] rounded-lg p-2 md:p-3 border border-white/5">
-                      <p className="text-[10px] md:text-xs text-neutral-500 font-medium mb-1">
+                    <div className="bg-secondary rounded-lg p-2 md:p-3 border border-border">
+                      <p className="text-[10px] md:text-xs text-secondary-foreground font-medium mb-1">
                         Puntos
                       </p>
                       <p
@@ -251,20 +251,20 @@ export default function AllBusinesses() {
                       </p>
                     </div>
 
-                    <div className="bg-white/[0.02] rounded-lg p-2 md:p-3 border border-white/5">
-                      <p className="text-[10px] md:text-xs text-neutral-500 font-medium mb-1">
+                    <div className="bg-secondary rounded-lg p-2 md:p-3 border border-border">
+                      <p className="text-[10px] md:text-xs text-secondary-foreground font-medium mb-1">
                         Sellos
                       </p>
-                      <p className="text-sm md:text-base font-bold text-white">
+                      <p className="text-sm md:text-base font-bold text-foreground">
                         {business.stamps}/{business.total}
                       </p>
                     </div>
 
-                    <div className="bg-white/[0.02] rounded-lg p-2 md:p-3 border border-white/5">
-                      <p className="text-[10px] md:text-xs text-neutral-500 font-medium mb-1">
+                    <div className="bg-secondary rounded-lg p-2 md:p-3 border border-border">
+                      <p className="text-[10px] md:text-xs text-secondary-foreground font-medium mb-1">
                         Avance
                       </p>
-                      <div className="w-full h-1.5 bg-white/5 rounded-full overflow-hidden">
+                      <div className="w-full h-1.5 bg-secondary rounded-full overflow-hidden">
                         <div
                           className="h-full rounded-full transition-all"
                           style={{
@@ -278,17 +278,17 @@ export default function AllBusinesses() {
                 </div>
               </div>
 
-              <div className="px-4 md:px-5 py-3 md:py-4 border-t border-white/5 bg-white/[0.01] text-[10px] md:text-xs text-neutral-600 flex items-center justify-between">
+              <div className="px-4 md:px-5 py-3 md:py-4 border-t border-border bg-black/[0.01] text-[10px] md:text-xs text-muted-foreground flex items-center justify-between">
                 <span>Última visita: {business.lastVisit}</span>
-                <span className="text-neutral-500">→</span>
+                <span className="text-muted-foreground">→</span>
               </div>
             </button>
           ))}
         </div>
       ) : (
         <div className="flex flex-col items-center justify-center py-16 text-center">
-          <Search size={32} className="text-neutral-600 mb-4" />
-          <p className="text-neutral-400 text-sm">
+          <Search size={32} className="text-muted-foreground mb-4" />
+          <p className="text-muted-foreground text-sm">
             No encontramos negocios que coincidan con tu búsqueda
           </p>
         </div>
