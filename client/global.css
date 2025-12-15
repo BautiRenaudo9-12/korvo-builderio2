@@ -246,20 +246,20 @@
 
 /* Leaflet Map Styling */
 .leaflet-container {
-  background-color: #0a0a0a;
+  background-color: #e8e4d6;
   font-family: "Inter", sans-serif;
 }
 
 .leaflet-control-zoom {
-  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(0, 0, 0, 0.15) !important;
   border-radius: 8px !important;
-  background-color: rgba(255, 255, 255, 0.05) !important;
+  background-color: rgba(255, 255, 255, 0.9) !important;
   box-shadow: none !important;
 }
 
 .leaflet-control-zoom-in,
 .leaflet-control-zoom-out {
-  color: #ffffff !important;
+  color: #3d4a24 !important;
   font-size: 16px !important;
   background-color: transparent !important;
   border: none !important;
@@ -271,7 +271,7 @@
 
 .leaflet-control-zoom-in:hover,
 .leaflet-control-zoom-out:hover {
-  background-color: rgba(255, 255, 255, 0.1) !important;
+  background-color: rgba(0, 0, 0, 0.05) !important;
 }
 
 .leaflet-popup-content-wrapper {
