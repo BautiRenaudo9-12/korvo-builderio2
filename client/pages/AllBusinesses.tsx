@@ -55,14 +55,14 @@ export default function AllBusinesses() {
 
         {/* Business Title */}
         <div className="mb-6">
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">
+          <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-2">
             {selectedBusiness.shop}
           </h1>
-          <div className="flex items-center gap-2 text-neutral-400 mb-3">
+          <div className="flex items-center gap-2 text-muted-foreground mb-3">
             <MapPin size={16} />
             <p className="text-sm md:text-base">{selectedBusiness.address}</p>
           </div>
-          <div className="flex items-center gap-2 text-neutral-400">
+          <div className="flex items-center gap-2 text-muted-foreground">
             <Clock size={16} />
             <p className="text-sm md:text-base">Última visita: {selectedBusiness.lastVisit}</p>
           </div>
@@ -70,8 +70,8 @@ export default function AllBusinesses() {
 
         {/* Stats Cards */}
         <div className="grid grid-cols-3 gap-3 md:gap-4 mb-8">
-          <div className="glass-panel rounded-xl p-4 md:p-6 border border-white/5">
-            <p className="text-xs md:text-sm text-neutral-500 font-medium mb-2">Puntos</p>
+          <div className="glass-panel rounded-xl p-4 md:p-6 border border-border">
+            <p className="text-xs md:text-sm text-muted-foreground font-medium mb-2">Puntos</p>
             <p
               className="text-2xl md:text-3xl font-bold"
               style={{ color: selectedBusiness.color }}
@@ -80,16 +80,16 @@ export default function AllBusinesses() {
             </p>
           </div>
 
-          <div className="glass-panel rounded-xl p-4 md:p-6 border border-white/5">
-            <p className="text-xs md:text-sm text-neutral-500 font-medium mb-2">Sellos</p>
-            <p className="text-2xl md:text-3xl font-bold text-white">
+          <div className="glass-panel rounded-xl p-4 md:p-6 border border-border">
+            <p className="text-xs md:text-sm text-muted-foreground font-medium mb-2">Sellos</p>
+            <p className="text-2xl md:text-3xl font-bold text-foreground">
               {selectedBusiness.stamps}/{selectedBusiness.total}
             </p>
           </div>
 
-          <div className="glass-panel rounded-xl p-4 md:p-6 border border-white/5">
-            <p className="text-xs md:text-sm text-neutral-500 font-medium mb-2">Tasa</p>
-            <p className="text-sm md:text-base font-semibold text-white">
+          <div className="glass-panel rounded-xl p-4 md:p-6 border border-border">
+            <p className="text-xs md:text-sm text-muted-foreground font-medium mb-2">Tasa</p>
+            <p className="text-sm md:text-base font-semibold text-foreground">
               {selectedBusiness.rate}
             </p>
           </div>
@@ -97,8 +97,8 @@ export default function AllBusinesses() {
 
         {/* Progress Bar */}
         <div className="mb-8">
-          <p className="text-sm text-neutral-400 mb-3">Progreso de Sellos</p>
-          <div className="w-full h-3 bg-white/5 rounded-full overflow-hidden border border-white/10">
+          <p className="text-sm text-muted-foreground mb-3">Progreso de Sellos</p>
+          <div className="w-full h-3 bg-secondary rounded-full overflow-hidden border border-border">
             <div
               className="h-full rounded-full transition-all"
               style={{
@@ -111,16 +111,16 @@ export default function AllBusinesses() {
 
         {/* Rewards Section */}
         <div>
-          <h2 className="text-lg md:text-xl font-semibold text-white mb-4">Premios Disponibles</h2>
+          <h2 className="text-lg md:text-xl font-semibold text-foreground mb-4">Premios Disponibles</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
             {selectedBusiness.rewards.map((reward) => (
               <div
                 key={reward.id}
-                className="glass-panel rounded-xl p-4 border border-white/5 hover:border-white/10 transition-all"
+                className="glass-panel rounded-xl p-4 border border-border hover:border-primary/30 transition-all"
               >
                 <div className="flex items-start justify-between">
                   <div className="flex-1">
-                    <h3 className="text-sm md:text-base font-semibold text-white mb-1">
+                    <h3 className="text-sm md:text-base font-semibold text-foreground mb-1">
                       {reward.name}
                     </h3>
                     <p
@@ -131,7 +131,7 @@ export default function AllBusinesses() {
                     </p>
                   </div>
                   {reward.locked && (
-                    <div className="text-xs px-2 py-1 bg-white/10 rounded text-neutral-400">
+                    <div className="text-xs px-2 py-1 bg-secondary rounded text-secondary-foreground">
                       Bloqueado
                     </div>
                   )}
@@ -148,8 +148,8 @@ export default function AllBusinesses() {
     <div className="px-6 md:px-8 pt-4 md:pt-8 pb-24">
       {/* Header */}
       <div className="mb-6 md:mb-8">
-        <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">Mis Negocios</h1>
-        <p className="text-neutral-400 text-sm">
+        <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-2">Mis Negocios</h1>
+        <p className="text-muted-foreground text-sm">
           {filteredAndSorted.length} negocio{filteredAndSorted.length !== 1 ? 's' : ''}
         </p>
       </div>
