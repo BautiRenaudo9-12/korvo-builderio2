@@ -193,8 +193,7 @@
    * Tailwind CSS theme for KORVO Loyalty Wallet
    * Dark mode theme with amber accents
    */
-  puedes mejorar este :root para que la paleta de colores sea perfecta no cambies ni nomnre de variable ni saquen ni agregues,
-    solo puedes modiciar el varlo del hsl: :root {
+  :root {
       --background: 0 0% 10%;
       --foreground: 210 40% 98%;
       --card: 0 0% 10%;
