@@ -1,7 +1,7 @@
 import { useState, useMemo, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { mockWalletCards } from '@/lib/data';
-import { Search, Zap, TrendingUp, ArrowUp, MapPin, Clock } from 'lucide-react';
+import { Search, Zap, TrendingUp, ArrowUp, MapPin, Clock, Gift, Tag, DollarSign } from 'lucide-react';
 import { WalletCard } from '@/types';
 
 type SortOption = 'name' | 'points' | 'stamps';
