@@ -278,9 +278,9 @@ export default function AllBusinesses() {
                 </div>
               </div>
 
-              <div className="px-4 md:px-5 py-3 md:py-4 border-t border-border bg-black/[0.01] text-[10px] md:text-xs text-muted-foreground flex items-center justify-between">
+              <div className="px-4 md:px-5 py-3 md:py-4 border-t border-border bg-black/[0.01] text-[10px] md:text-xs text-foreground/60 flex items-center justify-between">
                 <span>Última visita: {business.lastVisit}</span>
-                <span className="text-muted-foreground">→</span>
+                <span className="text-foreground/60">→</span>
               </div>
             </button>
           ))}
