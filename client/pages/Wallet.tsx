@@ -55,7 +55,7 @@ export default function Wallet() {
                         }`}
                       />
                     </button>
-                    <ChevronRight size={18} className="text-foreground/20 group-hover:text-foreground/60 transition-colors" />
+                    <ChevronRight size={18} className="text-foreground/40 group-hover:text-foreground/80 transition-colors" />
                   </div>
                 </div>
                 <div className="w-full h-1.5 md:h-2 bg-secondary/60 rounded-full overflow-hidden border border-border/50">
