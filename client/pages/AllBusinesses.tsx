@@ -41,7 +41,8 @@ export default function AllBusinesses() {
   const [sortBy, setSortBy] = useState<SortOption>("points");
   const [pointsToRedeem, setPointsToRedeem] = useState<number>(0);
   const [claimedItems, setClaimedItems] = useState<ClaimedItem[]>([]);
-  const [showClaimed, setShowClaimed] = useState(false);
+  const [showClaimedModal, setShowClaimedModal] = useState(false);
+  const [selectedClaimedItem, setSelectedClaimedItem] = useState<ClaimedItem | null>(null);
 
   useEffect(() => {
     if (id) {
