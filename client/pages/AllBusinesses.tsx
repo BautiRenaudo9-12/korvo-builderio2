@@ -72,6 +72,50 @@ export default function AllBusinesses() {
     return filtered;
   }, [searchQuery, sortBy]);
 
+  const handleClaimMoney = (points: number, money: number) => {
+    const newItem: ClaimedItem = {
+      id: Date.now().toString(),
+      type: "money",
+      businessId: selectedBusiness!.id,
+      businessName: selectedBusiness!.shop,
+      title: `Dinero en Efectivo`,
+      value: `$${money.toFixed(2)}`,
+      date: new Date().toLocaleDateString("es-ES"),
+    };
+    setClaimedItems([...claimedItems, newItem]);
+    setPointsToRedeem(0);
+  };
+
+  const handleClaimReward = (reward: { id: number; name: string; cost: number }) => {
+    const newItem: ClaimedItem = {
+      id: Date.now().toString() + reward.id,
+      type: "reward",
+      businessId: selectedBusiness!.id,
+      businessName: selectedBusiness!.shop,
+      title: reward.name,
+      value: `${reward.cost} pts`,
+      date: new Date().toLocaleDateString("es-ES"),
+    };
+    setClaimedItems([...claimedItems, newItem]);
+  };
+
+  const handleClaimDiscount = (discount: string, cost: number) => {
+    const newItem: ClaimedItem = {
+      id: Date.now().toString() + discount,
+      type: "discount",
+      businessId: selectedBusiness!.id,
+      businessName: selectedBusiness!.shop,
+      title: discount,
+      value: `${cost} pts`,
+      date: new Date().toLocaleDateString("es-ES"),
+    };
+    setClaimedItems([...claimedItems, newItem]);
+  };
+
+  const handleDeleteClaimed = (itemId: string) => {
+    setClaimedItems(claimedItems.filter((item) => item.id !== itemId));
+  };
+
   if (selectedBusiness) {
     return (
       <div className="px-6 md:px-8 pt-4 md:pt-8 pb-24 animate-fade-in">
