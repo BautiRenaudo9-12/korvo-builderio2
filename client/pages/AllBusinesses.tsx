@@ -97,7 +97,7 @@ export default function AllBusinesses() {
 
         {/* Progress Bar */}
         <div className="mb-8">
-          <p className="text-sm text-muted-foreground mb-3">Progreso de Sellos</p>
+          <p className="text-sm text-foreground/70 mb-3">Progreso de Sellos</p>
           <div className="w-full h-3 bg-secondary rounded-full overflow-hidden border border-border">
             <div
               className="h-full rounded-full transition-all"
