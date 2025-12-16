@@ -1,6 +1,7 @@
 import { WalletCard } from '@/types';
 import { ChevronRight, Heart } from 'lucide-react';
 import { useFavorites } from '@/hooks/use-favorites';
+import { useNavigate } from 'react-router-dom';
 
 interface BusinessCarouselProps {
   businesses: WalletCard[];
@@ -9,6 +10,7 @@ interface BusinessCarouselProps {
 
 export const BusinessCarousel = ({ businesses, onViewAll }: BusinessCarouselProps) => {
   const { isFavorite, toggleFavorite } = useFavorites();
+  const navigate = useNavigate();
 
   return (
     <div className="mb-6 md:mb-8">
