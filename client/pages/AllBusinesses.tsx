@@ -232,7 +232,7 @@ export default function AllBusinesses() {
                     <h3 className="text-base md:text-lg font-semibold text-foreground truncate group-hover:text-primary transition-colors">
                       {business.shop}
                     </h3>
-                    <p className="text-xs md:text-sm text-muted-foreground line-clamp-2">
+                    <p className="text-xs md:text-sm text-foreground/60 line-clamp-2">
                       {business.address}
                     </p>
                   </div>
