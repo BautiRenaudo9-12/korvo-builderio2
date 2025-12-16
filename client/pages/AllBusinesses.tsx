@@ -80,76 +80,86 @@ export default function AllBusinesses() {
           </div>
         </div>
 
-        {/* Stats Cards */}
-        <div className="grid grid-cols-3 gap-3 md:gap-4 mb-8">
-          <div className="glass-panel rounded-xl p-4 md:p-6 border border-border">
-            <p className="text-xs md:text-sm text-foreground/70 font-medium mb-2">Puntos</p>
-            <p
-              className="text-2xl md:text-3xl font-bold"
-              style={{ color: selectedBusiness.color }}
-            >
-              {selectedBusiness.ptsBalance}
-            </p>
-          </div>
-
-          <div className="glass-panel rounded-xl p-4 md:p-6 border border-border">
-            <p className="text-xs md:text-sm text-foreground/70 font-medium mb-2">Sellos</p>
-            <p className="text-2xl md:text-3xl font-bold text-foreground">
-              {selectedBusiness.stamps}/{selectedBusiness.total}
-            </p>
-          </div>
-
-          <div className="glass-panel rounded-xl p-4 md:p-6 border border-border">
-            <p className="text-xs md:text-sm text-foreground/70 font-medium mb-2">Tasa</p>
-            <p className="text-sm md:text-base font-semibold text-foreground">
-              {selectedBusiness.rate}
-            </p>
-          </div>
+        {/* Points Card */}
+        <div className="glass-panel rounded-xl p-4 md:p-6 border border-border mb-8">
+          <p className="text-xs md:text-sm text-foreground/70 font-medium mb-2">Puntos Disponibles</p>
+          <p
+            className="text-3xl md:text-4xl font-bold"
+            style={{ color: selectedBusiness.color }}
+          >
+            {selectedBusiness.ptsBalance}
+            <span className="text-sm md:text-base font-medium text-foreground/70 ml-2">pts</span>
+          </p>
         </div>
 
-        {/* Progress Bar */}
-        <div className="mb-8">
-          <p className="text-sm text-foreground/70 mb-3">Progreso de Sellos</p>
-          <div className="w-full h-3 bg-secondary rounded-full overflow-hidden border border-border">
-            <div
-              className="h-full rounded-full transition-all"
-              style={{
-                width: `${(selectedBusiness.stamps / selectedBusiness.total) * 100}%`,
-                backgroundColor: selectedBusiness.color,
-              }}
-            ></div>
-          </div>
-        </div>
-
-        {/* Rewards Section */}
-        <div>
-          <h2 className="text-lg md:text-xl font-semibold text-foreground mb-4">Premios Disponibles</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
-            {selectedBusiness.rewards.map((reward) => (
-              <div
-                key={reward.id}
-                className="glass-panel rounded-xl p-4 border border-border hover:border-primary/30 transition-all"
-              >
-                <div className="flex items-start justify-between">
-                  <div className="flex-1">
-                    <h3 className="text-sm md:text-base font-semibold text-foreground mb-1">
-                      {reward.name}
-                    </h3>
-                    <p
-                      className="text-base md:text-lg font-bold"
-                      style={{ color: selectedBusiness.color }}
-                    >
-                      {reward.cost} pts
-                    </p>
-                  </div>
-                  {reward.locked && (
-                    <div className="text-xs px-2 py-1 bg-secondary rounded text-secondary-foreground">
-                      Bloqueado
-                    </div>
-                  )}
+        {/* Mini Sections Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+          {/* Premios Disponibles */}
+          <div className="md:col-span-1">
+            <div className="flex items-center gap-2 mb-4">
+              <Gift size={20} className="text-primary" />
+              <h2 className="text-lg font-semibold text-foreground">Premios</h2>
+            </div>
+            <div className="space-y-2">
+              {selectedBusiness.rewards.slice(0, 3).map((reward) => (
+                <div
+                  key={reward.id}
+                  className="glass-panel rounded-lg p-3 border border-border hover:border-primary/30 transition-all"
+                >
+                  <p className="text-sm font-medium text-foreground">{reward.name}</p>
+                  <p
+                    className="text-xs font-bold mt-1"
+                    style={{ color: selectedBusiness.color }}
+                  >
+                    {reward.cost} pts
+                  </p>
                 </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Descuentos Disponibles */}
+          <div className="md:col-span-1">
+            <div className="flex items-center gap-2 mb-4">
+              <Tag size={20} className="text-accent" />
+              <h2 className="text-lg font-semibold text-foreground">Descuentos</h2>
+            </div>
+            <div className="space-y-2">
+              <div className="glass-panel rounded-lg p-3 border border-border hover:border-primary/30 transition-all">
+                <p className="text-sm font-medium text-foreground">10% Descuento</p>
+                <p className="text-xs text-foreground/60 mt-1">300 pts</p>
               </div>
-            ))}
+              <div className="glass-panel rounded-lg p-3 border border-border hover:border-primary/30 transition-all">
+                <p className="text-sm font-medium text-foreground">20% Descuento</p>
+                <p className="text-xs text-foreground/60 mt-1">500 pts</p>
+              </div>
+              <div className="glass-panel rounded-lg p-3 border border-border hover:border-primary/30 transition-all">
+                <p className="text-sm font-medium text-foreground">Envío Gratis</p>
+                <p className="text-xs text-foreground/60 mt-1">200 pts</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Canjear por Dinero */}
+          <div className="md:col-span-1">
+            <div className="flex items-center gap-2 mb-4">
+              <DollarSign size={20} className="text-success" />
+              <h2 className="text-lg font-semibold text-foreground">Dinero</h2>
+            </div>
+            <div className="space-y-2">
+              <div className="glass-panel rounded-lg p-3 border border-border hover:border-primary/30 transition-all">
+                <p className="text-sm font-medium text-foreground">$5</p>
+                <p className="text-xs text-foreground/60 mt-1">250 pts</p>
+              </div>
+              <div className="glass-panel rounded-lg p-3 border border-border hover:border-primary/30 transition-all">
+                <p className="text-sm font-medium text-foreground">$10</p>
+                <p className="text-xs text-foreground/60 mt-1">500 pts</p>
+              </div>
+              <div className="glass-panel rounded-lg p-3 border border-border hover:border-primary/30 transition-all">
+                <p className="text-sm font-medium text-foreground">$20</p>
+                <p className="text-xs text-foreground/60 mt-1">1000 pts</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
