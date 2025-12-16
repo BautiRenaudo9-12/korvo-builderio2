@@ -13,7 +13,7 @@ export const Layout = ({ children }: LayoutProps) => {
   const navigate = useNavigate();
 
   const shouldShowNav = !['/login', '/register'].includes(location.pathname);
-  const isDetailRoute = ['/store'].some((path) => location.pathname.startsWith(path));
+  const isDetailRoute = /^\/businesses\/\d+$/.test(location.pathname);
 
   return (
     <div className="w-full h-[100dvh] bg-background flex overflow-hidden">
