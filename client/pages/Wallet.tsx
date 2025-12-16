@@ -4,7 +4,7 @@ import { ChevronRight, Heart } from 'lucide-react';
 import { useFavorites } from '@/hooks/use-favorites';
 
 export default function Wallet() {
-  const { goToStoreDetail } = useNavigation();
+  const { goToBusinessDetail } = useNavigation();
   const { isFavorite, toggleFavorite } = useFavorites();
 
   return (
