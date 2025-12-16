@@ -190,8 +190,8 @@ export default function AllBusinesses() {
               onClick={() => setSortBy(option)}
               className={`flex items-center gap-1.5 px-3 py-2 rounded-lg transition-all whitespace-nowrap text-xs md:text-sm font-medium ${
                 sortBy === option
-                  ? 'bg-primary/10 border border-primary-20 text-primary'
-                  : 'bg-secondary border border-border text-secondary-foreground hover:bg-secondary/80 hover:border-border'
+                  ? 'bg-primary/10 border border-primary/30 text-primary font-semibold'
+                  : 'bg-secondary border border-border text-foreground hover:bg-secondary/60 hover:border-border/70 font-semibold'
               }`}
             >
               <Icon size={14} />
