@@ -13,10 +13,10 @@ export const BusinessCarousel = ({ businesses, onViewAll }: BusinessCarouselProp
   return (
     <div className="mb-6 md:mb-8">
       <div className="flex items-center justify-between mb-4">
-        <h3 className="text-sm md:text-base font-semibold text-white">Mis Negocios</h3>
+        <h3 className="text-sm md:text-base font-semibold text-foreground">Mis Negocios</h3>
         <button
           onClick={onViewAll}
-          className="text-xs md:text-sm text-neutral-400 hover:text-primary transition-colors flex items-center gap-1 group"
+          className="text-xs md:text-sm text-muted-foreground hover:text-primary transition-colors flex items-center gap-1 group"
         >
           Ver todos
           <ChevronRight size={14} className="group-hover:translate-x-1 transition-transform" />
@@ -27,7 +27,7 @@ export const BusinessCarousel = ({ businesses, onViewAll }: BusinessCarouselProp
         {businesses.map((business) => (
           <div
             key={business.id}
-            className="flex-shrink-0 w-40 md:w-48 glass-panel rounded-lg p-3 md:p-4 border border-white/5 hover:border-white/10 transition-all hover:bg-white/[0.02]"
+            className="flex-shrink-0 w-40 md:w-48 glass-panel rounded-lg p-3 md:p-4 border border-border hover:border-primary/30 transition-all hover:bg-black/[0.02]"
           >
             {/* Cover Image */}
             <div
@@ -49,7 +49,7 @@ export const BusinessCarousel = ({ businesses, onViewAll }: BusinessCarouselProp
                   className={`transition-all ${
                     isFavorite(business.id)
                       ? 'fill-destructive text-destructive'
-                      : 'text-white/70 hover:text-white'
+                      : 'text-foreground/70 hover:text-foreground'
                   }`}
                 />
               </button>
@@ -57,7 +57,7 @@ export const BusinessCarousel = ({ businesses, onViewAll }: BusinessCarouselProp
 
             {/* Business Info */}
             <div className="space-y-2">
-              <p className="text-xs md:text-sm font-semibold text-white truncate">
+              <p className="text-xs md:text-sm font-semibold text-foreground truncate">
                 {business.shop}
               </p>
 
@@ -66,7 +66,7 @@ export const BusinessCarousel = ({ businesses, onViewAll }: BusinessCarouselProp
                 <span className="text-base md:text-lg font-semibold" style={{ color: business.color }}>
                   {business.ptsBalance}
                 </span>
-                <span className="text-[10px] md:text-xs text-neutral-500">pts</span>
+                <span className="text-[10px] md:text-xs text-muted-foreground">pts</span>
               </div>
 
               {/* Stamps Progress */}
@@ -77,7 +77,7 @@ export const BusinessCarousel = ({ businesses, onViewAll }: BusinessCarouselProp
                   </span>
                   <span className="text-[10px] text-muted-foreground/70">sellos</span>
                 </div>
-                <div className="w-full h-1 bg-white/5 rounded-full overflow-hidden">
+                <div className="w-full h-1 bg-secondary rounded-full overflow-hidden">
                   <div
                     className="h-full rounded-full transition-all"
                     style={{

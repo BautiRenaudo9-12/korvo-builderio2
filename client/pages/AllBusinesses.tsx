@@ -1,4 +1,5 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 import { mockWalletCards } from '@/lib/data';
 import { Search, Zap, TrendingUp, ArrowUp, MapPin, Clock } from 'lucide-react';
 import { WalletCard } from '@/types';
@@ -6,9 +7,20 @@ import { WalletCard } from '@/types';
 type SortOption = 'name' | 'points' | 'stamps';
 
 export default function AllBusinesses() {
+  const { id } = useParams<{ id: string }>();
+  const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedBusiness, setSelectedBusiness] = useState<WalletCard | null>(null);
   const [sortBy, setSortBy] = useState<SortOption>('points');
+
+  useEffect(() => {
+    if (id) {
+      const business = mockWalletCards.find((b) => b.id === Number(id));
+      setSelectedBusiness(business || null);
+    } else {
+      setSelectedBusiness(null);
+    }
+  }, [id]);
 
   const filteredAndSorted = useMemo(() => {
     let filtered = mockWalletCards.filter((b) =>
@@ -36,7 +48,7 @@ export default function AllBusinesses() {
     return (
       <div className="px-6 md:px-8 pt-4 md:pt-8 pb-24 animate-fade-in">
         <button
-          onClick={() => setSelectedBusiness(null)}
+          onClick={() => navigate('/businesses')}
           className="flex items-center gap-2 text-primary-400 hover:text-primary transition-colors mb-6"
         >
           <ArrowUp size={18} className="rotate-180" />
@@ -55,14 +67,14 @@ export default function AllBusinesses() {
 
         {/* Business Title */}
         <div className="mb-6">
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">
+          <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-2">
             {selectedBusiness.shop}
           </h1>
-          <div className="flex items-center gap-2 text-neutral-400 mb-3">
+          <div className="flex items-center gap-2 text-foreground/60 mb-3">
             <MapPin size={16} />
             <p className="text-sm md:text-base">{selectedBusiness.address}</p>
           </div>
-          <div className="flex items-center gap-2 text-neutral-400">
+          <div className="flex items-center gap-2 text-foreground/60">
             <Clock size={16} />
             <p className="text-sm md:text-base">Última visita: {selectedBusiness.lastVisit}</p>
           </div>
@@ -70,8 +82,8 @@ export default function AllBusinesses() {
 
         {/* Stats Cards */}
         <div className="grid grid-cols-3 gap-3 md:gap-4 mb-8">
-          <div className="glass-panel rounded-xl p-4 md:p-6 border border-white/5">
-            <p className="text-xs md:text-sm text-neutral-500 font-medium mb-2">Puntos</p>
+          <div className="glass-panel rounded-xl p-4 md:p-6 border border-border">
+            <p className="text-xs md:text-sm text-foreground/70 font-medium mb-2">Puntos</p>
             <p
               className="text-2xl md:text-3xl font-bold"
               style={{ color: selectedBusiness.color }}
@@ -80,16 +92,16 @@ export default function AllBusinesses() {
             </p>
           </div>
 
-          <div className="glass-panel rounded-xl p-4 md:p-6 border border-white/5">
-            <p className="text-xs md:text-sm text-neutral-500 font-medium mb-2">Sellos</p>
-            <p className="text-2xl md:text-3xl font-bold text-white">
+          <div className="glass-panel rounded-xl p-4 md:p-6 border border-border">
+            <p className="text-xs md:text-sm text-foreground/70 font-medium mb-2">Sellos</p>
+            <p className="text-2xl md:text-3xl font-bold text-foreground">
               {selectedBusiness.stamps}/{selectedBusiness.total}
             </p>
           </div>
 
-          <div className="glass-panel rounded-xl p-4 md:p-6 border border-white/5">
-            <p className="text-xs md:text-sm text-neutral-500 font-medium mb-2">Tasa</p>
-            <p className="text-sm md:text-base font-semibold text-white">
+          <div className="glass-panel rounded-xl p-4 md:p-6 border border-border">
+            <p className="text-xs md:text-sm text-foreground/70 font-medium mb-2">Tasa</p>
+            <p className="text-sm md:text-base font-semibold text-foreground">
               {selectedBusiness.rate}
             </p>
           </div>
@@ -97,8 +109,8 @@ export default function AllBusinesses() {
 
         {/* Progress Bar */}
         <div className="mb-8">
-          <p className="text-sm text-neutral-400 mb-3">Progreso de Sellos</p>
-          <div className="w-full h-3 bg-white/5 rounded-full overflow-hidden border border-white/10">
+          <p className="text-sm text-foreground/70 mb-3">Progreso de Sellos</p>
+          <div className="w-full h-3 bg-secondary rounded-full overflow-hidden border border-border">
             <div
               className="h-full rounded-full transition-all"
               style={{
@@ -111,16 +123,16 @@ export default function AllBusinesses() {
 
         {/* Rewards Section */}
         <div>
-          <h2 className="text-lg md:text-xl font-semibold text-white mb-4">Premios Disponibles</h2>
+          <h2 className="text-lg md:text-xl font-semibold text-foreground mb-4">Premios Disponibles</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
             {selectedBusiness.rewards.map((reward) => (
               <div
                 key={reward.id}
-                className="glass-panel rounded-xl p-4 border border-white/5 hover:border-white/10 transition-all"
+                className="glass-panel rounded-xl p-4 border border-border hover:border-primary/30 transition-all"
               >
                 <div className="flex items-start justify-between">
                   <div className="flex-1">
-                    <h3 className="text-sm md:text-base font-semibold text-white mb-1">
+                    <h3 className="text-sm md:text-base font-semibold text-foreground mb-1">
                       {reward.name}
                     </h3>
                     <p
@@ -131,7 +143,7 @@ export default function AllBusinesses() {
                     </p>
                   </div>
                   {reward.locked && (
-                    <div className="text-xs px-2 py-1 bg-white/10 rounded text-neutral-400">
+                    <div className="text-xs px-2 py-1 bg-secondary rounded text-secondary-foreground">
                       Bloqueado
                     </div>
                   )}
@@ -148,8 +160,8 @@ export default function AllBusinesses() {
     <div className="px-6 md:px-8 pt-4 md:pt-8 pb-24">
       {/* Header */}
       <div className="mb-6 md:mb-8">
-        <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">Mis Negocios</h1>
-        <p className="text-neutral-400 text-sm">
+        <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-2">Mis Negocios</h1>
+        <p className="text-muted-foreground text-sm">
           {filteredAndSorted.length} negocio{filteredAndSorted.length !== 1 ? 's' : ''}
         </p>
       </div>
@@ -158,14 +170,14 @@ export default function AllBusinesses() {
       <div className="relative mb-6 md:mb-8">
         <Search
           size={18}
-          className="absolute left-3 top-1/2 -translate-y-1/2 text-neutral-500"
+          className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground"
         />
         <input
           type="text"
           placeholder="Buscar negocio o dirección..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className="w-full bg-white/5 border border-white/10 rounded-lg pl-10 pr-4 py-2.5 md:py-3 text-sm md:text-base text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-primary/50 focus:border-primary/50 transition-all"
+          className="w-full bg-secondary border border-border rounded-lg pl-10 pr-4 py-2.5 md:py-3 text-sm md:text-base text-foreground placeholder-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary/50 focus:border-primary/50 transition-all"
         />
       </div>
 
@@ -190,8 +202,8 @@ export default function AllBusinesses() {
               onClick={() => setSortBy(option)}
               className={`flex items-center gap-1.5 px-3 py-2 rounded-lg transition-all whitespace-nowrap text-xs md:text-sm font-medium ${
                 sortBy === option
-                  ? 'bg-primary-20 border border-primary-50 text-primary-400'
-                  : 'bg-white/5 border border-white/10 text-neutral-400 hover:bg-white/10 hover:border-white/20'
+                  ? 'bg-primary/10 border border-primary/30 text-primary font-semibold'
+                  : 'bg-secondary border border-border text-foreground hover:bg-secondary/60 hover:border-border/70 font-semibold'
               }`}
             >
               <Icon size={14} />
@@ -207,8 +219,8 @@ export default function AllBusinesses() {
           {filteredAndSorted.map((business, index) => (
             <button
               key={business.id}
-              onClick={() => setSelectedBusiness(business)}
-              className="w-full text-left glass-panel rounded-xl border border-white/5 hover:border-primary/30 transition-all hover:bg-white/[0.03] overflow-hidden group animate-fade-in"
+              onClick={() => navigate(`/businesses/${business.id}`)}
+              className="w-full text-left glass-panel rounded-xl border border-border hover:border-primary/30 transition-all hover:bg-black/[0.02] overflow-hidden group animate-fade-in"
               style={{ animationDelay: `${index * 50}ms` }}
             >
               <div className="p-4 md:p-5 flex gap-4 md:gap-5">
@@ -229,18 +241,18 @@ export default function AllBusinesses() {
                 {/* Business Info */}
                 <div className="flex-1 min-w-0">
                   <div className="mb-3">
-                    <h3 className="text-base md:text-lg font-semibold text-white truncate group-hover:text-primary-400 transition-colors">
+                    <h3 className="text-base md:text-lg font-semibold text-foreground truncate group-hover:text-primary transition-colors">
                       {business.shop}
                     </h3>
-                    <p className="text-xs md:text-sm text-neutral-400 line-clamp-2">
+                    <p className="text-xs md:text-sm text-foreground/60 line-clamp-2">
                       {business.address}
                     </p>
                   </div>
 
                   {/* Stats Grid */}
                   <div className="grid grid-cols-3 gap-3 md:gap-4">
-                    <div className="bg-white/[0.02] rounded-lg p-2 md:p-3 border border-white/5">
-                      <p className="text-[10px] md:text-xs text-neutral-500 font-medium mb-1">
+                    <div className="bg-secondary rounded-lg p-2 md:p-3 border border-border">
+                      <p className="text-[10px] md:text-xs text-foreground/70 font-medium mb-1">
                         Puntos
                       </p>
                       <p
@@ -251,20 +263,20 @@ export default function AllBusinesses() {
                       </p>
                     </div>
 
-                    <div className="bg-white/[0.02] rounded-lg p-2 md:p-3 border border-white/5">
-                      <p className="text-[10px] md:text-xs text-neutral-500 font-medium mb-1">
+                    <div className="bg-secondary rounded-lg p-2 md:p-3 border border-border">
+                      <p className="text-[10px] md:text-xs text-foreground/70 font-medium mb-1">
                         Sellos
                       </p>
-                      <p className="text-sm md:text-base font-bold text-white">
+                      <p className="text-sm md:text-base font-bold text-foreground">
                         {business.stamps}/{business.total}
                       </p>
                     </div>
 
-                    <div className="bg-white/[0.02] rounded-lg p-2 md:p-3 border border-white/5">
-                      <p className="text-[10px] md:text-xs text-neutral-500 font-medium mb-1">
+                    <div className="bg-secondary rounded-lg p-2 md:p-3 border border-border">
+                      <p className="text-[10px] md:text-xs text-foreground/70 font-medium mb-1">
                         Avance
                       </p>
-                      <div className="w-full h-1.5 bg-white/5 rounded-full overflow-hidden">
+                      <div className="w-full h-1.5 bg-secondary rounded-full overflow-hidden">
                         <div
                           className="h-full rounded-full transition-all"
                           style={{
@@ -278,17 +290,17 @@ export default function AllBusinesses() {
                 </div>
               </div>
 
-              <div className="px-4 md:px-5 py-3 md:py-4 border-t border-white/5 bg-white/[0.01] text-[10px] md:text-xs text-neutral-600 flex items-center justify-between">
+              <div className="px-4 md:px-5 py-3 md:py-4 border-t border-border bg-black/[0.01] text-[10px] md:text-xs text-foreground/60 flex items-center justify-between">
                 <span>Última visita: {business.lastVisit}</span>
-                <span className="text-neutral-500">→</span>
+                <span className="text-foreground/60">→</span>
               </div>
             </button>
           ))}
         </div>
       ) : (
         <div className="flex flex-col items-center justify-center py-16 text-center">
-          <Search size={32} className="text-neutral-600 mb-4" />
-          <p className="text-neutral-400 text-sm">
+          <Search size={32} className="text-muted-foreground mb-4" />
+          <p className="text-muted-foreground text-sm">
             No encontramos negocios que coincidan con tu búsqueda
           </p>
         </div>

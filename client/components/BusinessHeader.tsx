@@ -60,7 +60,7 @@ export const BusinessHeader = () => {
   };
 
   return (
-    <header className="md:hidden sticky top-0 z-40 px-4 py-4 bg-background border-b border-white/5">
+    <header className="md:hidden sticky top-0 z-40 px-4 py-4 bg-background border-b border-border">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
           <div class="flex items-center gap-2">
@@ -87,19 +87,19 @@ export const BusinessHeader = () => {
               </svg>
             </div>
             <div className="flex gap-0.5 items-end">
-            <h1 class="text-lg font-semibold tracking-tighter text-white">
+            <h1 class="text-lg font-semibold tracking-tighter text-foreground">
               KORVO
             </h1>
               <span className="text-primary italic font-medium text-xs uppercase tracking-wide pb-1 ">
               business
             </span>
             </div>
-            
+
           </div>
         </div>
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="p-2 hover:bg-white/10 rounded-lg transition-colors text-white"
+          className="p-2 hover:bg-black/10 rounded-lg transition-colors text-foreground"
         >
           {menuOpen ? <X size={20} /> : <Menu size={20} />}
         </button>
@@ -107,7 +107,7 @@ export const BusinessHeader = () => {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <nav className="mt-4 space-y-2 border-t border-white/5 pt-4 animate-fade-in">
+        <nav className="mt-4 space-y-2 border-t border-border pt-4 animate-fade-in">
           {mainMenuItems.map((item) => {
             const Icon = item.icon;
             const active = isActive(item.path);
@@ -119,7 +119,7 @@ export const BusinessHeader = () => {
                 className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all font-medium text-sm ${
                   active
                     ? "bg-primary/10 text-primary border border-primary/20"
-                    : "text-neutral-400 hover:text-white hover:bg-white/5 border border-transparent"
+                    : "text-muted-foreground hover:text-foreground hover:bg-black/5 border border-transparent"
                 }`}
               >
                 <Icon size={20} strokeWidth={1.5} />
@@ -135,7 +135,7 @@ export const BusinessHeader = () => {
               className={`w-full flex items-center justify-between px-4 py-3 rounded-lg transition-all font-medium text-sm ${
                 isBenefitsActive
                   ? "bg-primary/10 text-primary border border-primary/20"
-                  : "text-neutral-400 hover:text-white hover:bg-white/5 border border-transparent"
+                  : "text-muted-foreground hover:text-foreground hover:bg-black/5 border border-transparent"
               }`}
             >
               <div className="flex items-center gap-3">
@@ -160,10 +160,10 @@ export const BusinessHeader = () => {
                       handleNavigate(item.path);
                       setBenefitsExpanded(false);
                     }}
-                    className="w-full flex flex-col items-start px-4 py-2 rounded-lg transition-all hover:bg-white/5 border border-transparent text-neutral-400 hover:text-white text-left text-xs"
+                    className="w-full flex flex-col items-start px-4 py-2 rounded-lg transition-all hover:bg-black/5 border border-transparent text-muted-foreground hover:text-foreground text-left text-xs"
                   >
                     <span className="font-medium">{item.label}</span>
-                    <span className="text-[10px] text-neutral-600 mt-0.5">
+                    <span className="text-[10px] text-muted-foreground/70 mt-0.5">
                       {item.description}
                     </span>
                   </button>
@@ -175,7 +175,7 @@ export const BusinessHeader = () => {
           {/* Logout Button */}
           <button
             onClick={handleLogout}
-            className="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-neutral-400 hover:text-white hover:bg-white/5 border border-transparent transition-all font-medium text-sm"
+            className="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-muted-foreground hover:text-foreground hover:bg-black/5 border border-transparent transition-all font-medium text-sm"
           >
             <LogOut size={20} strokeWidth={1.5} />
             Volver a Usuario

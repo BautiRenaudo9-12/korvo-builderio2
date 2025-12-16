@@ -9,7 +9,7 @@ export default function StoreDetail() {
   if (!shop) {
     return (
       <div className="px-6 md:px-8 pt-4 md:pt-8 pb-24 md:pb-8 text-center">
-        <p className="text-neutral-400">Tienda no encontrada</p>
+        <p className="text-muted-foreground">Tienda no encontrada</p>
       </div>
     );
   }
@@ -27,18 +27,18 @@ export default function StoreDetail() {
         <div className="absolute bottom-4 md:bottom-6 left-6 md:left-8 z-20">
           <h2 className="text-2xl md:text-4xl font-bold text-white tracking-tight">{shop.shop}</h2>
           <div className="flex items-center gap-2 mt-1 md:mt-2">
-            <MapPin size={12} className="text-neutral-400 md:hidden" />
-            <MapPin size={16} className="text-neutral-400 hidden md:block" />
-            <p className="text-xs md:text-sm text-neutral-300 font-medium">{shop.address}</p>
+            <MapPin size={12} className="text-muted-foreground md:hidden" />
+            <MapPin size={16} className="text-muted-foreground hidden md:block" />
+            <p className="text-xs md:text-sm text-secondary-foreground font-medium">{shop.address}</p>
           </div>
         </div>
         <div className="absolute bottom-4 md:bottom-6 right-6 md:right-8 z-20 flex gap-2">
-          <button className="w-8 h-8 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white border border-white/10 hover:bg-white/20 transition-colors">
+          <button className="w-8 h-8 rounded-full bg-black/20 backdrop-blur-md flex items-center justify-center text-white border border-black/20 hover:bg-black/30 transition-colors">
             <Instagram size={14} />
           </button>
           <button
             onClick={() => window.open(`https://maps.google.com/?q=${shop.shop} ${shop.address}`, '_blank')}
-            className="w-8 h-8 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white border border-white/10 hover:bg-white/20 transition-colors"
+            className="w-8 h-8 rounded-full bg-black/20 backdrop-blur-md flex items-center justify-center text-white border border-black/20 hover:bg-black/30 transition-colors"
           >
             <Map size={14} />
           </button>
@@ -50,18 +50,18 @@ export default function StoreDetail() {
         <div className="glass-panel rounded-xl p-5 md:p-8 border border-primary-20 bg-background/80 backdrop-blur-md shadow-2xl mb-8 md:mb-12">
           <div className="flex justify-between items-end mb-4 md:mb-6">
             <div>
-              <p className="text-[10px] md:text-xs uppercase tracking-wider text-neutral-400 font-semibold mb-1 md:mb-2">
+              <p className="text-[10px] md:text-xs uppercase tracking-wider text-muted-foreground font-semibold mb-1 md:mb-2">
                 Tu Balance
               </p>
-              <h3 className="text-3xl md:text-5xl font-bold text-white tracking-tight">
-                {shop.ptsBalance} <span className="text-sm md:text-base font-medium text-neutral-500">pts</span>
+              <h3 className="text-3xl md:text-5xl font-bold text-foreground tracking-tight">
+                {shop.ptsBalance} <span className="text-sm md:text-base font-medium text-muted-foreground">pts</span>
               </h3>
             </div>
             <div className="text-right">
-              <p className="text-[10px] md:text-xs text-neutral-500">{shop.rate}</p>
+              <p className="text-[10px] md:text-xs text-muted-foreground">{shop.rate}</p>
             </div>
           </div>
-          <div className="w-full bg-neutral-800 h-1.5 md:h-2 rounded-full overflow-hidden">
+          <div className="w-full bg-secondary h-1.5 md:h-2 rounded-full overflow-hidden">
             <div
               className="rounded-full w-2/3"
               style={{
@@ -73,7 +73,7 @@ export default function StoreDetail() {
         </div>
 
         {/* Catalog */}
-        <h3 className="text-sm md:text-xl font-semibold text-white mb-4 md:mb-6">Recompensas</h3>
+        <h3 className="text-sm md:text-xl font-semibold text-foreground mb-4 md:mb-6">Recompensas</h3>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
           {shop.rewards.map((reward) => {
             const canAfford = shop.ptsBalance >= reward.cost;

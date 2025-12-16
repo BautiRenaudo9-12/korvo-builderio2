@@ -25,7 +25,7 @@ export const BusinessDetailView = ({ business, onBack }: BusinessDetailViewProps
           {/* Back Button */}
           <button
             onClick={onBack}
-            className="absolute top-4 left-4 md:top-6 md:left-6 p-2 bg-white/10 hover:bg-white/20 rounded-full transition-colors text-white"
+            className="absolute top-4 left-4 md:top-6 md:left-6 p-2 bg-black/20 hover:bg-black/30 rounded-full transition-colors text-white"
           >
             <ArrowLeft size={20} />
           </button>
@@ -35,7 +35,7 @@ export const BusinessDetailView = ({ business, onBack }: BusinessDetailViewProps
             <h2 className="text-2xl md:text-4xl font-bold text-white mb-1">
               {business.shop}
             </h2>
-            <div className="flex items-center gap-2 text-neutral-300 text-xs md:text-sm">
+            <div className="flex items-center gap-2 text-secondary-foreground text-xs md:text-sm">
               <MapPin size={14} />
               <span>{business.address}</span>
             </div>
@@ -54,7 +54,7 @@ export const BusinessDetailView = ({ business, onBack }: BusinessDetailViewProps
             {/* Key Stats */}
             <div className="grid grid-cols-3 gap-3 md:gap-4">
               {/* Points */}
-              <div className="glass-panel rounded-lg p-4 md:p-6 border border-white/5 text-center">
+              <div className="glass-panel rounded-lg p-4 md:p-6 border border-border text-center">
                 <p className="text-[10px] md:text-xs text-muted-foreground font-medium mb-2">
                   Puntos Acumulados
                 </p>
@@ -67,39 +67,39 @@ export const BusinessDetailView = ({ business, onBack }: BusinessDetailViewProps
               </div>
 
               {/* Stamps */}
-              <div className="glass-panel rounded-lg p-4 md:p-6 border border-white/5 text-center">
+              <div className="glass-panel rounded-lg p-4 md:p-6 border border-border text-center">
                 <p className="text-[10px] md:text-xs text-muted-foreground font-medium mb-2">
                   Sellos Conseguidos
                 </p>
-                <p className="text-2xl md:text-3xl font-bold text-white">
+                <p className="text-2xl md:text-3xl font-bold text-foreground">
                   {business.stamps}
                 </p>
                 <p className="text-[10px] text-muted-foreground/70 mt-1">de {business.total}</p>
               </div>
 
               {/* Exchange Rate */}
-              <div className="glass-panel rounded-lg p-4 md:p-6 border border-white/5 text-center">
+              <div className="glass-panel rounded-lg p-4 md:p-6 border border-border text-center">
                 <p className="text-[10px] md:text-xs text-muted-foreground font-medium mb-2">
                   Tasa
                 </p>
-                <p className="text-xs md:text-sm font-semibold text-white">
+                <p className="text-xs md:text-sm font-semibold text-foreground">
                   {business.rate}
                 </p>
               </div>
             </div>
 
             {/* Progress Section */}
-            <div className="glass-panel rounded-lg p-6 md:p-8 border border-white/5">
+            <div className="glass-panel rounded-lg p-6 md:p-8 border border-border">
               <div className="flex items-center gap-2 mb-4">
                 <TrendingUp size={18} className="text-primary" />
-                <h3 className="text-base md:text-lg font-semibold text-white">
+                <h3 className="text-base md:text-lg font-semibold text-foreground">
                   Progreso de Sellos
                 </h3>
               </div>
 
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="text-sm md:text-base font-medium text-white">
+                  <span className="text-sm md:text-base font-medium text-foreground">
                     {business.stamps} de {business.total} sellos
                   </span>
                   <span
@@ -110,7 +110,7 @@ export const BusinessDetailView = ({ business, onBack }: BusinessDetailViewProps
                   </span>
                 </div>
 
-                <div className="w-full h-3 bg-white/5 rounded-full overflow-hidden">
+                <div className="w-full h-3 bg-secondary rounded-full overflow-hidden">
                   <div
                     className="h-full rounded-full transition-all"
                     style={{
@@ -127,21 +127,21 @@ export const BusinessDetailView = ({ business, onBack }: BusinessDetailViewProps
             </div>
 
             {/* Last Visit Info */}
-            <div className="glass-panel rounded-lg p-6 md:p-8 border border-white/5">
+            <div className="glass-panel rounded-lg p-6 md:p-8 border border-border">
               <div className="flex items-center gap-2 mb-4">
                 <Clock size={18} className="text-primary" />
-                <h3 className="text-base md:text-lg font-semibold text-white">
+                <h3 className="text-base md:text-lg font-semibold text-foreground">
                   Última Visita
                 </h3>
               </div>
-              <p className="text-sm md:text-base text-neutral-300">{business.lastVisit}</p>
+              <p className="text-sm md:text-base text-foreground">{business.lastVisit}</p>
             </div>
 
             {/* Available Rewards */}
             <div>
               <div className="flex items-center gap-2 mb-4">
                 <Gift size={18} className="text-primary" />
-                <h3 className="text-base md:text-lg font-semibold text-white">
+                <h3 className="text-base md:text-lg font-semibold text-foreground">
                   Recompensas Disponibles
                 </h3>
               </div>
@@ -152,13 +152,13 @@ export const BusinessDetailView = ({ business, onBack }: BusinessDetailViewProps
                     key={reward.id}
                     className={`glass-panel rounded-lg p-4 md:p-5 border transition-all ${
                       reward.locked
-                        ? 'border-white/5 opacity-60'
+                        ? 'border-border opacity-60'
                         : 'border-primary-30 bg-primary/5'
                     }`}
                   >
                     <div className="flex items-start justify-between gap-4">
                       <div className="flex-1">
-                        <h4 className="text-sm md:text-base font-semibold text-white mb-1">
+                        <h4 className="text-sm md:text-base font-semibold text-foreground mb-1">
                           {reward.name}
                         </h4>
                         <p className="text-sm md:text-base font-bold text-primary">
@@ -168,7 +168,7 @@ export const BusinessDetailView = ({ business, onBack }: BusinessDetailViewProps
 
                       <div className="flex-shrink-0">
                         {reward.locked ? (
-                          <div className="flex items-center justify-center w-8 h-8 rounded-full bg-white/10 text-muted-foreground">
+                          <div className="flex items-center justify-center w-8 h-8 rounded-full bg-secondary text-secondary-foreground">
                             <Lock size={16} />
                           </div>
                         ) : (

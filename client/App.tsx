@@ -14,7 +14,6 @@ import Wallet from "./pages/Wallet";
 import Activity from "./pages/Activity";
 import Profile from "./pages/Profile";
 import Explore from "./pages/Explore";
-import StoreDetail from "./pages/StoreDetail";
 import AllBusinesses from "./pages/AllBusinesses";
 import NotFound from "./pages/NotFound";
 import BusinessDashboard from "./pages/business/Dashboard";
@@ -40,8 +39,7 @@ const App = () => (
           <Route element={<Layout><Activity /></Layout>} path="/activity" />
           <Route element={<Layout><Profile /></Layout>} path="/profile" />
           <Route element={<Layout><Explore /></Layout>} path="/explore" />
-          <Route element={<Layout><StoreDetail /></Layout>} path="/store/:id" />
-          <Route element={<Layout><AllBusinesses /></Layout>} path="/businesses" />
+          <Route element={<Layout><AllBusinesses /></Layout>} path="/businesses/:id?" />
 
           {/* Business Routes */}
           <Route element={<BusinessLayout><BusinessDashboard /></BusinessLayout>} path="/business/dashboard" />
