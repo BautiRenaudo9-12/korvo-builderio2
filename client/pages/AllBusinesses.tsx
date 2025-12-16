@@ -48,7 +48,7 @@ export default function AllBusinesses() {
     return (
       <div className="px-6 md:px-8 pt-4 md:pt-8 pb-24 animate-fade-in">
         <button
-          onClick={() => setSelectedBusiness(null)}
+          onClick={() => navigate('/businesses')}
           className="flex items-center gap-2 text-primary-400 hover:text-primary transition-colors mb-6"
         >
           <ArrowUp size={18} className="rotate-180" />
