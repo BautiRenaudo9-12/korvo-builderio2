@@ -96,97 +96,49 @@ export default function AllBusinesses() {
         {/* Mini Sections Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
           {/* Canjear por Dinero - First */}
-          {/* Canjear por Dinero */}
           <div className="md:col-span-1">
-            {/* Header */}
-            <div className="flex items-center gap-2 mb-3">
-              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-success/10">
-                <DollarSign size={16} className="text-success" />
-              </div>
-              <h2 className="text-base font-semibold text-foreground tracking-tight">
-                Canjear puntos
-              </h2>
+            <div className="flex items-center gap-2 mb-4">
+              <DollarSign size={20} className="text-success" />
+              <h2 className="text-lg font-semibold text-foreground">Canjear</h2>
             </div>
-
-            {/* Card */}
-            <div className="rounded-2xl bg-white p-5 shadow-[0_8px_24px_rgba(0,0,0,0.06)] space-y-5">
-              {/* Input */}
-              <div className="space-y-2">
-                <label className="text-xs font-medium text-foreground/60">
-                  Puntos a canjear
-                </label>
-
+            <div className=" rounded-lg p-4  bg-white shadow-xl space-y-4">
+              <div>
+                <p className="text-xs text-foreground/70 font-medium mb-3">Puntos a Canjear</p>
                 <input
                   type="number"
                   min="0"
                   max={selectedBusiness.ptsBalance}
                   value={pointsToRedeem}
-                  onChange={(e) =>
-                    setPointsToRedeem(Math.max(0, Number(e.target.value)))
-                  }
-                  placeholder="0"
-                  className="
-          w-full rounded-xl border border-border/40
-          px-4 py-3 text-base text-foreground
-          placeholder:text-foreground/30
-          focus:outline-none focus:ring-2 focus:ring-primary/30
-          focus:border-primary/40
-          transition
-        "
+                  onChange={(e) => setPointsToRedeem(Math.max(0, Number(e.target.value)))}
+                  className="w-full border border-border/50 rounded-lg px-3 py-2 text-foreground placeholder-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary/50 focus:border-primary/50"
+                  placeholder="Ingresa cantidad..."
                 />
-
-                <p className="text-[11px] text-foreground/50">
-                  Disponible: {selectedBusiness.ptsBalance} puntos
-                </p>
               </div>
 
-              {/* Resultado */}
               {pointsToRedeem > 0 && (
-                <div className="rounded-xl bg-foreground/[0.03] p-4 border border-border/40">
-                  <p className="text-xs text-foreground/60 mb-1">
-                    Recibirás
-                  </p>
-
-                  <p className="text-3xl font-semibold text-foreground tracking-tight">
+                <div className="bg-primary/10 rounded-lg p-3 border border-primary/30">
+                  <p className="text-xs text-foreground/70 font-medium mb-1">Recibirás</p>
+                  <p className="text-2xl font-bold text-primary">
                     ${(pointsToRedeem / 50).toFixed(2)}
                   </p>
-
-                  <p className="text-xs text-foreground/50 mt-1">
-                    {pointsToRedeem} puntos
-                  </p>
+                  <p className="text-xs text-foreground/60 mt-1">{pointsToRedeem} puntos</p>
                 </div>
               )}
 
-              {/* CTA */}
               <button
                 onClick={() => {
-                  if (
-                    pointsToRedeem > 0 &&
-                    pointsToRedeem <= selectedBusiness.ptsBalance
-                  ) {
+                  if (pointsToRedeem > 0 && pointsToRedeem <= selectedBusiness.ptsBalance) {
                     alert(`Canjeaste ${pointsToRedeem} puntos exitosamente`);
                     setPointsToRedeem(0);
                   }
                 }}
-                disabled={
-                  pointsToRedeem <= 0 ||
-                  pointsToRedeem > selectedBusiness.ptsBalance
-                }
-                className="
-        w-full rounded-xl py-3 text-sm font-semibold text-white
-        transition-all
-        disabled:opacity-40 disabled:cursor-not-allowed
-        active:scale-[0.98]
-      "
+                disabled={pointsToRedeem <= 0 || pointsToRedeem > selectedBusiness.ptsBalance}
+                className="w-full bg-gradient-to-r from-success to-secondary text-white font-semibold py-3 rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-lg active:scale-95"
                 style={{
-                  background:
-                    pointsToRedeem > 0 &&
-                      pointsToRedeem <= selectedBusiness.ptsBalance
-                      ? selectedBusiness.color
-                      : "#c7c7cc", // gris iOS disabled
+                  backgroundColor: pointsToRedeem > 0 && pointsToRedeem <= selectedBusiness.ptsBalance ? selectedBusiness.color : undefined,
                 }}
               >
-                Confirmar canje
+                Confirmar Canje
               </button>
             </div>
           </div>
