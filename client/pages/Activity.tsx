@@ -185,7 +185,7 @@ export default function Activity() {
           filteredAndGrouped.map((group) => (
             <div key={`${group.month}-${group.year}`}>
               {/* Month Header */}
-              <h3 className="text-sm font-semibold text-muted-foreground mb-3 uppercase tracking-wider">
+              <h3 className="text-sm font-semibold text-foreground/70 mb-3 uppercase tracking-wider">
                 {group.month} {group.year}
               </h3>
 
