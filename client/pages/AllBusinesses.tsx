@@ -118,14 +118,7 @@ export default function AllBusinesses() {
           {/* Canjear por Dinero */}
           <div className="md:col-span-1">
             {/* Header */}
-            <div className="flex items-center gap-2 mb-3">
-              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-success/10">
-                <DollarSign size={16} className="text-success" />
-              </div>
-              <h2 className="text-base font-semibold text-foreground tracking-tight">
-                Canjear puntos
-              </h2>
-            </div>
+            
             <div className="flex items-center gap-2 mb-4">
               <DollarSign size={20} className="text-primary" />
               <h2 className="text-lg font-semibold text-foreground">Canjear</h2>
