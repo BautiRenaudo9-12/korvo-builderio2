@@ -240,7 +240,7 @@ export default function AllBusinesses() {
                   {/* Stats Grid */}
                   <div className="grid grid-cols-3 gap-3 md:gap-4">
                     <div className="bg-secondary rounded-lg p-2 md:p-3 border border-border">
-                      <p className="text-[10px] md:text-xs text-secondary-foreground font-medium mb-1">
+                      <p className="text-[10px] md:text-xs text-foreground/70 font-medium mb-1">
                         Puntos
                       </p>
                       <p
