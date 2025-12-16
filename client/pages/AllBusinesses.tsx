@@ -95,6 +95,54 @@ export default function AllBusinesses() {
 
         {/* Mini Sections Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+          {/* Canjear por Dinero - First */}
+          <div className="md:col-span-1">
+            <div className="flex items-center gap-2 mb-4">
+              <DollarSign size={20} className="text-success" />
+              <h2 className="text-lg font-semibold text-foreground">Canjear</h2>
+            </div>
+            <div className="glass-panel rounded-lg p-4 border border-border space-y-4">
+              <div>
+                <p className="text-xs text-foreground/70 font-medium mb-3">Puntos a Canjear</p>
+                <input
+                  type="number"
+                  min="0"
+                  max={selectedBusiness.ptsBalance}
+                  value={pointsToRedeem}
+                  onChange={(e) => setPointsToRedeem(Math.max(0, Number(e.target.value)))}
+                  className="w-full bg-secondary border border-border rounded-lg px-3 py-2 text-foreground placeholder-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary/50 focus:border-primary/50"
+                  placeholder="Ingresa cantidad..."
+                />
+              </div>
+
+              {pointsToRedeem > 0 && (
+                <div className="bg-primary/10 rounded-lg p-3 border border-primary/30">
+                  <p className="text-xs text-foreground/70 font-medium mb-1">Recibirás</p>
+                  <p className="text-2xl font-bold text-primary">
+                    ${(pointsToRedeem / 50).toFixed(2)}
+                  </p>
+                  <p className="text-xs text-foreground/60 mt-1">{pointsToRedeem} puntos</p>
+                </div>
+              )}
+
+              <button
+                onClick={() => {
+                  if (pointsToRedeem > 0 && pointsToRedeem <= selectedBusiness.ptsBalance) {
+                    alert(`Canjeaste ${pointsToRedeem} puntos exitosamente`);
+                    setPointsToRedeem(0);
+                  }
+                }}
+                disabled={pointsToRedeem <= 0 || pointsToRedeem > selectedBusiness.ptsBalance}
+                className="w-full bg-gradient-to-r from-success to-primary text-white font-semibold py-3 rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-lg active:scale-95"
+                style={{
+                  backgroundColor: pointsToRedeem > 0 && pointsToRedeem <= selectedBusiness.ptsBalance ? selectedBusiness.color : undefined,
+                }}
+              >
+                Confirmar Canje
+              </button>
+            </div>
+          </div>
+
           {/* Premios Disponibles */}
           <div className="md:col-span-1">
             <div className="flex items-center gap-2 mb-4">
@@ -105,7 +153,7 @@ export default function AllBusinesses() {
               {selectedBusiness.rewards.slice(0, 3).map((reward) => (
                 <div
                   key={reward.id}
-                  className="glass-panel rounded-lg p-3 border border-border hover:border-primary/30 transition-all"
+                  className="glass-panel rounded-lg p-3 border border-border hover:border-primary/30 transition-all cursor-pointer hover:bg-white/[0.02]"
                 >
                   <p className="text-sm font-medium text-foreground">{reward.name}</p>
                   <p
@@ -126,39 +174,17 @@ export default function AllBusinesses() {
               <h2 className="text-lg font-semibold text-foreground">Descuentos</h2>
             </div>
             <div className="space-y-2">
-              <div className="glass-panel rounded-lg p-3 border border-border hover:border-primary/30 transition-all">
+              <div className="glass-panel rounded-lg p-3 border border-border hover:border-primary/30 transition-all cursor-pointer hover:bg-white/[0.02]">
                 <p className="text-sm font-medium text-foreground">10% Descuento</p>
                 <p className="text-xs text-foreground/60 mt-1">300 pts</p>
               </div>
-              <div className="glass-panel rounded-lg p-3 border border-border hover:border-primary/30 transition-all">
+              <div className="glass-panel rounded-lg p-3 border border-border hover:border-primary/30 transition-all cursor-pointer hover:bg-white/[0.02]">
                 <p className="text-sm font-medium text-foreground">20% Descuento</p>
                 <p className="text-xs text-foreground/60 mt-1">500 pts</p>
               </div>
-              <div className="glass-panel rounded-lg p-3 border border-border hover:border-primary/30 transition-all">
+              <div className="glass-panel rounded-lg p-3 border border-border hover:border-primary/30 transition-all cursor-pointer hover:bg-white/[0.02]">
                 <p className="text-sm font-medium text-foreground">Envío Gratis</p>
                 <p className="text-xs text-foreground/60 mt-1">200 pts</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Canjear por Dinero */}
-          <div className="md:col-span-1">
-            <div className="flex items-center gap-2 mb-4">
-              <DollarSign size={20} className="text-success" />
-              <h2 className="text-lg font-semibold text-foreground">Dinero</h2>
-            </div>
-            <div className="space-y-2">
-              <div className="glass-panel rounded-lg p-3 border border-border hover:border-primary/30 transition-all">
-                <p className="text-sm font-medium text-foreground">$5</p>
-                <p className="text-xs text-foreground/60 mt-1">250 pts</p>
-              </div>
-              <div className="glass-panel rounded-lg p-3 border border-border hover:border-primary/30 transition-all">
-                <p className="text-sm font-medium text-foreground">$10</p>
-                <p className="text-xs text-foreground/60 mt-1">500 pts</p>
-              </div>
-              <div className="glass-panel rounded-lg p-3 border border-border hover:border-primary/30 transition-all">
-                <p className="text-sm font-medium text-foreground">$20</p>
-                <p className="text-xs text-foreground/60 mt-1">1000 pts</p>
               </div>
             </div>
           </div>
