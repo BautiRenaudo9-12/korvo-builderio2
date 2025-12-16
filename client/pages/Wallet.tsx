@@ -10,7 +10,7 @@ export default function Wallet() {
   return (
     <div className="px-6 md:px-8 pt-4 md:pt-8 min-h-full">
       <h2 className="text-xl md:text-3xl font-semibold text-foreground tracking-tight mb-6 md:mb-8 animate-fade-in">
-        Mis Tarjetas
+        Mis Negocios
       </h2>
       <div className="pb-20 md:pb-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
         {mockWalletCards.map((card, index) => {
