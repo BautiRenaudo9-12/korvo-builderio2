@@ -12,6 +12,7 @@ export default function AllBusinesses() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedBusiness, setSelectedBusiness] = useState<WalletCard | null>(null);
   const [sortBy, setSortBy] = useState<SortOption>('points');
+  const [pointsToRedeem, setPointsToRedeem] = useState<number>(0);
 
   useEffect(() => {
     if (id) {
