@@ -273,7 +273,8 @@ export default function AllBusinesses() {
               {selectedBusiness.rewards.slice(0, 3).map((reward) => (
                 <div
                   key={reward.id}
-                  className="glass-panel rounded-lg p-3 border border-border hover:border-primary/30 transition-all cursor-pointer hover:bg-white/[0.02]"
+                  onClick={() => handleClaimReward(reward)}
+                  className="glass-panel rounded-lg p-3 border border-border hover:border-primary/30 transition-all cursor-pointer hover:bg-white/[0.02] active:scale-95"
                 >
                   <p className="text-sm font-medium text-foreground">
                     {reward.name}
