@@ -434,7 +434,7 @@ export default function AllBusinesses() {
             {selectedClaimedItem && (
               <div className="flex flex-col items-center gap-6 py-4">
                 <div className="bg-white p-4 rounded-lg">
-                  <QRCode
+                  <QRCodeSVG
                     value={selectedClaimedItem.id}
                     size={256}
                     level="H"
