@@ -1,6 +1,7 @@
 import { WalletCard } from '@/types';
 import { ChevronRight, Heart } from 'lucide-react';
 import { useFavorites } from '@/hooks/use-favorites';
+import { useNavigate } from 'react-router-dom';
 
 interface BusinessCarouselProps {
   businesses: WalletCard[];
@@ -9,6 +10,7 @@ interface BusinessCarouselProps {
 
 export const BusinessCarousel = ({ businesses, onViewAll }: BusinessCarouselProps) => {
   const { isFavorite, toggleFavorite } = useFavorites();
+  const navigate = useNavigate();
 
   return (
     <div className="mb-6 md:mb-8">
@@ -27,7 +29,8 @@ export const BusinessCarousel = ({ businesses, onViewAll }: BusinessCarouselProp
         {businesses.map((business) => (
           <div
             key={business.id}
-            className="flex-shrink-0 w-40 md:w-48 glass-panel rounded-lg p-3 md:p-4 border border-border hover:border-primary/30 transition-all hover:bg-black/[0.02]"
+            onClick={() => navigate(`/businesses/${business.id}`)}
+            className="flex-shrink-0 w-40 md:w-48 glass-panel rounded-lg p-3 md:p-4 border border-border hover:border-primary/30 transition-all hover:bg-black/[0.02] cursor-pointer"
           >
             {/* Cover Image */}
             <div
@@ -49,7 +52,7 @@ export const BusinessCarousel = ({ businesses, onViewAll }: BusinessCarouselProp
                   className={`transition-all ${
                     isFavorite(business.id)
                       ? 'fill-destructive text-destructive'
-                      : 'text-foreground/70 hover:text-foreground'
+                      : 'text-white hover:text-foreground'
                   }`}
                 />
               </button>
