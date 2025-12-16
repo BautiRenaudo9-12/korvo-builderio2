@@ -88,7 +88,7 @@ export default function AllBusinesses() {
           </div>
 
           <div className="glass-panel rounded-xl p-4 md:p-6 border border-border">
-            <p className="text-xs md:text-sm text-muted-foreground font-medium mb-2">Tasa</p>
+            <p className="text-xs md:text-sm text-foreground/70 font-medium mb-2">Tasa</p>
             <p className="text-sm md:text-base font-semibold text-foreground">
               {selectedBusiness.rate}
             </p>
