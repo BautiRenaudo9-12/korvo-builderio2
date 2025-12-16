@@ -19,6 +19,9 @@ export default defineConfig(({ mode }) => ({
       "@shared": path.resolve(__dirname, "./shared"),
     },
   },
+  optimizeDeps: {
+    include: ["qrcode.react"],
+  },
 }));
 
 function expressPlugin(): Plugin {

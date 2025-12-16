@@ -12,16 +12,16 @@ export default function Home() {
       
 
 
-      <div className="mb-8 md:mb-12">
+      <div className="mb-4 md:mb-8">
         <p className="text-muted-foreground text-xs md:text-sm font-medium uppercase tracking-wider mb-1 md:mb-2">
           Buenos días, {mockUser.name}
         </p>
-        <div className="flex items-end gap-2">
+        {/* <div className="flex items-end gap-2">
           <h2 className="text-4xl md:text-6xl font-semibold text-foreground tracking-tighter">
             {mockUser.points.toLocaleString()}
           </h2>
           <span className="text-primary font-medium pb-1.5 md:pb-3 text-xs md:text-sm tracking-wide">PTS TOTALES</span>
-        </div>
+        </div> */}
       </div>
 
 
