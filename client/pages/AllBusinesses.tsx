@@ -334,31 +334,42 @@ export default function AllBusinesses() {
           </div>
         </div>
 
-        {/* Claimed Items Section */}
+        {/* Claimed Items Button */}
         {claimedItems.length > 0 && (
           <div className="mt-8 md:mt-12">
             <button
-              onClick={() => setShowClaimed(!showClaimed)}
-              className="flex items-center justify-between w-full mb-4 pb-3 border-b border-border"
+              onClick={() => setShowClaimedModal(true)}
+              className="flex items-center justify-between w-full px-4 py-3 bg-success/10 border border-success/30 rounded-lg hover:bg-success/20 transition-colors"
             >
               <div className="flex items-center gap-2">
                 <CheckCircle size={20} className="text-success" />
                 <h2 className="text-lg font-semibold text-foreground">
-                  Reclamado ({claimedItems.length})
+                  Ver Reclamado ({claimedItems.length})
                 </h2>
               </div>
-              <span className="text-foreground/60">
-                {showClaimed ? "▼" : "▶"}
-              </span>
+              <span className="text-foreground/60">→</span>
             </button>
+          </div>
+        )}
 
-            {showClaimed && (
-              <div className="space-y-3">
-                {claimedItems.map((item) => (
-                  <div
-                    key={item.id}
-                    className="glass-panel rounded-lg p-4 border border-border flex items-start justify-between group hover:border-primary/30 transition-all"
-                  >
+        {/* Claimed Items Modal */}
+        <Dialog open={showClaimedModal} onOpenChange={setShowClaimedModal}>
+          <DialogContent className="max-w-2xl">
+            <DialogHeader>
+              <DialogTitle className="flex items-center gap-2">
+                <CheckCircle size={24} className="text-success" />
+                Mis Reclamados ({claimedItems.length})
+              </DialogTitle>
+            </DialogHeader>
+
+            <div className="space-y-3 max-h-96 overflow-y-auto">
+              {claimedItems.map((item) => (
+                <button
+                  key={item.id}
+                  onClick={() => setSelectedClaimedItem(item)}
+                  className="w-full text-left glass-panel rounded-lg p-4 border border-border hover:border-primary/30 transition-all group active:scale-95"
+                >
+                  <div className="flex items-start justify-between">
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-2">
                         <span
@@ -392,18 +403,80 @@ export default function AllBusinesses() {
                         {item.value}
                       </p>
                       <button
-                        onClick={() => handleDeleteClaimed(item.id)}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleDeleteClaimed(item.id);
+                        }}
                         className="p-1.5 rounded-lg hover:bg-destructive/10 transition-colors opacity-0 group-hover:opacity-100"
                       >
                         <Trash2 size={16} className="text-destructive" />
                       </button>
                     </div>
                   </div>
-                ))}
+                </button>
+              ))}
+            </div>
+          </DialogContent>
+        </Dialog>
+
+        {/* QR Code Modal */}
+        <Dialog
+          open={selectedClaimedItem !== null}
+          onOpenChange={(open) => {
+            if (!open) setSelectedClaimedItem(null);
+          }}
+        >
+          <DialogContent className="max-w-md flex flex-col items-center">
+            <DialogHeader>
+              <DialogTitle>Código QR - {selectedClaimedItem?.title}</DialogTitle>
+            </DialogHeader>
+
+            {selectedClaimedItem && (
+              <div className="flex flex-col items-center gap-6 py-4">
+                <div className="bg-white p-4 rounded-lg">
+                  <QRCode
+                    value={selectedClaimedItem.id}
+                    size={256}
+                    level="H"
+                    includeMargin={true}
+                  />
+                </div>
+
+                <div className="text-center space-y-2">
+                  <p className="text-sm text-foreground/60">ID de Canje</p>
+                  <p className="text-lg font-mono font-bold text-foreground break-all">
+                    {selectedClaimedItem.id}
+                  </p>
+                </div>
+
+                <div className="w-full space-y-2">
+                  <div className="glass-panel rounded-lg p-3 border border-border">
+                    <p className="text-xs text-foreground/60 mb-1">Tipo</p>
+                    <p className="text-sm font-semibold text-foreground">
+                      {selectedClaimedItem.type === "money"
+                        ? "Dinero en Efectivo"
+                        : selectedClaimedItem.type === "reward"
+                        ? "Premio"
+                        : "Descuento"}
+                    </p>
+                  </div>
+                  <div className="glass-panel rounded-lg p-3 border border-border">
+                    <p className="text-xs text-foreground/60 mb-1">Valor</p>
+                    <p className="text-sm font-semibold text-foreground">
+                      {selectedClaimedItem.value}
+                    </p>
+                  </div>
+                  <div className="glass-panel rounded-lg p-3 border border-border">
+                    <p className="text-xs text-foreground/60 mb-1">Negocio</p>
+                    <p className="text-sm font-semibold text-foreground">
+                      {selectedClaimedItem.businessName}
+                    </p>
+                  </div>
+                </div>
               </div>
             )}
-          </div>
-        )}
+          </DialogContent>
+        </Dialog>
       </div>
     );
   }
