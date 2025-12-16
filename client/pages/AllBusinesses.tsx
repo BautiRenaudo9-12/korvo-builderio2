@@ -101,7 +101,7 @@ export default function AllBusinesses() {
               <DollarSign size={20} className="text-success" />
               <h2 className="text-lg font-semibold text-foreground">Canjear</h2>
             </div>
-            <div className=" rounded-lg p-4  bg-white shadow-lg space-y-4">
+            <div className=" rounded-lg p-4  bg-white shadow-xl space-y-4">
               <div>
                 <p className="text-xs text-foreground/70 font-medium mb-3">Puntos a Canjear</p>
                 <input
