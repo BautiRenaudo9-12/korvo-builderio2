@@ -252,7 +252,7 @@ export default function AllBusinesses() {
                     </div>
 
                     <div className="bg-secondary rounded-lg p-2 md:p-3 border border-border">
-                      <p className="text-[10px] md:text-xs text-secondary-foreground font-medium mb-1">
+                      <p className="text-[10px] md:text-xs text-foreground/70 font-medium mb-1">
                         Sellos
                       </p>
                       <p className="text-sm md:text-base font-bold text-foreground">
@@ -261,7 +261,7 @@ export default function AllBusinesses() {
                     </div>
 
                     <div className="bg-secondary rounded-lg p-2 md:p-3 border border-border">
-                      <p className="text-[10px] md:text-xs text-secondary-foreground font-medium mb-1">
+                      <p className="text-[10px] md:text-xs text-foreground/70 font-medium mb-1">
                         Avance
                       </p>
                       <div className="w-full h-1.5 bg-secondary rounded-full overflow-hidden">
