@@ -128,7 +128,7 @@ export default function Activity() {
             className={`flex items-center gap-1.5 px-3 py-2 rounded-lg transition-all text-xs md:text-sm font-medium font-semibold ${
               typeFilter === 'all'
                 ? 'bg-primary text-primary-foreground border border-primary'
-                : 'bg-secondary border border-border text-foreground hover:bg-secondary/60 hover:border-border font-bold'
+                : 'bg-secondary border border-border text-foreground hover:bg-secondary/40 hover:border-border/60 font-bold'
             }`}
           >
             <Filter size={14} />
@@ -140,7 +140,7 @@ export default function Activity() {
             className={`flex items-center gap-1.5 px-3 py-2 rounded-lg transition-all text-xs md:text-sm font-medium font-semibold ${
               typeFilter === 'earn'
                 ? 'bg-success text-white border border-success'
-                : 'bg-secondary border border-border text-foreground hover:bg-secondary/60 hover:border-border font-bold'
+                : 'bg-secondary border border-border text-foreground hover:bg-secondary/40 hover:border-border/60 font-bold'
             }`}
           >
             <ArrowDownLeft size={14} />
@@ -152,7 +152,7 @@ export default function Activity() {
             className={`flex items-center gap-1.5 px-3 py-2 rounded-lg transition-all text-xs md:text-sm font-medium font-semibold ${
               typeFilter === 'burn'
                 ? 'bg-destructive text-destructive-foreground border border-destructive'
-                : 'bg-secondary border border-border text-foreground hover:bg-secondary/60 hover:border-border font-bold'
+                : 'bg-secondary border border-border text-foreground hover:bg-secondary/40 hover:border-border/60 font-bold'
             }`}
           >
             <ArrowUpRight size={14} />
