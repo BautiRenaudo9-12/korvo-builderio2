@@ -77,10 +77,7 @@ export default function Home() {
       </div>
 
       {/* Business Carousel */}
-      <BusinessCarousel
-        businesses={mockWalletCards}
-        onViewAll={goToAllBusinesses}
-      />
+      
 
       
     </div>
