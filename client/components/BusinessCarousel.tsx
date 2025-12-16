@@ -49,7 +49,7 @@ export const BusinessCarousel = ({ businesses, onViewAll }: BusinessCarouselProp
                   className={`transition-all ${
                     isFavorite(business.id)
                       ? 'fill-destructive text-destructive'
-                      : 'text-white hover:text-foreground'
+                      : 'text-white hover:text-white'
                   }`}
                 />
               </button>
