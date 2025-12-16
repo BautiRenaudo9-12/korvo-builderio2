@@ -58,11 +58,11 @@ export default function AllBusinesses() {
           <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-2">
             {selectedBusiness.shop}
           </h1>
-          <div className="flex items-center gap-2 text-muted-foreground mb-3">
+          <div className="flex items-center gap-2 text-foreground/60 mb-3">
             <MapPin size={16} />
             <p className="text-sm md:text-base">{selectedBusiness.address}</p>
           </div>
-          <div className="flex items-center gap-2 text-muted-foreground">
+          <div className="flex items-center gap-2 text-foreground/60">
             <Clock size={16} />
             <p className="text-sm md:text-base">Última visita: {selectedBusiness.lastVisit}</p>
           </div>
