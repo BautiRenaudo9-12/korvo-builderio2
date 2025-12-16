@@ -110,7 +110,7 @@ export default function AllBusinesses() {
                   max={selectedBusiness.ptsBalance}
                   value={pointsToRedeem}
                   onChange={(e) => setPointsToRedeem(Math.max(0, Number(e.target.value)))}
-                  className="w-full border border-border/20 rounded-lg px-3 py-2 text-foreground placeholder-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary/50 focus:border-primary/50"
+                  className="w-full border border-border/50 rounded-lg px-3 py-2 text-foreground placeholder-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary/50 focus:border-primary/50"
                   placeholder="Ingresa cantidad..."
                 />
               </div>
@@ -133,7 +133,7 @@ export default function AllBusinesses() {
                   }
                 }}
                 disabled={pointsToRedeem <= 0 || pointsToRedeem > selectedBusiness.ptsBalance}
-                className="w-full bg-gradient-to-r from-success to-primary text-white font-semibold py-3 rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-lg active:scale-95"
+                className="w-full  text-white font-semibold py-3 rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-lg active:scale-95"
                 style={{
                   backgroundColor: pointsToRedeem > 0 && pointsToRedeem <= selectedBusiness.ptsBalance ? selectedBusiness.color : undefined,
                 }}
