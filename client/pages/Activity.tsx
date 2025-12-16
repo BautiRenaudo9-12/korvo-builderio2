@@ -215,7 +215,7 @@ export default function Activity() {
                           <p className="text-sm md:text-base font-medium text-foreground truncate">
                             {transaction.item || (isEarn ? 'Puntos ganados' : 'Canjeado')}
                           </p>
-                          <p className="text-[10px] md:text-xs text-muted-foreground truncate">
+                          <p className="text-[10px] md:text-xs text-foreground/60 truncate">
                             {transaction.shop} • {transaction.date}
                           </p>
                         </div>
