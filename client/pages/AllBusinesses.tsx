@@ -1,4 +1,5 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 import { mockWalletCards } from '@/lib/data';
 import { Search, Zap, TrendingUp, ArrowUp, MapPin, Clock } from 'lucide-react';
 import { WalletCard } from '@/types';
@@ -6,9 +7,20 @@ import { WalletCard } from '@/types';
 type SortOption = 'name' | 'points' | 'stamps';
 
 export default function AllBusinesses() {
+  const { id } = useParams<{ id: string }>();
+  const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedBusiness, setSelectedBusiness] = useState<WalletCard | null>(null);
   const [sortBy, setSortBy] = useState<SortOption>('points');
+
+  useEffect(() => {
+    if (id) {
+      const business = mockWalletCards.find((b) => b.id === Number(id));
+      setSelectedBusiness(business || null);
+    } else {
+      setSelectedBusiness(null);
+    }
+  }, [id]);
 
   const filteredAndSorted = useMemo(() => {
     let filtered = mockWalletCards.filter((b) =>
