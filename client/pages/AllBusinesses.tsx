@@ -219,7 +219,7 @@ export default function AllBusinesses() {
           {filteredAndSorted.map((business, index) => (
             <button
               key={business.id}
-              onClick={() => setSelectedBusiness(business)}
+              onClick={() => navigate(`/businesses/${business.id}`)}
               className="w-full text-left glass-panel rounded-xl border border-border hover:border-primary/30 transition-all hover:bg-black/[0.02] overflow-hidden group animate-fade-in"
               style={{ animationDelay: `${index * 50}ms` }}
             >
