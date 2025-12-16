@@ -11,10 +11,22 @@ import {
   Gift,
   Tag,
   DollarSign,
+  CheckCircle,
+  Trash2,
 } from "lucide-react";
 import { WalletCard } from "@/types";
 
 type SortOption = "name" | "points" | "stamps";
+
+interface ClaimedItem {
+  id: string;
+  type: "money" | "reward" | "discount";
+  businessId: number;
+  businessName: string;
+  title: string;
+  value: string;
+  date: string;
+}
 
 export default function AllBusinesses() {
   const { id } = useParams<{ id: string }>();
