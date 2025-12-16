@@ -71,7 +71,7 @@ export default function AllBusinesses() {
         {/* Stats Cards */}
         <div className="grid grid-cols-3 gap-3 md:gap-4 mb-8">
           <div className="glass-panel rounded-xl p-4 md:p-6 border border-border">
-            <p className="text-xs md:text-sm text-muted-foreground font-medium mb-2">Puntos</p>
+            <p className="text-xs md:text-sm text-foreground/70 font-medium mb-2">Puntos</p>
             <p
               className="text-2xl md:text-3xl font-bold"
               style={{ color: selectedBusiness.color }}
