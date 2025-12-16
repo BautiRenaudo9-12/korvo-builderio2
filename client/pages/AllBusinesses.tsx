@@ -126,6 +126,10 @@ export default function AllBusinesses() {
                 Canjear puntos
               </h2>
             </div>
+            <div className="flex items-center gap-2 mb-4">
+              <Gift size={20} className="text-primary" />
+              <h2 className="text-lg font-semibold text-foreground">Premios</h2>
+            </div>
 
             {/* Card */}
             <div className="rounded-2xl bg-white p-5 shadow-[0_8px_24px_rgba(0,0,0,0.06)] space-y-5">
