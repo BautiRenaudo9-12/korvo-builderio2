@@ -133,7 +133,7 @@ export default function AllBusinesses() {
                   }
                 }}
                 disabled={pointsToRedeem <= 0 || pointsToRedeem > selectedBusiness.ptsBalance}
-                className="w-full bg-gradient-to-r from-success to-primary text-white font-semibold py-3 rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-lg active:scale-95"
+                className="w-full bg-gradient-to-r from-success to-secondary text-white font-semibold py-3 rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-lg active:scale-95"
                 style={{
                   backgroundColor: pointsToRedeem > 0 && pointsToRedeem <= selectedBusiness.ptsBalance ? selectedBusiness.color : undefined,
                 }}
