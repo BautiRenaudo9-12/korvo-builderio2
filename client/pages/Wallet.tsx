@@ -35,7 +35,7 @@ export default function Wallet() {
                     </div>
                     <div className="min-w-0">
                       <h3 className="font-semibold text-foreground tracking-tight text-sm md:text-base font-bold">{card.shop}</h3>
-                      <p className="text-[10px] md:text-xs text-foreground/70 font-semibold">{card.ptsBalance} Pts disponibles</p>
+                      <p className="text-[10px] md:text-xs text-foreground/80 font-semibold">{card.ptsBalance} Pts disponibles</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-2 flex-shrink-0 ml-2">
