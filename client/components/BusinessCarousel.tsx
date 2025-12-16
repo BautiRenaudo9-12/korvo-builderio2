@@ -27,6 +27,7 @@ export const BusinessCarousel = ({ businesses, onViewAll }: BusinessCarouselProp
         {businesses.map((business) => (
           <div
             key={business.id}
+            onClick={() => navigate(`/businesses/${business.id}`)}
             className="flex-shrink-0 w-40 md:w-48 glass-panel rounded-lg p-3 md:p-4 border border-border hover:border-primary/30 transition-all hover:bg-black/[0.02]"
           >
             {/* Cover Image */}
