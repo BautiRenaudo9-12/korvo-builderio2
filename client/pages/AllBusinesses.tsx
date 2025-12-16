@@ -299,19 +299,28 @@ export default function AllBusinesses() {
               </h2>
             </div>
             <div className="space-y-2">
-              <div className="glass-panel rounded-lg p-3 border border-border hover:border-primary/30 transition-all cursor-pointer hover:bg-white/[0.02]">
+              <div
+                onClick={() => handleClaimDiscount("10% Descuento", 300)}
+                className="glass-panel rounded-lg p-3 border border-border hover:border-primary/30 transition-all cursor-pointer hover:bg-white/[0.02] active:scale-95"
+              >
                 <p className="text-sm font-medium text-foreground">
                   10% Descuento
                 </p>
                 <p className="text-xs text-foreground/60 mt-1">300 pts</p>
               </div>
-              <div className="glass-panel rounded-lg p-3 border border-border hover:border-primary/30 transition-all cursor-pointer hover:bg-white/[0.02]">
+              <div
+                onClick={() => handleClaimDiscount("20% Descuento", 500)}
+                className="glass-panel rounded-lg p-3 border border-border hover:border-primary/30 transition-all cursor-pointer hover:bg-white/[0.02] active:scale-95"
+              >
                 <p className="text-sm font-medium text-foreground">
                   20% Descuento
                 </p>
                 <p className="text-xs text-foreground/60 mt-1">500 pts</p>
               </div>
-              <div className="glass-panel rounded-lg p-3 border border-border hover:border-primary/30 transition-all cursor-pointer hover:bg-white/[0.02]">
+              <div
+                onClick={() => handleClaimDiscount("Envío Gratis", 200)}
+                className="glass-panel rounded-lg p-3 border border-border hover:border-primary/30 transition-all cursor-pointer hover:bg-white/[0.02] active:scale-95"
+              >
                 <p className="text-sm font-medium text-foreground">
                   Envío Gratis
                 </p>
@@ -320,6 +329,77 @@ export default function AllBusinesses() {
             </div>
           </div>
         </div>
+
+        {/* Claimed Items Section */}
+        {claimedItems.length > 0 && (
+          <div className="mt-8 md:mt-12">
+            <button
+              onClick={() => setShowClaimed(!showClaimed)}
+              className="flex items-center justify-between w-full mb-4 pb-3 border-b border-border"
+            >
+              <div className="flex items-center gap-2">
+                <CheckCircle size={20} className="text-success" />
+                <h2 className="text-lg font-semibold text-foreground">
+                  Reclamado ({claimedItems.length})
+                </h2>
+              </div>
+              <span className="text-foreground/60">
+                {showClaimed ? "▼" : "▶"}
+              </span>
+            </button>
+
+            {showClaimed && (
+              <div className="space-y-3">
+                {claimedItems.map((item) => (
+                  <div
+                    key={item.id}
+                    className="glass-panel rounded-lg p-4 border border-border flex items-start justify-between group hover:border-primary/30 transition-all"
+                  >
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2 mb-2">
+                        <span
+                          className={`text-xs font-semibold px-2 py-1 rounded ${
+                            item.type === "money"
+                              ? "bg-success/20 text-success"
+                              : item.type === "reward"
+                              ? "bg-primary/20 text-primary"
+                              : "bg-accent/20 text-accent"
+                          }`}
+                        >
+                          {item.type === "money"
+                            ? "💵"
+                            : item.type === "reward"
+                            ? "🎁"
+                            : "🏷️"}
+                        </span>
+                        <span className="text-xs text-foreground/60">
+                          {item.date}
+                        </span>
+                      </div>
+                      <h3 className="text-sm font-semibold text-foreground mb-1">
+                        {item.title}
+                      </h3>
+                      <p className="text-xs text-foreground/60">
+                        {item.businessName}
+                      </p>
+                    </div>
+                    <div className="flex items-center gap-3 ml-3">
+                      <p className="text-sm font-bold text-foreground whitespace-nowrap">
+                        {item.value}
+                      </p>
+                      <button
+                        onClick={() => handleDeleteClaimed(item.id)}
+                        className="p-1.5 rounded-lg hover:bg-destructive/10 transition-colors opacity-0 group-hover:opacity-100"
+                      >
+                        <Trash2 size={16} className="text-destructive" />
+                      </button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        )}
       </div>
     );
   }
