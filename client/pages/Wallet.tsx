@@ -18,7 +18,7 @@ export default function Wallet() {
           return (
             <div
               key={card.id}
-              onClick={() => goToStoreDetail(card.id)}
+              onClick={() => goToBusinessDetail(card.id)}
               className="glass-panel rounded-2xl p-5 md:p-6 relative overflow-hidden group animate-fade-in cursor-pointer active:scale-95 transition-all border border-border hover:border-primary/30"
               style={{
                 animationDelay: `${index * 50}ms`,
