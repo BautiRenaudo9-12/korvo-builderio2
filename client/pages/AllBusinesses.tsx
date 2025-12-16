@@ -37,6 +37,8 @@ export default function AllBusinesses() {
   );
   const [sortBy, setSortBy] = useState<SortOption>("points");
   const [pointsToRedeem, setPointsToRedeem] = useState<number>(0);
+  const [claimedItems, setClaimedItems] = useState<ClaimedItem[]>([]);
+  const [showClaimed, setShowClaimed] = useState(false);
 
   useEffect(() => {
     if (id) {
