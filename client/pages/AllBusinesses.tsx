@@ -128,7 +128,7 @@ export default function AllBusinesses() {
             </div>
             <div className="flex items-center gap-2 mb-4">
               <Gift size={20} className="text-primary" />
-              <h2 className="text-lg font-semibold text-foreground">Premios</h2>
+              <h2 className="text-lg font-semibold text-foreground">Canjear</h2>
             </div>
 
             {/* Card */}
