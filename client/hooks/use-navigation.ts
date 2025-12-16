@@ -10,7 +10,7 @@ export const useNavigation = () => {
   const goToExplore = useCallback(() => navFn('/explore'), [navFn]);
   const goToProfile = useCallback(() => navFn('/profile'), [navFn]);
   const goToActivity = useCallback(() => navFn('/activity'), [navFn]);
-  const goToBusinessDetail = useCallback((id: number) => navFn(`/businesses/${id}`), [navFn]);
+  const goToBusinessDetail = useCallback((id: number) => navFn(`/wallet/${id}`), [navFn]);
   const goToAllBusinesses = useCallback(() => navFn('/wallet'), [navFn]);
 
   return {
