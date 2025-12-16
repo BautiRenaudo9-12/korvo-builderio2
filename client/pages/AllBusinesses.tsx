@@ -15,7 +15,7 @@ import {
   Trash2,
   X,
 } from "lucide-react";
-import QRCode from "qrcode.react";
+import { QRCodeSVG } from "qrcode.react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { WalletCard } from "@/types";
 
