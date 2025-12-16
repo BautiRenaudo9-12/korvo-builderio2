@@ -236,8 +236,8 @@ export default function AllBusinesses() {
                     pointsToRedeem > 0 &&
                     pointsToRedeem <= selectedBusiness.ptsBalance
                   ) {
-                    alert(`Canjeaste ${pointsToRedeem} puntos exitosamente`);
-                    setPointsToRedeem(0);
+                    const money = pointsToRedeem / 50;
+                    handleClaimMoney(pointsToRedeem, money);
                   }
                 }}
                 disabled={
