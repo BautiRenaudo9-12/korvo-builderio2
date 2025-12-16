@@ -170,7 +170,7 @@ export default function Activity() {
 
         <div className="glass-panel rounded-lg p-4 border border-border" style={{ backgroundColor: 'rgba(255, 255, 255, 0.8)' }}>
           <p className="text-[10px] md:text-xs text-foreground/75 font-semibold mb-2">Pts Canjeados</p>
-          <p className="text-lg md:text-2xl font-bold text-destructive">-{totalBurn}</p>
+          <p className="text-lg md:text-2xl font-bold text-destructive">{totalBurn}</p>
         </div>
 
         <div className="glass-panel rounded-lg p-4 border border-border" style={{ backgroundColor: 'rgba(255, 255, 255, 0.8)' }}>
