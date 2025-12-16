@@ -20,7 +20,7 @@ export const useNavigation = () => {
     goToExplore,
     goToProfile,
     goToActivity,
-    goToStoreDetail,
+    goToBusinessDetail,
     goToAllBusinesses,
   };
 };
