@@ -14,7 +14,6 @@ import Wallet from "./pages/Wallet";
 import Activity from "./pages/Activity";
 import Profile from "./pages/Profile";
 import Explore from "./pages/Explore";
-import StoreDetail from "./pages/StoreDetail";
 import AllBusinesses from "./pages/AllBusinesses";
 import NotFound from "./pages/NotFound";
 import BusinessDashboard from "./pages/business/Dashboard";
