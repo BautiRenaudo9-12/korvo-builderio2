@@ -167,17 +167,35 @@ export default function Activity() {
 
       {/* Stats Cards */}
       <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 mb-8">
-        <div className="glass-panel rounded-lg p-4 border border-border" style={{ backgroundColor: 'rgba(255, 255, 255, 0.8)' }}>
+        <div
+          className="glass-panel rounded-lg p-4 border"
+          style={{
+            backgroundColor: `hsl(var(--card))`,
+            borderColor: `hsl(var(--border))`,
+          }}
+        >
           <p className="text-[10px] md:text-xs text-foreground/75 font-semibold mb-2">Pts Ganados</p>
           <p className="text-lg md:text-2xl font-bold text-success">+{totalEarn}</p>
         </div>
 
-        <div className="glass-panel rounded-lg p-4 border border-border" style={{ backgroundColor: 'rgba(255, 255, 255, 0.8)' }}>
+        <div
+          className="glass-panel rounded-lg p-4 border"
+          style={{
+            backgroundColor: `hsl(var(--card))`,
+            borderColor: `hsl(var(--border))`,
+          }}
+        >
           <p className="text-[10px] md:text-xs text-foreground/75 font-semibold mb-2">Pts Canjeados</p>
           <p className="text-lg md:text-2xl font-bold text-destructive">{totalBurn}</p>
         </div>
 
-        <div className="glass-panel rounded-lg p-4 border border-border" style={{ backgroundColor: 'rgba(255, 255, 255, 0.8)' }}>
+        <div
+          className="glass-panel rounded-lg p-4 border"
+          style={{
+            backgroundColor: `hsl(var(--card))`,
+            borderColor: `hsl(var(--border))`,
+          }}
+        >
           <p className="text-[10px] md:text-xs text-foreground/75 font-semibold mb-2">Total Transacciones</p>
           <p className="text-lg md:text-2xl font-bold text-foreground">{mockTransactions.length}</p>
         </div>
