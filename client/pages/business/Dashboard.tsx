@@ -12,7 +12,7 @@ export default function BusinessDashboard() {
       <h1 className="text-2xl md:text-4xl font-bold text-foreground mb-8">Dashboard</h1>
 
       {/* Stats Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6 mb-8">
+      <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6 mb-8">
         {/* Total Points */}
         <div className="glass-panel rounded-lg p-4 md:p-6 border border-white/5 hover:border-white/10 transition-all">
           <div className="flex items-center justify-between mb-3 md:mb-4">
@@ -28,8 +28,8 @@ export default function BusinessDashboard() {
         {/* Active Customers */}
         <div className="glass-panel rounded-lg p-4 md:p-6 border border-white/5 hover:border-white/10 transition-all">
           <div className="flex items-center justify-between mb-3 md:mb-4">
-            <div className="w-8 md:w-10 h-8 md:h-10 rounded-lg bg-info-20 flex items-center justify-center">
-              <Users size={18} className="text-info" />
+            <div className="w-8 md:w-10 h-8 md:h-10 rounded-lg flex items-center justify-center">
+              <Users size={18} className="text-primary" />
             </div>
             <span className="text-xs text-success font-semibold">+8%</span>
           </div>

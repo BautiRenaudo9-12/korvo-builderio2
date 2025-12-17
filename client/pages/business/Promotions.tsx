@@ -100,11 +100,17 @@ export default function BusinessPromotions() {
 
   return (
     <div className="px-3 sm:px-4 md:px-8 pt-3 sm:pt-4 md:pt-8 pb-8">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-6">
+        <div>
+          <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground">Promociones</h1>
+          <p className="text-muted-foreground text-xs sm:text-sm">Define las promociones para tus clientes</p>
+        </div>
+      </div>
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-6 sm:mb-8">
-        <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-white">Promociones</h1>
+
         <button
           onClick={handleAddNew}
-          className="flex items-center justify-center sm:justify-start gap-2 px-3 sm:px-4 py-2 bg-primary hover:bg-primary-dark text-black font-semibold rounded-lg transition-colors text-sm sm:text-base whitespace-nowrap"
+          className="flex items-center justify-center sm:justify-start gap-2 px-3 sm:px-4 py-2 bg-primary hover:bg-primary-dark font-semibold rounded-lg transition-colors text-sm sm:text-base whitespace-nowrap"
         >
           <Plus size={16} />
           <span className="hidden sm:inline">Nueva Promoción</span>
@@ -115,8 +121,8 @@ export default function BusinessPromotions() {
       {/* Form Modal */}
       {showForm && (
         <div className="fixed inset-0 z-50 backdrop-blur-lg bg-black/80 flex items-center justify-center p-4 animate-fade-in">
-          <div className="glass-panel rounded-2xl p-6 max-w-lg w-full max-h-[90vh] overflow-y-auto border border-white/5">
-            <h2 className="text-xl font-bold text-white mb-6">
+          <div className="bg-background rounded-2xl p-6 max-w-lg w-full max-h-[90vh] overflow-y-auto border border-white/5">
+            <h2 className="text-xl font-bold text-foreground mb-6">
               {editingId ? 'Editar Promoción' : 'Nueva Promoción'}
             </h2>
 
@@ -128,7 +134,7 @@ export default function BusinessPromotions() {
                   type="text"
                   value={formData?.title || ''}
                   onChange={(e) => setFormData({ ...formData!, title: e.target.value })}
-                  className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-primary/50"
+                  className="w-full bg-foreground/5 border border-foreground/10 rounded-lg px-4 py-2 text-foreground placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-primary/50"
                   placeholder="Ej: Descuento Black Friday"
                 />
               </div>
@@ -139,7 +145,7 @@ export default function BusinessPromotions() {
                 <textarea
                   value={formData?.description || ''}
                   onChange={(e) => setFormData({ ...formData!, description: e.target.value })}
-                  className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-primary/50 min-h-20 resize-none"
+                  className="w-full bg-foreground/5 border border-foreground/10 rounded-lg px-4 py-2 text-foreground placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-primary/50 min-h-20 resize-none"
                   placeholder="Detalles de la promoción"
                 />
               </div>
@@ -150,7 +156,7 @@ export default function BusinessPromotions() {
                 <select
                   value={formData?.type || 'percentage'}
                   onChange={(e) => setFormData({ ...formData!, type: e.target.value as any })}
-                  className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-1 focus:ring-primary/50"
+                  className="w-full bg-foreground/5 border border-foreground/10 rounded-lg px-4 py-2 text-foreground focus:outline-none focus:ring-1 focus:ring-primary/50"
                 >
                   <option value="percentage">% Descuento</option>
                   <option value="fixed">Descuento Fijo</option>
@@ -167,7 +173,7 @@ export default function BusinessPromotions() {
                   type="number"
                   value={formData?.discount || 0}
                   onChange={(e) => setFormData({ ...formData!, discount: parseInt(e.target.value) })}
-                  className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-primary/50"
+                  className="w-full bg-foreground/5 border border-foreground/10 rounded-lg px-4 py-2 text-foreground placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-primary/50"
                   placeholder="0"
                 />
               </div>
@@ -180,7 +186,7 @@ export default function BusinessPromotions() {
                     type="date"
                     value={formData?.startDate || ''}
                     onChange={(e) => setFormData({ ...formData!, startDate: e.target.value })}
-                    className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-1 focus:ring-primary/50"
+                    className="w-full bg-foreground/5 border border-foreground/10 rounded-lg px-4 py-2 text-foreground focus:outline-none focus:ring-1 focus:ring-primary/50"
                   />
                 </div>
                 <div>
@@ -189,21 +195,20 @@ export default function BusinessPromotions() {
                     type="date"
                     value={formData?.endDate || ''}
                     onChange={(e) => setFormData({ ...formData!, endDate: e.target.value })}
-                    className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-1 focus:ring-primary/50"
+                    className="w-full bg-foreground/5 border border-foreground/10 rounded-lg px-4 py-2 text-foreground focus:outline-none focus:ring-1 focus:ring-primary/50"
                   />
                 </div>
               </div>
 
               {/* Active Toggle */}
-              <div className="flex items-center justify-between py-3 px-4 rounded-lg bg-white/5 border border-white/10">
-                <span className="text-white font-medium">Activa</span>
+              <div className="flex items-center justify-between py-3 px-4 rounded-lg bg-foreground/5 border border-foreground/10">
+                <span className="text-foreground font-medium">Activa</span>
                 <button
                   onClick={() => setFormData({ ...formData!, active: !formData?.active })}
-                  className={`px-4 py-2 rounded-lg font-medium transition-all ${
-                    formData?.active
+                  className={`px-4 py-2 rounded-lg font-medium transition-all ${formData?.active
                       ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/50'
-                      : 'bg-white/5 text-neutral-400 border border-white/10'
-                  }`}
+                      : 'bg-white/5 text-neutral-400 border border-text-foreground/10'
+                    }`}
                 >
                   {formData?.active ? 'Sí' : 'No'}
                 </button>
@@ -214,7 +219,7 @@ export default function BusinessPromotions() {
             <div className="flex gap-3 mt-8">
               <button
                 onClick={handleCancel}
-                className="flex-1 px-4 py-2 border border-white/10 text-white rounded-lg hover:bg-white/5 transition-colors font-medium"
+                className="flex-1 px-4 py-2 border border-text-foreground/10 text-foreground rounded-lg hover:bg-white/5 transition-colors font-medium"
               >
                 Cancelar
               </button>
@@ -242,19 +247,19 @@ export default function BusinessPromotions() {
             >
               <div className="flex items-start justify-between gap-2 sm:gap-3 mb-3 sm:mb-4">
                 <div className="flex-1 min-w-0">
-                  <h3 className="text-base sm:text-lg font-bold text-white mb-1 break-words">{promo.title}</h3>
+                  <h3 className="text-base sm:text-lg font-bold text-foreground mb-1 break-words">{promo.title}</h3>
                   <p className="text-xs sm:text-sm text-neutral-400 line-clamp-2">{promo.description}</p>
                 </div>
                 <div className="flex gap-1 sm:gap-2 flex-shrink-0">
                   <button
                     onClick={() => handleEdit(promo)}
-                    className="p-1.5 sm:p-2 hover:bg-white/10 rounded-lg transition-colors text-primary"
+                    className="p-1.5 sm:p-2 hover:bg-foreground/10 rounded-lg transition-colors text-primary"
                   >
                     <Edit2 size={16} />
                   </button>
                   <button
                     onClick={() => handleDelete(promo.id)}
-                    className="p-1.5 sm:p-2 hover:bg-white/10 rounded-lg transition-colors text-red-500"
+                    className="p-1.5 sm:p-2 hover:bg-foreground/10 rounded-lg transition-colors text-red-500"
                   >
                     <Trash2 size={16} />
                   </button>
@@ -263,10 +268,10 @@ export default function BusinessPromotions() {
 
               {/* Type and Value */}
               <div className="flex items-center gap-2 mb-3 sm:mb-4 flex-wrap">
-                <span className="px-2 sm:px-3 py-1 rounded-full bg-white/10 text-xs font-semibold text-neutral-300 whitespace-nowrap">
+                <span className="px-2 sm:px-3 py-1 rounded-full bg-foreground/5 text-xs font-semibold text-foreground/60 whitespace-nowrap">
                   {getTypeLabel(promo.type)}
                 </span>
-                <span className="text-xl sm:text-2xl font-bold text-primary-400">
+                <span className="text-xl sm:text-2xl font-bold text-primary">
                   {promo.type === 'percentage' ? `${promo.discount}%` : promo.type === 'fixed' ? `$${promo.discount}` : `+${promo.discount}`}
                 </span>
               </div>
@@ -282,11 +287,10 @@ export default function BusinessPromotions() {
               {/* Status Badge */}
               <div className="flex gap-2">
                 <span
-                  className={`px-2 sm:px-3 py-1 rounded-full text-xs font-semibold whitespace-nowrap ${
-                    active
-                      ? 'bg-emerald-500/20 text-emerald-400'
-                      : 'bg-neutral-500/20 text-neutral-400'
-                  }`}
+                  className={`px-2 sm:px-3 py-1 rounded-full text-xs font-semibold whitespace-nowrap ${active
+                      ? 'bg-emerald-500/10 text-emerald-400'
+                      : 'bg-neutral-500/20 text-foreground/60'
+                    }`}
                 >
                   {active ? 'Activa' : 'Inactiva'}
                 </span>

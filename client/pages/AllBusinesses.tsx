@@ -248,11 +248,10 @@ export default function AllBusinesses() {
           <button
             onClick={() => claimedItems.length > 0 && setShowClaimedModal(true)}
             disabled={claimedItems.length === 0}
-            className={`flex items-center justify-between w-full px-4 py-3 backdrop-blur-xl rounded-xl transition-all active:scale-[0.98] shadow-[0_8px_24px_rgba(0,0,0,0.06)] ${
-              claimedItems.length > 0
+            className={`flex items-center justify-between w-full px-4 py-3 backdrop-blur-xl rounded-xl transition-all active:scale-[0.98] shadow-[0_8px_24px_rgba(0,0,0,0.06)] ${claimedItems.length > 0
                 ? "hover:border-primary/30 cursor-pointer"
                 : "opacity-50 cursor-not-allowed"
-            }`}
+              }`}
             style={{
               backgroundColor: `hsl(var(--card) / 0.9)`,
               borderColor: claimedItems.length > 0 ? `hsl(var(--border))` : `hsl(var(--border) / 0.5)`,
@@ -353,7 +352,7 @@ export default function AllBusinesses() {
                 style={{
                   background:
                     pointsToRedeem > 0 &&
-                    pointsToRedeem <= selectedBusiness.ptsBalance
+                      pointsToRedeem <= selectedBusiness.ptsBalance
                       ? selectedBusiness.color
                       : "#c7c7cc",
                 }}
@@ -407,7 +406,7 @@ export default function AllBusinesses() {
                   10% Descuento
                 </p>
                 <p className="text-xs font-semibold mt-0.5"
-                    style={{ color: selectedBusiness.color }} >300 pts</p>
+                  style={{ color: selectedBusiness.color }} >300 pts</p>
               </div>
               <div
                 onClick={() => confirmClaimDiscount("20% Descuento", 500)}
@@ -417,7 +416,7 @@ export default function AllBusinesses() {
                   20% Descuento
                 </p>
                 <p className="text-xs font-semibold mt-0.5"
-                    style={{ color: selectedBusiness.color }}>500 pts</p>
+                  style={{ color: selectedBusiness.color }}>500 pts</p>
               </div>
               <div
                 onClick={() => confirmClaimDiscount("Envío Gratis", 200)}
@@ -427,7 +426,7 @@ export default function AllBusinesses() {
                   Envío Gratis
                 </p>
                 <p className="text-xs font-semibold mt-0.5"
-                    style={{ color: selectedBusiness.color }}>200 pts</p>
+                  style={{ color: selectedBusiness.color }}>200 pts</p>
               </div>
             </div>
           </div>
@@ -466,8 +465,8 @@ export default function AllBusinesses() {
                                 item.type === "money"
                                   ? "hsl(var(--success) / 0.1)"
                                   : item.type === "reward"
-                                  ? "hsl(var(--primary) / 0.1)"
-                                  : "hsl(var(--accent) / 0.1)",
+                                    ? "hsl(var(--primary) / 0.1)"
+                                    : "hsl(var(--accent) / 0.1)",
                             }}
                           >
                             {item.type === "money" ? (
@@ -667,8 +666,8 @@ export default function AllBusinesses() {
                       {selectedClaimedItem.type === "money"
                         ? "Dinero en Efectivo"
                         : selectedClaimedItem.type === "reward"
-                        ? "Premio"
-                        : "Descuento"}
+                          ? "Premio"
+                          : "Descuento"}
                     </p>
                   </div>
                   <div className="glass-panel rounded-lg p-3 shadow-sm">
@@ -695,11 +694,10 @@ export default function AllBusinesses() {
   return (
     <div className="px-6 md:px-8 pt-4 md:pt-8 pb-24">
       {/* Header */}
+      
       <div className="mb-6 md:mb-8">
-        <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-2">
-          Mis Negocios
-        </h1>
-        <p className="text-muted-foreground text-sm">
+        <h2 className="text-2xl md:text-4xl font-bold text-foreground mb-2 md:mb-3">Billetera</h2>
+        <p className="text-sm md:text-base text-muted-foreground max-w-2xl">
           {filteredAndSorted.length} negocio
           {filteredAndSorted.length !== 1 ? "s" : ""}
         </p>
@@ -741,11 +739,10 @@ export default function AllBusinesses() {
             <button
               key={option}
               onClick={() => setSortBy(option)}
-              className={`flex items-center gap-1.5 px-3 py-2 rounded-lg transition-all whitespace-nowrap text-xs md:text-sm font-medium ${
-                sortBy === option
+              className={`flex items-center gap-1.5 px-3 py-2 rounded-lg transition-all whitespace-nowrap text-xs md:text-sm font-medium ${sortBy === option
                   ? "bg-primary/10 border border-primary/30 text-primary font-semibold"
                   : "bg-secondary shadow-sm text-foreground hover:bg-secondary/60 hover:border-border/70 font-semibold"
-              }`}
+                }`}
             >
               <Icon size={14} />
               {labels[option]}
@@ -839,9 +836,8 @@ export default function AllBusinesses() {
                         <div
                           className="h-full rounded-full transition-all"
                           style={{
-                            width: `${
-                              (business.stamps / business.total) * 100
-                            }%`,
+                            width: `${(business.stamps / business.total) * 100
+                              }%`,
                             backgroundColor: business.color,
                           }}
                         ></div>

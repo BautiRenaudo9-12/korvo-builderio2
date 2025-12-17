@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { mockRewards } from '@/lib/business-data';
-import { Plus, Edit2, Trash2, Toggle2 } from 'lucide-react';
+import { Plus, Edit2, Trash2 } from 'lucide-react';
 
 interface EditingReward {
   id: string;
@@ -48,12 +48,12 @@ export default function BusinessRewards() {
         rewards.map((r) =>
           r.id === editingId
             ? {
-                ...r,
-                name: formData.name,
-                description: formData.description,
-                cost: formData.cost,
-                active: formData.active,
-              }
+              ...r,
+              name: formData.name,
+              description: formData.description,
+              cost: formData.cost,
+              active: formData.active,
+            }
             : r
         )
       );
@@ -98,11 +98,16 @@ export default function BusinessRewards() {
 
   return (
     <div className="px-3 sm:px-4 md:px-8 pt-3 sm:pt-4 md:pt-8 pb-8">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-6">
+        <div>
+          <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground">Recompensas</h1>
+          <p className="text-muted-foreground text-xs sm:text-sm">Define las recompensas para tus clientes</p>
+        </div>
+      </div>
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-6 sm:mb-8">
-        <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground">Recompensas</h1>
         <button
           onClick={handleAddNew}
-          className="flex items-center justify-center sm:justify-start gap-2 px-3 sm:px-4 py-2 bg-primary hover:bg-primary-dark text-black font-semibold rounded-lg transition-colors text-sm sm:text-base whitespace-nowrap"
+          className="flex items-center justify-center sm:justify-start gap-2 px-3 sm:px-4 py-2 bg-primary hover:bg-primary-dark font-semibold rounded-lg transition-colors text-sm sm:text-base whitespace-nowrap"
         >
           <Plus size={16} />
           <span className="hidden sm:inline">Nueva Recompensa</span>
@@ -113,7 +118,7 @@ export default function BusinessRewards() {
       {/* Form Modal */}
       {showForm && (
         <div className="fixed inset-0 z-50 backdrop-blur-lg bg-black/80 flex items-center justify-center p-4 animate-fade-in">
-          <div className="glass-panel rounded-2xl p-6 max-w-lg w-full max-h-[90vh] overflow-y-auto border border-white/5">
+          <div className="bg-card rounded-2xl p-6 max-w-lg w-full max-h-[90vh] overflow-y-auto border border-white/5">
             <h2 className="text-xl font-bold text-foreground mb-6">
               {editingId ? 'Editar Recompensa' : 'Nueva Recompensa'}
             </h2>
@@ -157,7 +162,7 @@ export default function BusinessRewards() {
                   type="number"
                   value={formData?.cost || 0}
                   onChange={(e) => setFormData({ ...formData!, cost: parseInt(e.target.value) })}
-                  className="w-full rounded-lg px-4 py-2 text-foreground placeholder-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary/50 border"
+                  className="w-full rounded-lg px-4 py-2 text-primary placeholder-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary/50 border"
                   style={{
                     backgroundColor: `hsl(var(--card))`,
                     borderColor: `hsl(var(--border))`,
@@ -177,11 +182,10 @@ export default function BusinessRewards() {
                 <span className="text-foreground font-medium">Activa</span>
                 <button
                   onClick={() => setFormData({ ...formData!, active: !formData?.active })}
-                  className={`px-4 py-2 rounded-lg font-medium transition-all ${
-                    formData?.active
+                  className={`px-4 py-2 rounded-lg font-medium transition-all ${formData?.active
                       ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/50'
                       : 'bg-white/5 text-neutral-400 border border-white/10'
-                  }`}
+                    }`}
                 >
                   {formData?.active ? 'Sí' : 'No'}
                 </button>
@@ -192,13 +196,13 @@ export default function BusinessRewards() {
             <div className="flex gap-3 mt-8">
               <button
                 onClick={handleCancel}
-                className="flex-1 px-4 py-2 border border-white/10 text-white rounded-lg hover:bg-white/5 transition-colors font-medium"
+                className="flex-1 px-4 py-2 border border-foreground/10 text-foreground rounded-lg hover:bg-foreground/5 transition-colors font-medium"
               >
                 Cancelar
               </button>
               <button
                 onClick={handleSave}
-                className="flex-1 px-4 py-2 bg-primary hover:bg-primary-dark text-black rounded-lg transition-colors font-semibold"
+                className="flex-1 px-4 py-2 bg-primary hover:bg-primary-dark rounded-lg transition-colors font-semibold dark:text-black"
               >
                 Guardar
               </button>
@@ -253,11 +257,10 @@ export default function BusinessRewards() {
                     <td className="px-4 md:px-6 py-4">
                       <button
                         onClick={() => handleToggle(reward.id)}
-                        className={`px-3 py-1 rounded-full text-xs font-semibold transition-all ${
-                          reward.active
+                        className={`px-3 py-1 rounded-full text-xs font-semibold transition-all ${reward.active
                             ? 'bg-emerald-500/20 text-emerald-400'
                             : 'bg-neutral-500/20 text-neutral-400'
-                        }`}
+                          }`}
                       >
                         {reward.active ? 'Activa' : 'Inactiva'}
                       </button>
@@ -338,11 +341,10 @@ export default function BusinessRewards() {
             {/* Status */}
             <button
               onClick={() => handleToggle(reward.id)}
-              className={`w-full px-2 sm:px-3 py-2 sm:py-3 rounded-lg font-semibold transition-all text-xs sm:text-sm ${
-                reward.active
+              className={`w-full px-2 sm:px-3 py-2 sm:py-3 rounded-lg font-semibold transition-all text-xs sm:text-sm ${reward.active
                   ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30'
                   : 'bg-neutral-500/20 text-neutral-400 border border-neutral-500/30'
-              }`}
+                }`}
             >
               {reward.active ? '✓ Activa' : '○ Inactiva'}
             </button>

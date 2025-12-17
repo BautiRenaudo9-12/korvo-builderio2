@@ -56,7 +56,7 @@ export default function BusinessPoints() {
                   })
                 }
                 step="0.1"
-                className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white placeholder-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary/50"
+                className="w-full bg-foreground/5 border border-foreground/10 rounded-lg px-4 py-2 text-foreground placeholder-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary/50"
                 placeholder="1"
               />
               <p className="text-xs text-muted-foreground mt-2">El cliente ganará {pointsConfig.pointsPerDollar} puntos por cada $1 gastado</p>
@@ -73,7 +73,7 @@ export default function BusinessPoints() {
                     expiryMonths: Math.max(1, parseInt(e.target.value)),
                   })
                 }
-                className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white placeholder-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary/50"
+                className="w-full bg-foreground/5 border border-foreground/10 rounded-lg px-4 py-2 text-foreground placeholder-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary/50"
                 placeholder="12"
               />
               <p className="text-xs text-muted-foreground mt-2">Los puntos expirarán después de {pointsConfig.expiryMonths} meses de inactividad</p>
@@ -81,7 +81,7 @@ export default function BusinessPoints() {
 
             <button
               onClick={handleSaveConfig}
-              className="w-full px-4 py-2 bg-primary hover:bg-primary-dark text-black rounded-lg transition-colors font-semibold"
+              className="w-full px-4 py-2 bg-primary hover:bg-primary-dark  rounded-lg transition-colors font-semibold"
             >
               Guardar Configuración
             </button>
@@ -115,7 +115,7 @@ export default function BusinessPoints() {
       </div>
 
       {saveMessage && (
-        <div className="fixed bottom-4 right-4 px-4 py-3 bg-success-20 text-success-400 border border-success/50 rounded-lg animate-fade-in">
+        <div className="fixed bottom-4 right-4 px-4 py-3 bg-success text-success-400 border border-success/50 rounded-lg animate-fade-in">
           ✓ Configuración guardada
         </div>
       )}

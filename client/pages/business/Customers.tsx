@@ -36,21 +36,21 @@ export default function BusinessCustomers() {
 
   return (
     <div className="px-4 md:px-8 pt-4 md:pt-8 pb-8">
-      <h1 className="text-2xl md:text-3xl font-bold text-white mb-8">Clientes</h1>
+      <h1 className="text-2xl md:text-3xl font-bold text-foreground mb-8">Clientes</h1>
 
       {/* Stats Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4 mb-6 md:mb-8">
-        <div className="glass-panel rounded-lg p-4 md:p-6 border border-white/5">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 mb-6 md:mb-8">
+        <div className="col-span-2 glass-panel rounded-lg p-4 md:p-6 border border-white/5">
           <p className="text-muted-foreground text-xs md:text-sm mb-2">Total de Clientes</p>
-          <p className="text-2xl md:text-3xl font-bold text-white">{totalCustomers}</p>
+          <p className="text-2xl md:text-3xl font-bold text-foreground">{totalCustomers}</p>
         </div>
         <div className="glass-panel rounded-lg p-4 md:p-6 border border-white/5">
           <p className="text-muted-foreground text-xs md:text-sm mb-2">Puntos en Circulación</p>
-          <p className="text-2xl md:text-3xl font-bold text-primary/80">{totalPointsInCirculation.toLocaleString()}</p>
+          <p className="text-2xl md:text-3xl font-bold text-primary">{totalPointsInCirculation.toLocaleString()}</p>
         </div>
         <div className="glass-panel rounded-lg p-4 md:p-6 border border-white/5">
           <p className="text-muted-foreground text-xs md:text-sm mb-2">Activos este mes</p>
-          <p className="text-2xl md:text-3xl font-bold text-emerald-500">{activeThisMonth}</p>
+          <p className="text-2xl md:text-3xl font-bold text-primary">{activeThisMonth}</p>
         </div>
       </div>
 
@@ -66,7 +66,7 @@ export default function BusinessCustomers() {
             placeholder="Buscar por nombre, email o teléfono..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full bg-white/5 border border-white/10 rounded-lg pl-10 pr-4 py-2.5 text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-primary/50"
+            className="text-sm w-full bg-card border border-white/10 rounded-lg pl-10 pr-4 py-2.5 text-foreground placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-primary/50"
           />
         </div>
 
@@ -77,7 +77,7 @@ export default function BusinessCustomers() {
               onClick={() => setSortBy(option)}
               className={`px-4 py-2 rounded-lg transition-all text-sm font-medium ${
                 sortBy === option
-                  ? 'bg-primary-20 border border-primary-50 text-primary-400'
+                  ? 'bg-primary-20 border border-primary-50 text-primary'
                   : 'bg-white/5 border border-white/10 text-muted-foreground hover:bg-white/10'
               }`}
             >
@@ -124,7 +124,7 @@ export default function BusinessCustomers() {
                 >
                   <td className="px-4 md:px-6 py-4">
                     <div>
-                      <p className="text-white font-medium">{customer.name}</p>
+                      <p className="text-foreground font-medium">{customer.name}</p>
                       <p className="text-xs text-neutral-500">Desde {customer.joinedAt}</p>
                     </div>
                   </td>
@@ -139,7 +139,7 @@ export default function BusinessCustomers() {
                   </td>
                   <td className="px-4 md:px-6 py-4">
                     <div className="space-y-1">
-                      <p className="text-white font-medium">
+                      <p className="text-foreground font-medium">
                         {customer.stamps}/{customer.totalStamps}
                       </p>
                       <div className="w-16 h-1.5 bg-white/5 rounded-full overflow-hidden">
@@ -153,7 +153,7 @@ export default function BusinessCustomers() {
                     </div>
                   </td>
                   <td className="px-4 md:px-6 py-4">
-                    <span className="text-white font-semibold">${customer.totalSpent.toLocaleString()}</span>
+                    <span className="text-foreground font-semibold">${customer.totalSpent.toLocaleString()}</span>
                   </td>
                   <td className="px-4 md:px-6 py-4">
                     <span className="text-xs text-neutral-500">{customer.lastVisit}</span>

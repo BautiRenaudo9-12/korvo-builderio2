@@ -60,11 +60,11 @@ export const BusinessHeader = () => {
   };
 
   return (
-    <header className="md:hidden sticky top-0 z-40 px-4 py-4 bg-background border-b border-border">
+    <header className="md:hidden sticky top-0 z-40 px-4 py-4 bg-background ">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <div class="flex items-center gap-2">
-            <div class="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center border border-primary/20">
+          <div className="flex items-center gap-2">
+            <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center border border-primary/20">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="18"
@@ -75,7 +75,7 @@ export const BusinessHeader = () => {
                 stroke-width="1.5"
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                class="lucide lucide-bird text-primary"
+                className="lucide lucide-bird text-primary"
                 aria-hidden="true"
               >
                 <path d="M16 7h.01"></path>
@@ -87,7 +87,7 @@ export const BusinessHeader = () => {
               </svg>
             </div>
             <div className="flex gap-0.5 items-end">
-            <h1 class="text-lg font-semibold tracking-tighter text-foreground">
+            <h1 className="text-lg font-semibold tracking-tighter text-foreground">
               KORVO
             </h1>
               <span className="text-primary italic font-medium text-xs uppercase tracking-wide pb-1 ">
