@@ -113,17 +113,7 @@
   border: 1px solid hsl(var(--border));
 }
 
-.dark .glass-panel {
-  background: hsl(var(--card) / 0.85);
-}
 
-.dark .glass-nav {
-  background: hsl(var(--background));
-}
-
-.dark .glass-modal {
-  background: hsl(var(--card));
-}
 /* ================================
    ANIMATIONS
 ================================ */
