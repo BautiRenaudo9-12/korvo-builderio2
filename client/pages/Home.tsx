@@ -27,7 +27,7 @@ export default function Home() {
 
 
       {/* QR Identity */}
-      <div className=" rounded-2xl p-6 md:p-8 relative overflow-hidden group mb-6 md:mb-8 shadow-2xl border border-border">
+      <div className="glass-panel rounded-2xl p-6 md:p-8 relative overflow-hidden group mb-6 md:mb-8 shadow-2xl border border-border">
         <div className="absolute inset-0 bg-gradient-to-br from-black/5 to-transparent pointer-events-none"></div>
         <div className="flex flex-col items-center justify-center relative z-10">
           <div className="w-48 md:w-64 h-48 md:h-64 bg-white p-3 rounded-xl relative overflow-hidden shadow-inner mb-4 md:mb-6">
