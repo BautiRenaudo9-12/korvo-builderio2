@@ -122,8 +122,9 @@
 }
 
 .dark .glass-modal {
-background: hsl(var(--card) / 0.8);
+  background: hsl(var(--card) / 0.8);
 }
+
 /* ================================
    ANIMATIONS
 ================================ */
