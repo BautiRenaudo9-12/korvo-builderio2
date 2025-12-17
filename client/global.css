@@ -118,7 +118,7 @@
 }
 
 .dark .glass-nav {
-  background: hsl(var(--background)/ 0.7);
+  background: hsl(var(--background)/ 0.8);
 }
 
 .dark .glass-modal {
