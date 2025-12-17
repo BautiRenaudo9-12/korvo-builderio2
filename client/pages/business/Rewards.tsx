@@ -99,7 +99,7 @@ export default function BusinessRewards() {
   return (
     <div className="px-3 sm:px-4 md:px-8 pt-3 sm:pt-4 md:pt-8 pb-8">
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-6 sm:mb-8">
-        <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-white">Recompensas</h1>
+        <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground">Recompensas</h1>
         <button
           onClick={handleAddNew}
           className="flex items-center justify-center sm:justify-start gap-2 px-3 sm:px-4 py-2 bg-primary hover:bg-primary-dark text-black font-semibold rounded-lg transition-colors text-sm sm:text-base whitespace-nowrap"
@@ -114,7 +114,7 @@ export default function BusinessRewards() {
       {showForm && (
         <div className="fixed inset-0 z-50 backdrop-blur-lg bg-black/80 flex items-center justify-center p-4 animate-fade-in">
           <div className="glass-panel rounded-2xl p-6 max-w-lg w-full max-h-[90vh] overflow-y-auto border border-white/5">
-            <h2 className="text-xl font-bold text-white mb-6">
+            <h2 className="text-xl font-bold text-foreground mb-6">
               {editingId ? 'Editar Recompensa' : 'Nueva Recompensa'}
             </h2>
 
@@ -126,7 +126,11 @@ export default function BusinessRewards() {
                   type="text"
                   value={formData?.name || ''}
                   onChange={(e) => setFormData({ ...formData!, name: e.target.value })}
-                  className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-primary/50"
+                  className="w-full rounded-lg px-4 py-2 text-foreground placeholder-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary/50 border"
+                  style={{
+                    backgroundColor: `hsl(var(--card))`,
+                    borderColor: `hsl(var(--border))`,
+                  }}
                   placeholder="Ej: Café Gratis"
                 />
               </div>
@@ -137,7 +141,11 @@ export default function BusinessRewards() {
                 <textarea
                   value={formData?.description || ''}
                   onChange={(e) => setFormData({ ...formData!, description: e.target.value })}
-                  className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-primary/50 min-h-20 resize-none"
+                  className="w-full rounded-lg px-4 py-2 text-foreground placeholder-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary/50 min-h-20 resize-none border"
+                  style={{
+                    backgroundColor: `hsl(var(--card))`,
+                    borderColor: `hsl(var(--border))`,
+                  }}
                   placeholder="Ej: Taza de café americano o capuchino"
                 />
               </div>
@@ -149,14 +157,24 @@ export default function BusinessRewards() {
                   type="number"
                   value={formData?.cost || 0}
                   onChange={(e) => setFormData({ ...formData!, cost: parseInt(e.target.value) })}
-                  className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-primary/50"
+                  className="w-full rounded-lg px-4 py-2 text-foreground placeholder-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary/50 border"
+                  style={{
+                    backgroundColor: `hsl(var(--card))`,
+                    borderColor: `hsl(var(--border))`,
+                  }}
                   placeholder="300"
                 />
               </div>
 
               {/* Active Toggle */}
-              <div className="flex items-center justify-between py-3 px-4 rounded-lg bg-white/5 border border-white/10">
-                <span className="text-white font-medium">Activa</span>
+              <div
+                className="flex items-center justify-between py-3 px-4 rounded-lg border"
+                style={{
+                  backgroundColor: `hsl(var(--muted) / 0.2)`,
+                  borderColor: `hsl(var(--border))`,
+                }}
+              >
+                <span className="text-foreground font-medium">Activa</span>
                 <button
                   onClick={() => setFormData({ ...formData!, active: !formData?.active })}
                   className={`px-4 py-2 rounded-lg font-medium transition-all ${
@@ -196,19 +214,19 @@ export default function BusinessRewards() {
             <table className="w-full">
               <thead>
                 <tr className="border-b border-white/5 bg-white/[0.02]">
-                  <th className="px-4 md:px-6 py-4 text-left text-xs font-semibold text-neutral-400 uppercase">
+                  <th className="px-4 md:px-6 py-4 text-left text-xs font-semibold text-muted-foreground uppercase">
                     Recompensa
                   </th>
-                  <th className="px-4 md:px-6 py-4 text-left text-xs font-semibold text-neutral-400 uppercase">
+                  <th className="px-4 md:px-6 py-4 text-left text-xs font-semibold text-muted-foreground uppercase">
                     Costo
                   </th>
-                  <th className="px-4 md:px-6 py-4 text-left text-xs font-semibold text-neutral-400 uppercase">
+                  <th className="px-4 md:px-6 py-4 text-left text-xs font-semibold text-muted-foreground uppercase">
                     Canjeadas
                   </th>
-                  <th className="px-4 md:px-6 py-4 text-left text-xs font-semibold text-neutral-400 uppercase">
+                  <th className="px-4 md:px-6 py-4 text-left text-xs font-semibold text-muted-foreground uppercase">
                     Estado
                   </th>
-                  <th className="px-4 md:px-6 py-4 text-left text-xs font-semibold text-neutral-400 uppercase">
+                  <th className="px-4 md:px-6 py-4 text-left text-xs font-semibold text-muted-foreground uppercase">
                     Acciones
                   </th>
                 </tr>
@@ -222,15 +240,15 @@ export default function BusinessRewards() {
                   >
                     <td className="px-4 md:px-6 py-4">
                       <div>
-                        <p className="text-white font-medium">{reward.name}</p>
-                        <p className="text-xs text-neutral-500 line-clamp-1">{reward.description}</p>
+                        <p className="text-foreground font-medium">{reward.name}</p>
+                        <p className="text-xs text-muted-foreground line-clamp-1">{reward.description}</p>
                       </div>
                     </td>
                     <td className="px-4 md:px-6 py-4">
                       <span className="text-primary-400 font-semibold">{reward.cost} pts</span>
                     </td>
                     <td className="px-4 md:px-6 py-4">
-                      <span className="text-white font-medium">{reward.redeemCount}</span>
+                      <span className="text-foreground font-medium">{reward.redeemCount}</span>
                     </td>
                     <td className="px-4 md:px-6 py-4">
                       <button
@@ -300,14 +318,20 @@ export default function BusinessRewards() {
 
             {/* Info Grid */}
             <div className="grid grid-cols-2 gap-2 sm:gap-3 mb-3">
-              <div className="bg-white/5 rounded-lg p-2.5 sm:p-3">
-                <p className="text-xs text-neutral-500 mb-1">Costo</p>
+              <div
+                className="rounded-lg p-2.5 sm:p-3"
+                style={{ backgroundColor: `hsl(var(--muted) / 0.2)` }}
+              >
+                <p className="text-xs text-muted-foreground mb-1">Costo</p>
                 <p className="text-primary-400 font-bold text-lg sm:text-xl">{reward.cost}</p>
-                <p className="text-xs text-neutral-600">puntos</p>
+                <p className="text-xs text-muted-foreground">puntos</p>
               </div>
-              <div className="bg-white/5 rounded-lg p-2.5 sm:p-3">
-                <p className="text-xs text-neutral-500 mb-1">Canjeadas</p>
-                <p className="text-white font-bold text-lg sm:text-xl">{reward.redeemCount}</p>
+              <div
+                className="rounded-lg p-2.5 sm:p-3"
+                style={{ backgroundColor: `hsl(var(--muted) / 0.2)` }}
+              >
+                <p className="text-xs text-muted-foreground mb-1">Canjeadas</p>
+                <p className="text-foreground font-bold text-lg sm:text-xl">{reward.redeemCount}</p>
               </div>
             </div>
 
@@ -327,7 +351,7 @@ export default function BusinessRewards() {
 
         {rewards.length === 0 && (
           <div className="text-center py-8 sm:py-12">
-            <p className="text-neutral-400 text-xs sm:text-sm">No hay recompensas creadas</p>
+            <p className="text-muted-foreground text-xs sm:text-sm">No hay recompensas creadas</p>
           </div>
         )}
       </div>
@@ -335,7 +359,7 @@ export default function BusinessRewards() {
       {/* Empty State - Desktop */}
       {rewards.length === 0 && (
         <div className="hidden md:block text-center py-12">
-          <p className="text-neutral-400 text-sm">No hay recompensas creadas</p>
+          <p className="text-muted-foreground text-sm">No hay recompensas creadas</p>
         </div>
       )}
     </div>

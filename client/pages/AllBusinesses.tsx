@@ -248,11 +248,16 @@ export default function AllBusinesses() {
           <button
             onClick={() => claimedItems.length > 0 && setShowClaimedModal(true)}
             disabled={claimedItems.length === 0}
-            className={`flex items-center justify-between w-full px-4 py-3 bg-white/60 backdrop-blur-xl rounded-xl transition-all active:scale-[0.98] shadow-[0_8px_24px_rgba(0,0,0,0.06)] ${
+            className={`flex items-center justify-between w-full px-4 py-3 backdrop-blur-xl rounded-xl transition-all active:scale-[0.98] shadow-[0_8px_24px_rgba(0,0,0,0.06)] ${
               claimedItems.length > 0
-                ? "hover:border-primary/30 hover:bg-white/80 cursor-pointer"
+                ? "hover:border-primary/30 cursor-pointer"
                 : "opacity-50 cursor-not-allowed"
             }`}
+            style={{
+              backgroundColor: `hsl(var(--card) / 0.9)`,
+              borderColor: claimedItems.length > 0 ? `hsl(var(--border))` : `hsl(var(--border) / 0.5)`,
+              border: '1px solid',
+            }}
           >
             <div className="flex items-center gap-2.5">
               <div className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center">
@@ -281,7 +286,10 @@ export default function AllBusinesses() {
             </div>
 
             {/* Card */}
-            <div className="rounded-xl bg-white p-4 shadow-[0_8px_24px_rgba(0,0,0,0.06)] space-y-4">
+            <div
+              className="rounded-xl p-4 shadow-[0_8px_24px_rgba(0,0,0,0.06)] space-y-4"
+              style={{ backgroundColor: `hsl(var(--card))` }}
+            >
               {/* Input */}
               <div className="space-y-1.5">
                 <label className="text-xs font-medium text-foreground/60">
@@ -298,6 +306,11 @@ export default function AllBusinesses() {
                   }
                   placeholder="0"
                   className="w-full rounded-lg shadow-sm/40 px-3 py-2.5 text-sm text-foreground placeholder:text-foreground/30 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/40 transition"
+                  style={{
+                    backgroundColor: `hsl(var(--background))`,
+                    borderColor: `hsl(var(--border))`,
+                    border: '1px solid',
+                  }}
                 />
 
                 <p className="text-[10px] text-foreground/50">
@@ -307,7 +320,10 @@ export default function AllBusinesses() {
 
               {/* Resultado */}
               {pointsToRedeem > 0 && (
-                <div className="rounded-lg bg-foreground/[0.03] p-3 shadow-sm/40">
+                <div
+                  className="rounded-lg p-3 shadow-sm/40"
+                  style={{ backgroundColor: `hsl(var(--muted) / 0.3)` }}
+                >
                   <p className="text-xs text-foreground/60 mb-1">Recibirás</p>
                   <p className="text-2xl font-semibold text-foreground tracking-tight">
                     ${(pointsToRedeem / 50).toFixed(2)}
@@ -701,6 +717,10 @@ export default function AllBusinesses() {
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
           className="w-full shadow-sm rounded-lg pl-10 pr-4 py-2.5 md:py-3 text-sm md:text-base text-foreground placeholder-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary/50 focus:border-primary/50 transition-all"
+          style={{
+            backgroundColor: `hsl(var(--card))`,
+            borderColor: `hsl(var(--border))`,
+          }}
         />
       </div>
 
@@ -772,7 +792,10 @@ export default function AllBusinesses() {
 
                   {/* Stats Grid */}
                   <div className="flex items-center gap-3 md:gap-4">
-                    <div className="bg-white/90 backdrop-blur-sm rounded-xl p-2.5 md:p-3 shadow-sm/40 shadow-sm flex-1">
+                    <div
+                      className="backdrop-blur-sm rounded-xl p-2.5 md:p-3 shadow-sm flex-1"
+                      style={{ backgroundColor: `hsl(var(--card))` }}
+                    >
                       <div className="flex items-center justify-between mb-1">
                         <p className="text-[10px] md:text-xs text-foreground/50 font-medium">
                           Puntos
@@ -802,11 +825,17 @@ export default function AllBusinesses() {
                       </p>
                     </div>
 
-                    <div className="bg-white/90 backdrop-blur-sm rounded-xl p-2.5 md:p-3 shadow-sm/40 shadow-sm flex-1">
+                    <div
+                      className="backdrop-blur-sm rounded-xl p-2.5 md:p-3 shadow-sm/40 shadow-sm flex-1"
+                      style={{ backgroundColor: `hsl(var(--card))` }}
+                    >
                       <p className="text-[10px] md:text-xs text-foreground/50 font-medium mb-1">
                         Avance
                       </p>
-                      <div className="w-full h-2 bg-foreground/[0.03] rounded-full overflow-hidden">
+                      <div
+                        className="w-full h-2 rounded-full overflow-hidden"
+                        style={{ backgroundColor: `hsl(var(--muted))` }}
+                      >
                         <div
                           className="h-full rounded-full transition-all"
                           style={{

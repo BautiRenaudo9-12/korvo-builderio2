@@ -80,7 +80,10 @@ export const BusinessCarousel = ({ businesses, onViewAll }: BusinessCarouselProp
                   </span>
                   <span className="text-[10px] text-muted-foreground/70">sellos</span>
                 </div>
-                <div className="w-full h-1 bg-secondary rounded-full overflow-hidden">
+                <div
+                  className="w-full h-1 rounded-full overflow-hidden"
+                  style={{ backgroundColor: `hsl(var(--muted))` }}
+                >
                   <div
                     className="h-full rounded-full transition-all"
                     style={{

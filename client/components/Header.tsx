@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
-import { ChevronLeft, User, Bird } from 'lucide-react';
+import { ChevronLeft, User, Bird, Moon, Sun } from 'lucide-react';
+import { useTheme } from '@/hooks/use-theme';
 
 interface HeaderProps {
   isDetailRoute: boolean;
@@ -8,6 +9,7 @@ interface HeaderProps {
 
 export const Header = ({ isDetailRoute, onBack }: HeaderProps) => {
   const navigate = useNavigate();
+  const { theme, toggleTheme } = useTheme();
 
   return (
     <header className="md:hidden pt-6 pb-2 px-6 flex justify-between items-center z-20 bg-background backdrop-blur-sm sticky top-0 transition-all duration-300 ">
@@ -28,14 +30,36 @@ export const Header = ({ isDetailRoute, onBack }: HeaderProps) => {
         </div>
       )}
 
-      {isDetailRoute && <div />}
+      {!isDetailRoute && (
+        <div className="flex items-center gap-1">
+          <button
+            onClick={toggleTheme}
+            className="p-2 rounded-full hover:bg-accent/10 transition-colors group"
+            title={theme === 'light' ? 'Cambiar a modo oscuro' : 'Cambiar a modo claro'}
+          >
+            {theme === 'light' ? (
+              <Moon size={20} className="text-muted-foreground group-hover:text-foreground transition-colors" strokeWidth={1.5} />
+            ) : (
+              <Sun size={20} className="text-muted-foreground group-hover:text-foreground transition-colors" strokeWidth={1.5} />
+            )}
+          </button>
+          <button
+            onClick={() => navigate('/profile')}
+            className="relative p-2 rounded-full hover:bg-accent/10 transition-colors group"
+          >
+            <User size={20} className="text-muted-foreground group-hover:text-foreground transition-colors" strokeWidth={1.5} />
+          </button>
+        </div>
+      )}
 
-      <button
-        onClick={() => navigate('/profile')}
-        className="relative p-2 rounded-full hover:bg-black/5 transition-colors group"
-      >
-        <User size={20} className="text-muted-foreground group-hover:text-foreground transition-colors" strokeWidth={1.5} />
-      </button>
+      {isDetailRoute && (
+        <button
+          onClick={() => navigate('/profile')}
+          className="relative p-2 rounded-full hover:bg-accent/10 transition-colors group"
+        >
+          <User size={20} className="text-muted-foreground group-hover:text-foreground transition-colors" strokeWidth={1.5} />
+        </button>
+      )}
     </header>
   );
 };

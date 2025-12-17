@@ -6,31 +6,28 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom Scrollbar */
+/* ================================
+   SCROLLBARS
+================================ */
 ::-webkit-scrollbar {
   width: 0px;
   background: transparent;
 }
 
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-
-.no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
+.no-scrollbar::-webkit-scrollbar,
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
 
+.no-scrollbar,
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
 
-/* Color utilities using CSS variables */
+/* ================================
+   COLOR UTILITIES (CSS VARIABLES)
+================================ */
 .text-primary {
   color: hsl(var(--primary));
 }
@@ -48,7 +45,7 @@
 }
 
 .bg-primary-dark:hover {
-  background-color: hsl(var(--primary) / 0.9);
+  background-color: hsl(var(--primary) / 0.85);
 }
 
 .bg-primary-10 {
@@ -75,14 +72,9 @@
   border-color: hsl(var(--primary) / 0.5);
 }
 
-.ring-primary:focus {
-  outline: none;
-  ring: 1px solid hsl(var(--primary) / 0.5);
-}
-
 .focus-ring-primary:focus {
   outline: none;
-  --tw-ring-color: hsl(var(--primary) / 0.5);
+  --tw-ring-color: hsl(var(--ring) / 0.5);
 }
 
 .hover-primary-10:hover {
@@ -97,32 +89,51 @@
   --tw-gradient-to: hsl(var(--primary) / 0.8);
 }
 
-/* Glassmorphism utilities */
+/* ================================
+   GLASSMORPHISM
+================================ */
 .glass-panel {
-  background: rgba(255, 255, 255, 0.6);
+  background: hsl(var(--card) / 0.65);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  border: 1px solid hsl(var(--border) / 0.6);
 }
 
 .glass-nav {
-  background: hsl(var(--background)/0.95);
+  background: hsl(var(--background) / 0.92);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  border-top: 1px solid hsl(var(--border));
 }
 
 .glass-modal {
-  background: rgba(255, 255, 255, 0.95);
+  background: hsl(var(--card) / 0.8);
   backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid hsl(var(--border));
 }
 
-/* Animations */
+.dark .glass-panel {
+  background: hsl(var(--card) / 0.8);
+}
+
+.dark .glass-nav {
+  background: hsl(var(--background)/ 0.8);
+}
+
+.dark .glass-modal {
+  background: hsl(var(--card) / 0.8);
+}
+
+/* ================================
+   ANIMATIONS
+================================ */
 @keyframes fadeIn {
   from {
     opacity: 0;
     transform: translateY(10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -139,6 +150,7 @@
     transform: scale(0.95);
     opacity: 0;
   }
+
   to {
     transform: scale(1);
     opacity: 1;
@@ -152,14 +164,18 @@
 .delay-100 {
   animation-delay: 100ms;
 }
+
 .delay-200 {
   animation-delay: 200ms;
 }
+
 .delay-300 {
   animation-delay: 300ms;
 }
 
-/* QR Scan Line Animation */
+/* ================================
+   QR SCAN
+================================ */
 .qr-scan-line {
   height: 2px;
   width: 100%;
@@ -168,7 +184,7 @@
   top: 0;
   left: 0;
   animation: scan 2s infinite linear;
-  box-shadow: 0 0 10px hsl(var(--primary));
+  box-shadow: 0 0 12px hsl(var(--primary) / 0.6);
 }
 
 @keyframes scan {
@@ -176,151 +192,135 @@
     top: 0%;
     opacity: 0;
   }
+
   10% {
     opacity: 1;
   }
+
   90% {
     opacity: 1;
   }
+
   100% {
     top: 100%;
     opacity: 0;
   }
 }
 
+/* ================================
+   THEME VARIABLES
+================================ */
 @layer base {
-  /**
-   * Tailwind CSS theme for KORVO Loyalty Wallet
-   * Light mode theme with green accents
-   */
   :root {
-      --background: 45 25% 96%;
-      --foreground: 220 18% 18%;
+    --background: 45 25% 96%;
+    --foreground: 220 18% 18%;
 
-      --card: 45 25% 98%;
-      --card-foreground: 220 18% 18%;
+    --card: 0 0% 100%;
+    --card-foreground: 0, 0%, 100%;
 
-      --popover: 45 25% 98%;
-      --popover-foreground: 220 18% 18%;
+    --popover: 45 25% 98%;
+    --popover-foreground: 220 18% 18%;
 
-      --primary: 85 40% 36%;
-      --primary-foreground: 45 25% 98%;
+    --primary: 85 40% 36%;
+    --primary-foreground: 45 25% 98%;
 
-      --secondary: 45 18% 88%;
-      --secondary-foreground: 220 18% 22%;
+    --secondary: 45 18% 88%;
+    --secondary-foreground: 220 18% 22%;
 
-      --muted: 45 18% 88%;
-      --muted-foreground: 220 12% 42%;
+    --muted: 45 18% 88%;
+    --muted-foreground: 220 12% 42%;
 
-      --accent: 85 45% 32%;
-      --accent-foreground: 45 25% 98%;
+    --accent: 85 45% 32%;
+    --accent-foreground: 45 25% 98%;
 
-      --destructive: 0 60% 45%;
-      --destructive-foreground: 45 25% 98%;
+    --destructive: 0 60% 45%;
+    --destructive-foreground: 45 25% 98%;
 
-      --border: 45 15% 82%;
-      --input: 45 15% 82%;
-      --ring: 85 40% 36%;
+    --border: 45 15% 82%;
+    --input: 45 15% 82%;
+    --ring: 85 40% 36%;
 
-      --success: 95 45% 34%;
-      --success-foreground: 45 25% 98%;
+    --success: 95 45% 34%;
+    --success-foreground: 45 25% 98%;
 
-      --info: 210 30% 45%;
-      --info-foreground: 45 25% 98%;
+    --info: 210 30% 45%;
+    --info-foreground: 45 25% 98%;
 
-      --warning: 38 65% 50%;
-      --warning-foreground: 220 18% 18%;
+    --warning: 38 65% 50%;
+    --warning-foreground: 220 18% 18%;
 
-      --radius: 0.5rem;
+    --radius: 0.5rem;
+  }
 
-      --sidebar-background: 45 22% 94%;
-      --sidebar-foreground: 220 18% 18%;
-      --sidebar-primary: 85 40% 36%;
-      --sidebar-primary-foreground: 45 25% 98%;
-      --sidebar-accent: 45 18% 88%;
-      --sidebar-accent-foreground: 220 18% 22%;
-      --sidebar-border: 45 15% 82%;
-      --sidebar-ring: 85 40% 36%;
-    }
+  .dark {
+    --background: 45 14% 8%;
+    --foreground: 45 10% 92%;
+
+    --card: 45 14% 10%;
+    --card-foreground: 45 10% 92%;
+
+    --popover: 45 14% 10%;
+    --popover-foreground: 45 10% 92%;
+
+    --primary: 85 55% 50%;
+    --primary-foreground: 45 14% 10%;
+
+    --secondary: 45 12% 18%;
+    --secondary-foreground: 45 10% 92%;
+
+    --muted: 45 12% 18%;
+    --muted-foreground: 45 8% 65%;
+
+    --accent: 85 60% 45%;
+    --accent-foreground: 45 14% 10%;
+
+    --destructive: 0 65% 48%;
+    --destructive-foreground: 45 10% 92%;
+
+    --border: 45 12% 20%;
+    --input: 45 12% 20%;
+    --ring: 85 55% 50%;
+
+    --success: 95 60% 42%;
+    --success-foreground: 45 10% 92%;
+
+    --info: 210 65% 60%;
+    --info-foreground: 45 14% 10%;
+
+    --warning: 38 75% 55%;
+    --warning-foreground: 45 14% 10%;
+
+    --radius: 0.5rem;
+  }
 }
 
-/* Leaflet Map Styling */
+/* ================================
+   LEAFLET (THEME AWARE)
+================================ */
 .leaflet-container {
-  background-color: #e8e4d6;
+  background-color: hsl(var(--background));
   font-family: "Inter", sans-serif;
 }
 
 .leaflet-control-zoom {
-  border: 1px solid rgba(0, 0, 0, 0.15) !important;
-  border-radius: 8px !important;
-  background-color: rgba(255, 255, 255, 0.9) !important;
-  box-shadow: none !important;
+  border: 1px solid hsl(var(--border)) !important;
+  background-color: hsl(var(--card) / 0.9) !important;
 }
 
 .leaflet-control-zoom-in,
 .leaflet-control-zoom-out {
-  color: #3d4a24 !important;
-  font-size: 16px !important;
-  background-color: transparent !important;
-  border: none !important;
-  width: 36px !important;
-  height: 36px !important;
-  line-height: 36px !important;
-  text-align: center !important;
-}
-
-.leaflet-control-zoom-in:hover,
-.leaflet-control-zoom-out:hover {
-  background-color: rgba(0, 0, 0, 0.05) !important;
+  color: hsl(var(--primary)) !important;
 }
 
 .leaflet-popup-content-wrapper {
-  background-color: rgba(255, 255, 255, 0.95) !important;
-  border-radius: 8px !important;
-  border: 1px solid rgba(0, 0, 0, 0.1) !important;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4) !important;
+  background-color: hsl(var(--card)) !important;
+  border: 1px solid hsl(var(--border)) !important;
+  color: hsl(var(--card-foreground)) !important;
 }
 
-.leaflet-popup-content {
-  margin: 0 !important;
-  color: #1a1a1a !important;
-  font-size: 13px !important;
-}
-
-.leaflet-popup-tip {
-  background-color: rgba(255, 255, 255, 0.95) !important;
-  border: 1px solid rgba(0, 0, 0, 0.1) !important;
-}
-
-.leaflet-popup-close-button {
-  color: #666666 !important;
-  font-size: 18px !important;
-  top: 6px !important;
-  right: 6px !important;
-}
-
-.leaflet-popup-close-button:hover {
-  color: #000000 !important;
-}
-
-.leaflet-container a.leaflet-popup-close-button {
-  width: auto !important;
-  height: auto !important;
-}
-
-/* Attribution Control */
-.leaflet-control-attribution {
-  background-color: rgba(255, 255, 255, 0.85) !important;
-  color: rgba(0, 0, 0, 0.6) !important;
-  font-size: 10px !important;
-  border-radius: 4px !important;
-  padding: 4px 8px !important;
-}
-
-.leaflet-control-attribution a {
-  color: rgba(0, 0, 0, 0.8) !important;
-}
-
+/* ================================
+   BASE
+================================ */
 @layer base {
   * {
     @apply border-border;
@@ -333,16 +333,5 @@
 
   body {
     @apply bg-background text-foreground;
-  }
-
-  :where(p, span, li, h1, h2, h3, h4, h5, h6, a, button, label, td, th) {
-    overflow-wrap: anywhere;
-    word-break: break-word;
-  }
-
-  pre,
-  code {
-    overflow-x: auto;
-    white-space: pre;
   }
 }

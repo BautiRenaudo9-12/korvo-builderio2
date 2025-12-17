@@ -23,7 +23,7 @@ export default function BusinessPoints() {
     <div className="px-3 sm:px-4 md:px-8 pt-3 sm:pt-4 md:pt-8 pb-8">
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-6">
         <div>
-          <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-1">Configuración de Puntos</h1>
+          <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground mb-1">Configuración de Puntos</h1>
           <p className="text-muted-foreground text-xs sm:text-sm">Define cómo ganan puntos tus clientes</p>
         </div>
       </div>
@@ -31,7 +31,7 @@ export default function BusinessPoints() {
       <div className="glass-panel rounded-lg p-4 sm:p-6 border border-white/5">
         <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 sm:gap-4 mb-6">
           <div className="flex-1">
-            <h2 className="text-lg sm:text-xl font-semibold text-white mb-1">Parámetros de Puntos</h2>
+            <h2 className="text-lg sm:text-xl font-semibold text-foreground mb-1">Parámetros de Puntos</h2>
             <p className="text-xs sm:text-sm text-muted-foreground">Configura las reglas de acumulación y expiración</p>
           </div>
           <button
@@ -88,12 +88,24 @@ export default function BusinessPoints() {
           </div>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-            <div className="p-3 sm:p-4 bg-white/5 rounded-lg border border-white/10">
+            <div
+              className="p-3 sm:p-4 rounded-lg border"
+              style={{
+                backgroundColor: `hsl(var(--muted) / 0.2)`,
+                borderColor: `hsl(var(--border))`,
+              }}
+            >
               <p className="text-xs sm:text-sm text-muted-foreground mb-2">Ratio de Puntos</p>
               <p className="text-2xl sm:text-3xl font-bold text-primary">{pointsConfig.pointsPerDollar}</p>
               <p className="text-xs text-muted-foreground mt-2">puntos por $1</p>
             </div>
-            <div className="p-3 sm:p-4 bg-white/5 rounded-lg border border-white/10">
+            <div
+              className="p-3 sm:p-4 rounded-lg border"
+              style={{
+                backgroundColor: `hsl(var(--muted) / 0.2)`,
+                borderColor: `hsl(var(--border))`,
+              }}
+            >
               <p className="text-xs sm:text-sm text-muted-foreground mb-2">Expiración</p>
               <p className="text-2xl sm:text-3xl font-bold text-primary">{pointsConfig.expiryMonths}</p>
               <p className="text-xs text-muted-foreground mt-2">meses de inactividad</p>
