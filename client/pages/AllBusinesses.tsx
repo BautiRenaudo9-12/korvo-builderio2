@@ -720,7 +720,6 @@ export default function AllBusinesses() {
           style={{
             backgroundColor: `hsl(var(--card))`,
             borderColor: `hsl(var(--border))`,
-            border: '1px solid',
           }}
         />
       </div>
