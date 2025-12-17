@@ -320,7 +320,10 @@ export default function AllBusinesses() {
 
               {/* Resultado */}
               {pointsToRedeem > 0 && (
-                <div className="rounded-lg bg-foreground/[0.03] p-3 shadow-sm/40">
+                <div
+                  className="rounded-lg p-3 shadow-sm/40"
+                  style={{ backgroundColor: `hsl(var(--muted) / 0.3)` }}
+                >
                   <p className="text-xs text-foreground/60 mb-1">Recibirás</p>
                   <p className="text-2xl font-semibold text-foreground tracking-tight">
                     ${(pointsToRedeem / 50).toFixed(2)}
