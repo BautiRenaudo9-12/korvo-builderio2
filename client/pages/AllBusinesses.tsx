@@ -792,7 +792,7 @@ export default function AllBusinesses() {
                   </div>
 
                   {/* Stats Grid */}
-                  <div className="flex items-center gap-3 md:gap-4 bg-red">
+                  <div className="flex items-center gap-3 md:gap-4 bg-red-5000">
                     <div
                       className="backdrop-blur-sm rounded-xl p-2.5 md:p-3 shadow-sm/40 shadow-sm flex-1"
                       style={{ backgroundColor: `hsl(var(--card))` }}
