@@ -248,11 +248,16 @@ export default function AllBusinesses() {
           <button
             onClick={() => claimedItems.length > 0 && setShowClaimedModal(true)}
             disabled={claimedItems.length === 0}
-            className={`flex items-center justify-between w-full px-4 py-3 bg-white/60 backdrop-blur-xl rounded-xl transition-all active:scale-[0.98] shadow-[0_8px_24px_rgba(0,0,0,0.06)] ${
+            className={`flex items-center justify-between w-full px-4 py-3 backdrop-blur-xl rounded-xl transition-all active:scale-[0.98] shadow-[0_8px_24px_rgba(0,0,0,0.06)] ${
               claimedItems.length > 0
-                ? "hover:border-primary/30 hover:bg-white/80 cursor-pointer"
+                ? "hover:border-primary/30 cursor-pointer"
                 : "opacity-50 cursor-not-allowed"
             }`}
+            style={{
+              backgroundColor: `hsl(var(--card) / 0.9)`,
+              borderColor: claimedItems.length > 0 ? `hsl(var(--border))` : `hsl(var(--border) / 0.5)`,
+              border: '1px solid',
+            }}
           >
             <div className="flex items-center gap-2.5">
               <div className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center">
