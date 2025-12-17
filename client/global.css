@@ -93,7 +93,7 @@
    GLASSMORPHISM
 ================================ */
 .glass-panel {
-  background: hsl(var(--background) / 0.65);
+  background: hsl(var(--card) / 0.65);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid hsl(var(--border) / 0.6);
@@ -214,7 +214,7 @@
     --background: 45 25% 96%;
     --foreground: 220 18% 18%;
 
-    --card: 0 0% 100%;;
+    --card: 0 0% 100%;
     --card-foreground: 0, 0%, 100%;
 
     --popover: 45 25% 98%;
