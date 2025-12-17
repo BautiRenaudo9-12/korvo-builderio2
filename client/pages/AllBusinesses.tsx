@@ -777,7 +777,10 @@ export default function AllBusinesses() {
 
                   {/* Stats Grid */}
                   <div className="flex items-center gap-3 md:gap-4">
-                    <div className="bg-white/90 backdrop-blur-sm rounded-xl p-2.5 md:p-3 shadow-sm/40 shadow-sm flex-1">
+                    <div
+                      className="backdrop-blur-sm rounded-xl p-2.5 md:p-3 shadow-sm/40 shadow-sm flex-1"
+                      style={{ backgroundColor: `hsl(var(--card))` }}
+                    >
                       <div className="flex items-center justify-between mb-1">
                         <p className="text-[10px] md:text-xs text-foreground/50 font-medium">
                           Puntos
@@ -807,11 +810,17 @@ export default function AllBusinesses() {
                       </p>
                     </div>
 
-                    <div className="bg-white/90 backdrop-blur-sm rounded-xl p-2.5 md:p-3 shadow-sm/40 shadow-sm flex-1">
+                    <div
+                      className="backdrop-blur-sm rounded-xl p-2.5 md:p-3 shadow-sm/40 shadow-sm flex-1"
+                      style={{ backgroundColor: `hsl(var(--card))` }}
+                    >
                       <p className="text-[10px] md:text-xs text-foreground/50 font-medium mb-1">
                         Avance
                       </p>
-                      <div className="w-full h-2 bg-foreground/[0.03] rounded-full overflow-hidden">
+                      <div
+                        className="w-full h-2 rounded-full overflow-hidden"
+                        style={{ backgroundColor: `hsl(var(--muted))` }}
+                      >
                         <div
                           className="h-full rounded-full transition-all"
                           style={{
