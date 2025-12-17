@@ -194,76 +194,76 @@
    * Light mode theme with green accents
    */
   :root {
-      --background: 45 14% 8%;
-      --foreground: 45 10% 92%;
-  
-      --card: 45 14% 10%;
-      --card-foreground: 45 10% 92%;
-  
-      --popover: 45 14% 10%;
-      --popover-foreground: 45 10% 92%;
-  
-      --primary: 85 55% 50%;
-      --primary-foreground: 45 14% 10%;
-  
-      --secondary: 45 12% 18%;
-      --secondary-foreground: 45 10% 92%;
-  
-      --muted: 45 12% 18%;
-      --muted-foreground: 45 8% 65%;
-  
-      --accent: 85 60% 45%;
-      --accent-foreground: 45 14% 10%;
-  
-      --destructive: 0 65% 48%;
-      --destructive-foreground: 45 10% 92%;
-  
-      --border: 45 12% 20%;
-      --input: 45 12% 20%;
-      --ring: 85 55% 50%;
-  
-      --success: 95 60% 42%;
-      --success-foreground: 45 10% 92%;
-  
-      --info: 210 65% 60%;
-      --info-foreground: 45 14% 10%;
-  
-      --warning: 38 75% 55%;
-      --warning-foreground: 45 14% 10%;
-  
+      --background: 45 25% 96%;
+      --foreground: 220 18% 18%;
+
+      --card: 45 25% 98%;
+      --card-foreground: 220 18% 18%;
+
+      --popover: 45 25% 98%;
+      --popover-foreground: 220 18% 18%;
+
+      --primary: 85 40% 36%;
+      --primary-foreground: 45 25% 98%;
+
+      --secondary: 45 18% 88%;
+      --secondary-foreground: 220 18% 22%;
+
+      --muted: 45 18% 88%;
+      --muted-foreground: 220 12% 42%;
+
+      --accent: 85 45% 32%;
+      --accent-foreground: 45 25% 98%;
+
+      --destructive: 0 60% 45%;
+      --destructive-foreground: 45 25% 98%;
+
+      --border: 45 15% 82%;
+      --input: 45 15% 82%;
+      --ring: 85 40% 36%;
+
+      --success: 95 45% 34%;
+      --success-foreground: 45 25% 98%;
+
+      --info: 210 30% 45%;
+      --info-foreground: 45 25% 98%;
+
+      --warning: 38 65% 50%;
+      --warning-foreground: 220 18% 18%;
+
       --radius: 0.5rem;
-  
-      --sidebar-background: 45 13% 7%;
-      --sidebar-foreground: 45 10% 92%;
-      --sidebar-primary: 85 55% 50%;
-      --sidebar-primary-foreground: 45 14% 10%;
-      --sidebar-accent: 45 12% 18%;
-      --sidebar-accent-foreground: 45 10% 92%;
-      --sidebar-border: 45 12% 20%;
-      --sidebar-ring: 85 55% 50%;
-  
-      --button-default-bg: 85 55% 50%;
-      --button-default-text: 45 14% 10%;
-      --button-default-hover: 85 60% 45%;
-  
-      --button-secondary-bg: 45 12% 18%;
-      --button-secondary-text: 45 10% 92%;
-      --button-secondary-hover: 45 12% 24%;
-  
-      --button-destructive-bg: 0 65% 48%;
-      --button-destructive-text: 45 10% 92%;
-      --button-destructive-hover: 0 65% 42%;
-  
-      --button-outline-border: 45 12% 24%;
-      --button-outline-bg: 45 14% 8%;
-      --button-outline-text: 45 10% 92%;
-      --button-outline-hover-bg: 85 60% 45%;
-      --button-outline-hover-text: 45 14% 10%;
-  
-      --card-bg: 45 14% 10%;
-      --card-text: 45 10% 92%;
-      --card-border: 45 12% 20%;
-      --card-shadow: rgba(0, 0, 0, 0.35);
+
+      --sidebar-background: 45 22% 94%;
+      --sidebar-foreground: 220 18% 18%;
+      --sidebar-primary: 85 40% 36%;
+      --sidebar-primary-foreground: 45 25% 98%;
+      --sidebar-accent: 45 18% 88%;
+      --sidebar-accent-foreground: 220 18% 22%;
+      --sidebar-border: 45 15% 82%;
+      --sidebar-ring: 85 40% 36%;
+
+      --button-default-bg: 85 40% 36%;
+      --button-default-text: 45 25% 98%;
+      --button-default-hover: 85 40% 32%;
+
+      --button-secondary-bg: 45 18% 88%;
+      --button-secondary-text: 220 18% 22%;
+      --button-secondary-hover: 45 18% 80%;
+
+      --button-destructive-bg: 0 60% 45%;
+      --button-destructive-text: 45 25% 98%;
+      --button-destructive-hover: 0 60% 40%;
+
+      --button-outline-border: 45 15% 82%;
+      --button-outline-bg: 45 25% 96%;
+      --button-outline-text: 220 18% 18%;
+      --button-outline-hover-bg: 85 45% 32%;
+      --button-outline-hover-text: 45 25% 98%;
+
+      --card-bg: 45 25% 98%;
+      --card-text: 220 18% 18%;
+      --card-border: 45 15% 82%;
+      --card-shadow: rgba(0, 0, 0, 0.05);
     }
 
   @media (prefers-color-scheme: dark) {
