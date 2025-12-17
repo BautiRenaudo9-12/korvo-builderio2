@@ -306,6 +306,11 @@ export default function AllBusinesses() {
                   }
                   placeholder="0"
                   className="w-full rounded-lg shadow-sm/40 px-3 py-2.5 text-sm text-foreground placeholder:text-foreground/30 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/40 transition"
+                  style={{
+                    backgroundColor: `hsl(var(--background))`,
+                    borderColor: `hsl(var(--border))`,
+                    border: '1px solid',
+                  }}
                 />
 
                 <p className="text-[10px] text-foreground/50">
