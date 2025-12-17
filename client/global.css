@@ -107,14 +107,14 @@
 }
 
 .glass-modal {
-  background: hsl(var(--card) / 0.95);
+  background: hsl(var(--card) / 0.8);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid hsl(var(--border));
 }
 
 .dark .glass-panel {
-  background: hsl(var(--card) / 0.85);
+  background: hsl(var(--card) / 0.8);
 }
 
 .dark .glass-nav {
