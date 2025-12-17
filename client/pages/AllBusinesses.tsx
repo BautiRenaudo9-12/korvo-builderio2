@@ -716,7 +716,7 @@ export default function AllBusinesses() {
           placeholder="Buscar negocio o dirección..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className="w-full shadow-sm rounded-lg pl-10 pr-4 py-2.5 md:py-3 text-sm md:text-base text-foreground "
+          className="w-full shadow-sm rounded-lg pl-10 pr-4 py-2.5 md:py-3 text-sm md:text-base  placeholder-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary/50 focus:border-primary/50 transition-all"
           style={{
             backgroundColor: `hsl(var(--card))`,
             borderColor: `hsl(var(--border))`,
