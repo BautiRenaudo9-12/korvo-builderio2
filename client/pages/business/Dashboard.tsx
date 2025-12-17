@@ -9,7 +9,7 @@ export default function BusinessDashboard() {
 
   return (
     <div className="px-4 md:px-8 pt-4 md:pt-8 pb-8">
-      <h1 className="text-2xl md:text-4xl font-bold text-white mb-8">Dashboard</h1>
+      <h1 className="text-2xl md:text-4xl font-bold text-foreground mb-8">Dashboard</h1>
 
       {/* Stats Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6 mb-8">
@@ -22,7 +22,7 @@ export default function BusinessDashboard() {
             <span className="text-xs text-success font-semibold">+12%</span>
           </div>
           <p className="text-muted-foreground text-xs md:text-sm mb-1">Puntos en Circulación</p>
-          <p className="text-2xl md:text-3xl font-bold text-white">{stats.totalPoints.toLocaleString()}</p>
+          <p className="text-2xl md:text-3xl font-bold text-foreground">{stats.totalPoints.toLocaleString()}</p>
         </div>
 
         {/* Active Customers */}
@@ -34,7 +34,7 @@ export default function BusinessDashboard() {
             <span className="text-xs text-success font-semibold">+8%</span>
           </div>
           <p className="text-muted-foreground text-xs md:text-sm mb-1">Clientes Activos</p>
-          <p className="text-2xl md:text-3xl font-bold text-white">{stats.activeCustomers}</p>
+          <p className="text-2xl md:text-3xl font-bold text-foreground">{stats.activeCustomers}</p>
         </div>
 
         {/* Rewards Claimed */}
@@ -46,7 +46,7 @@ export default function BusinessDashboard() {
             <span className="text-xs text-success font-semibold">+15%</span>
           </div>
           <p className="text-muted-foreground text-xs md:text-sm mb-1">Recompensas Canjeadas</p>
-          <p className="text-2xl md:text-3xl font-bold text-white">{stats.rewardsClaimed}</p>
+          <p className="text-2xl md:text-3xl font-bold text-foreground">{stats.rewardsClaimed}</p>
         </div>
 
         {/* Monthly Revenue */}
@@ -58,7 +58,7 @@ export default function BusinessDashboard() {
             <span className="text-xs text-success font-semibold">+5%</span>
           </div>
           <p className="text-muted-foreground text-xs md:text-sm mb-1">Ingresos (Mes)</p>
-          <p className="text-2xl md:text-3xl font-bold text-white">${(stats.monthlyRevenue / 1000).toFixed(1)}K</p>
+          <p className="text-2xl md:text-3xl font-bold text-foreground">${(stats.monthlyRevenue / 1000).toFixed(1)}K</p>
         </div>
       </div>
 
@@ -68,7 +68,7 @@ export default function BusinessDashboard() {
         <div className="glass-panel rounded-lg p-6 border border-white/5">
           <div className="flex items-center gap-2 mb-6">
             <BarChart3 size={20} className="text-primary" />
-            <h3 className="text-lg font-semibold text-white">Puntos (Ganados vs Canjeados)</h3>
+            <h3 className="text-lg font-semibold text-foreground">Puntos (Ganados vs Canjeados)</h3>
           </div>
           <ResponsiveContainer width="100%" height={300}>
             <BarChart data={chartData} margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
@@ -93,7 +93,7 @@ export default function BusinessDashboard() {
         <div className="glass-panel rounded-lg p-6 border border-white/5">
           <div className="flex items-center gap-2 mb-6">
             <TrendingUp size={20} className="text-success" />
-            <h3 className="text-lg font-semibold text-white">Ingresos Mensuales</h3>
+            <h3 className="text-lg font-semibold text-foreground">Ingresos Mensuales</h3>
           </div>
           <ResponsiveContainer width="100%" height={300}>
             <LineChart data={chartData} margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
@@ -122,16 +122,17 @@ export default function BusinessDashboard() {
 
       {/* Recent Transactions */}
       <div className="glass-panel rounded-lg p-6 border border-white/5">
-        <h3 className="text-lg font-semibold text-white mb-6">Transacciones Recientes</h3>
+        <h3 className="text-lg font-semibold text-foreground mb-6">Transacciones Recientes</h3>
         <div className="space-y-3 max-w-2xl">
           {recentTx.map((tx) => (
             <div
               key={tx.id}
-              className="flex items-center justify-between py-3 px-4 rounded-lg bg-white/5 hover:bg-white/10 transition-colors"
+              className="flex items-center justify-between py-3 px-4 rounded-lg transition-colors"
+              style={{ backgroundColor: `hsl(var(--muted) / 0.2)` }}
             >
               <div className="min-w-0 flex-1">
-                <p className="text-white font-medium truncate">{tx.customerName}</p>
-                <p className="text-xs text-neutral-500">
+                <p className="text-foreground font-medium truncate">{tx.customerName}</p>
+                <p className="text-xs text-muted-foreground">
                   {tx.reward ? `Canjeó: ${tx.reward}` : 'Puntos ganados'} • {tx.date} {tx.time}
                 </p>
               </div>
