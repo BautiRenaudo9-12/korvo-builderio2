@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
-import { ChevronLeft, User, Bird } from 'lucide-react';
+import { ChevronLeft, User, Bird, Moon, Sun } from 'lucide-react';
+import { useTheme } from '@/hooks/use-theme';
 
 interface HeaderProps {
   isDetailRoute: boolean;
@@ -8,6 +9,7 @@ interface HeaderProps {
 
 export const Header = ({ isDetailRoute, onBack }: HeaderProps) => {
   const navigate = useNavigate();
+  const { theme, toggleTheme } = useTheme();
 
   return (
     <header className="md:hidden pt-6 pb-2 px-6 flex justify-between items-center z-20 bg-background backdrop-blur-sm sticky top-0 transition-all duration-300 ">
