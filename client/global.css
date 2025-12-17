@@ -214,7 +214,9 @@
     --background: 45 25% 96%;
     --foreground: 220 18% 18%;
 
-    --card: 45 25% 98%;
+    --card: 0
+      0%
+      100%;
     --card-foreground: 220 18% 18%;
 
     --popover: 45 25% 98%;
