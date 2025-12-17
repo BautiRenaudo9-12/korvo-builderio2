@@ -286,7 +286,10 @@ export default function AllBusinesses() {
             </div>
 
             {/* Card */}
-            <div className="rounded-xl bg-white p-4 shadow-[0_8px_24px_rgba(0,0,0,0.06)] space-y-4">
+            <div
+              className="rounded-xl p-4 shadow-[0_8px_24px_rgba(0,0,0,0.06)] space-y-4"
+              style={{ backgroundColor: `hsl(var(--card))` }}
+            >
               {/* Input */}
               <div className="space-y-1.5">
                 <label className="text-xs font-medium text-foreground/60">
