@@ -1,8 +1,8 @@
-import { useState, useMemo } from 'react';
-import { mockTransactions } from '@/lib/data';
-import { ArrowDownLeft, ArrowUpRight, Search, Filter } from 'lucide-react';
+import { useState, useMemo } from "react";
+import { mockTransactions } from "@/lib/data";
+import { ArrowDownLeft, ArrowUpRight, Search, Filter } from "lucide-react";
 
-type TransactionType = 'all' | 'earn' | 'burn';
+type TransactionType = "all" | "earn" | "burn";
 
 interface GroupedTransactions {
   month: string;
@@ -11,10 +11,22 @@ interface GroupedTransactions {
   transactions: (typeof mockTransactions)[0][];
 }
 
-const getMonthName = (dateStr: string): { month: string; year: string; monthIndex: number } => {
+const getMonthName = (
+  dateStr: string
+): { month: string; year: string; monthIndex: number } => {
   const months = [
-    'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
-    'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre',
+    "Enero",
+    "Febrero",
+    "Marzo",
+    "Abril",
+    "Mayo",
+    "Junio",
+    "Julio",
+    "Agosto",
+    "Septiembre",
+    "Octubre",
+    "Noviembre",
+    "Diciembre",
   ];
 
   // Parse dates like "Ayer 14:30", "Lunes", "05 Oct", "01 Oct"
@@ -22,11 +34,11 @@ const getMonthName = (dateStr: string): { month: string; year: string; monthInde
   let month = date.getMonth();
   let year = date.getFullYear();
 
-  if (dateStr === 'Ayer' || dateStr.includes('14:30')) {
+  if (dateStr === "Ayer" || dateStr.includes("14:30")) {
     date.setDate(date.getDate() - 1);
     month = date.getMonth();
     year = date.getFullYear();
-  } else if (dateStr === 'Lunes') {
+  } else if (dateStr === "Lunes") {
     // Find last Monday
     const today = new Date();
     const day = today.getDay();
@@ -34,7 +46,7 @@ const getMonthName = (dateStr: string): { month: string; year: string; monthInde
     date.setDate(diff);
     month = date.getMonth();
     year = date.getFullYear();
-  } else if (dateStr.includes('Oct') || dateStr.includes('Octubre')) {
+  } else if (dateStr.includes("Oct") || dateStr.includes("Octubre")) {
     month = 9; // October
   }
 
@@ -46,8 +58,8 @@ const getMonthName = (dateStr: string): { month: string; year: string; monthInde
 };
 
 export default function Activity() {
-  const [searchQuery, setSearchQuery] = useState('');
-  const [typeFilter, setTypeFilter] = useState<TransactionType>('all');
+  const [searchQuery, setSearchQuery] = useState("");
+  const [typeFilter, setTypeFilter] = useState<TransactionType>("all");
   const [showFilters, setShowFilters] = useState(false);
 
   const filteredAndGrouped = useMemo(() => {
@@ -55,9 +67,11 @@ export default function Activity() {
     let filtered = mockTransactions.filter((transaction) => {
       const matchesSearch =
         transaction.shop.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        (transaction.item && transaction.item.toLowerCase().includes(searchQuery.toLowerCase()));
+        (transaction.item &&
+          transaction.item.toLowerCase().includes(searchQuery.toLowerCase()));
 
-      const matchesType = typeFilter === 'all' || transaction.type === typeFilter;
+      const matchesType =
+        typeFilter === "all" || transaction.type === typeFilter;
 
       return matchesSearch && matchesType;
     });
@@ -84,16 +98,17 @@ export default function Activity() {
     // Sort by month (newest first)
     return Object.values(grouped).sort(
       (a, b) =>
-        new Date(b.year, b.monthIndex).getTime() - new Date(a.year, a.monthIndex).getTime()
+        new Date(b.year, b.monthIndex).getTime() -
+        new Date(a.year, a.monthIndex).getTime()
     );
   }, [searchQuery, typeFilter]);
 
   const totalEarn = mockTransactions
-    .filter((t) => t.type === 'earn')
+    .filter((t) => t.type === "earn")
     .reduce((sum, t) => sum + parseInt(t.amount), 0);
 
   const totalBurn = mockTransactions
-    .filter((t) => t.type === 'burn')
+    .filter((t) => t.type === "burn")
     .reduce((sum, t) => sum + parseInt(t.amount), 0);
 
   return (
@@ -128,11 +143,11 @@ export default function Activity() {
         {/* Filter Buttons */}
         <div className="flex gap-2 md:gap-3 flex-wrap">
           <button
-            onClick={() => setTypeFilter('all')}
+            onClick={() => setTypeFilter("all")}
             className={`flex items-center gap-1.5 px-3 py-2 rounded-lg transition-all text-xs md:text-sm font-medium font-semibold ${
-              typeFilter === 'all'
-                ? 'bg-primary text-primary-foreground border border-primary'
-                : 'bg-secondary border border-border text-foreground hover:bg-secondary/40 hover:border-border/60 font-bold'
+              typeFilter === "all"
+                ? "bg-primary text-primary-foreground border border-primary"
+                : "bg-secondary border border-border text-foreground hover:bg-secondary/40 hover:border-border/60 font-bold"
             }`}
           >
             <Filter size={14} />
@@ -140,11 +155,11 @@ export default function Activity() {
           </button>
 
           <button
-            onClick={() => setTypeFilter('earn')}
+            onClick={() => setTypeFilter("earn")}
             className={`flex items-center gap-1.5 px-3 py-2 rounded-lg transition-all text-xs md:text-sm font-medium font-semibold ${
-              typeFilter === 'earn'
-                ? 'bg-success text-white border border-success'
-                : 'bg-secondary border border-border text-foreground hover:bg-secondary/40 hover:border-border/60 font-bold'
+              typeFilter === "earn"
+                ? "bg-success text-white border border-success"
+                : "bg-secondary border border-border text-foreground hover:bg-secondary/40 hover:border-border/60 font-bold"
             }`}
           >
             <ArrowDownLeft size={14} />
@@ -152,11 +167,11 @@ export default function Activity() {
           </button>
 
           <button
-            onClick={() => setTypeFilter('burn')}
+            onClick={() => setTypeFilter("burn")}
             className={`flex items-center gap-1.5 px-3 py-2 rounded-lg transition-all text-xs md:text-sm font-medium font-semibold ${
-              typeFilter === 'burn'
-                ? 'bg-destructive text-destructive-foreground border border-destructive'
-                : 'bg-secondary border border-border text-foreground hover:bg-secondary/40 hover:border-border/60 font-bold'
+              typeFilter === "burn"
+                ? "bg-destructive text-destructive-foreground border border-destructive"
+                : "bg-secondary border border-border text-foreground hover:bg-secondary/40 hover:border-border/60 font-bold"
             }`}
           >
             <ArrowUpRight size={14} />
@@ -174,8 +189,12 @@ export default function Activity() {
             borderColor: `hsl(var(--border))`,
           }}
         >
-          <p className="text-[10px] md:text-xs text-foreground/75 font-semibold mb-2">Pts Ganados</p>
-          <p className="text-lg md:text-2xl font-bold text-success">+{totalEarn}</p>
+          <p className="text-[10px] md:text-xs text-foreground/75 font-semibold mb-2">
+            Pts Ganados
+          </p>
+          <p className="text-lg md:text-2xl font-bold text-success">
+            +{totalEarn}
+          </p>
         </div>
 
         <div
@@ -185,8 +204,12 @@ export default function Activity() {
             borderColor: `hsl(var(--border))`,
           }}
         >
-          <p className="text-[10px] md:text-xs text-foreground/75 font-semibold mb-2">Pts Canjeados</p>
-          <p className="text-lg md:text-2xl font-bold text-destructive">{totalBurn}</p>
+          <p className="text-[10px] md:text-xs text-foreground/75 font-semibold mb-2">
+            Pts Canjeados
+          </p>
+          <p className="text-lg md:text-2xl font-bold text-destructive">
+            {totalBurn}
+          </p>
         </div>
 
         <div
@@ -196,8 +219,12 @@ export default function Activity() {
             borderColor: `hsl(var(--border))`,
           }}
         >
-          <p className="text-[10px] md:text-xs text-foreground/75 font-semibold mb-2">Total Transacciones</p>
-          <p className="text-lg md:text-2xl font-bold text-foreground">{mockTransactions.length}</p>
+          <p className="text-[10px] md:text-xs text-foreground/75 font-semibold mb-2">
+            Total Transacciones
+          </p>
+          <p className="text-lg md:text-2xl font-bold text-foreground">
+            {mockTransactions.length}
+          </p>
         </div>
       </div>
 
@@ -214,17 +241,22 @@ export default function Activity() {
               {/* Transactions for this month */}
               <div className="space-y-2">
                 {group.transactions.map((transaction, i) => {
-                  const isEarn = transaction.type === 'earn';
-                  const color = isEarn ? 'text-emerald-500' : 'text-red-400';
+                  const isEarn = transaction.type === "earn";
+                  const color = isEarn ? "text-emerald-500" : "text-red-400";
                   const icon = isEarn ? ArrowDownLeft : ArrowUpRight;
                   const Icon = icon;
-                  const iconBg = isEarn ? 'bg-emerald-500/10 text-emerald-500' : 'bg-red-500/10 text-red-400';
+                  const iconBg = isEarn
+                    ? "bg-emerald-500/10 text-emerald-500"
+                    : "bg-red-500/10 text-red-400";
 
                   return (
                     <div
                       key={transaction.id}
                       className="flex items-center justify-between py-4 md:py-5 px-4 md:px-5 glass-panel rounded-lg border border-border hover:border-primary/30 hover:bg-black/[0.02] transition-all animate-fade-in"
-                      style={{ animationDelay: `${i * 30}ms` }}
+                      style={{
+                        animationDelay: `${i * 30}ms`,
+                        backgroundColor: `hsl(var(--card))`,
+                      }}
                     >
                       <div className="flex items-center gap-3 md:gap-4 flex-1">
                         <div
@@ -235,14 +267,17 @@ export default function Activity() {
                         </div>
                         <div className="min-w-0 flex-1">
                           <p className="text-sm md:text-base font-medium text-foreground truncate">
-                            {transaction.item || (isEarn ? 'Puntos ganados' : 'Canjeado')}
+                            {transaction.item ||
+                              (isEarn ? "Puntos ganados" : "Canjeado")}
                           </p>
                           <p className="text-[10px] md:text-xs text-foreground/60 truncate">
                             {transaction.shop} • {transaction.date}
                           </p>
                         </div>
                       </div>
-                      <span className={`text-sm md:text-base font-semibold ${color} tracking-tight flex-shrink-0 ml-4`}>
+                      <span
+                        className={`text-sm md:text-base font-semibold ${color} tracking-tight flex-shrink-0 ml-4`}
+                      >
                         {transaction.amount}
                       </span>
                     </div>
